@@ -1,0 +1,315 @@
+{
+  "log": "/home/sunuk/nav2_follow_stabilization/smooth010/candidate/follower_diagnostics/logs/local_avoidance_trial_1794479475679391457.jsonl",
+  "sha256": "91594f25dd651c4de1647c88755e2f9c5d7a67b1ca1319cd811e228b2da17e4f",
+  "arm_to_stop_s": 359.502998536,
+  "control_samples": 3183,
+  "control_sample_coverage_s": 359.3086697509992,
+  "estimated_nonzero_command_s": 348.19629322599917,
+  "estimated_zero_command_s": 11.112376524999998,
+  "observed_zero_command_episodes": 24,
+  "observed_drive_stop_transitions": 47,
+  "zero_episode_median_max_s": [
+    0.330099704,
+    1.9250167099999997
+  ],
+  "positive_command_v_min_median_max_mps": [
+    9.82614662765772e-10,
+    0.022344362643645286,
+    0.1
+  ],
+  "smooth_gap_min_median_max_m": [
+    1.4109467565994152,
+    1.4657456479501603,
+    1.6332353554939143
+  ],
+  "gap_samples": 3131,
+  "reason_samples": {
+    "TRACKED_PURSUIT": 3086,
+    "FOLLOW_WAITING_LEADER_ROTATION": 43,
+    "FOLLOW_WAITING_LEADER_REVERSE": 9,
+    "SMOOTH_GAP_HOLD": 45
+  },
+  "estimated_reason_s": {
+    "TRACKED_PURSUIT": 348.3018376839992,
+    "FOLLOW_WAITING_LEADER_ROTATION": 4.884948924999999,
+    "FOLLOW_WAITING_LEADER_REVERSE": 1.002103433,
+    "SMOOTH_GAP_HOLD": 5.119779709000001
+  },
+  "source_age_over_03s_at_follower_publish_samples": {
+    "leader": 37,
+    "path": 72
+  },
+  "source_age_max_at_publish_s": {
+    "follower_map": 0.214745679,
+    "scan": 0.257144468,
+    "leader": 0.54490201,
+    "path": 0.591299908
+  },
+  "motor_samples": 3201,
+  "motor_faults": [],
+  "motor_requested_abs_rpm_peak": 15,
+  "motor_reported_abs_rpm_peak": 16,
+  "zero_reply_hold_samples": 25,
+  "phase_waiting_for_zero_samples": 0,
+  "final_result": {
+    "event": "end",
+    "ros_ns": 1794479846388705018,
+    "reason": "TRIAL_TIME_LIMIT",
+    "leader_started": true,
+    "arm_requested": true,
+    "leader_zero_confirmed": true,
+    "follower_zero_confirmed": true,
+    "post_stop_faults": [],
+    "motion_feedback_seen": true,
+    "trial_success": true,
+    "geometric_complete_candidate": false,
+    "evaluation_pass": false,
+    "controller_kind": "TRACKED_PURSUIT_BOUNDED_CHECK_V1",
+    "trial_seconds": 360,
+    "input_source_timeout_s": 0.8,
+    "plan_only": false,
+    "plan_ready": false,
+    "near_return_hold_enabled": false,
+    "continuous_reobservation_enabled": false,
+    "pose_source": "filtered",
+    "dynamic_box": false,
+    "post_rejoin_follow_target_m": 1.0,
+    "obstacle_front_trigger_m": null,
+    "persistent_replan": false,
+    "continuous20": false,
+    "clearance_policy_m": null,
+    "stop_clearance_m": null,
+    "follow_lookahead_m": 0.8,
+    "tracked_pursuit_handoff_confirmed": false,
+    "frame_check_distance_m": null,
+    "frame_check_complete": false,
+    "follow_only": true,
+    "follower_rpm_limit": 15,
+    "extended_follow_speed": true,
+    "smooth_follow": true,
+    "follow_gap_deadband_m": 0.05,
+    "follow_max_linear_mps": 0.1,
+    "follow_min_linear_mps": 0.0,
+    "reference_recovery_waits": 0,
+    "reference_recovery_timeout_s": 10.0,
+    "follow_check_seconds": 360,
+    "auto_start_on_plan": true,
+    "auto_start_on_goal": true,
+    "prepare_only": false,
+    "direct_unicast": true,
+    "exclude_body_internal_scan": true,
+    "clearance_stop_enabled": false,
+    "leader_control": "NAV2_THROUGH_FAIL_CLOSED_GATE"
+  },
+  "zero_command_segments": [
+    {
+      "zero": true,
+      "start_s": 0.194328785,
+      "seconds": 0.105544458,
+      "reasons": [
+        "TRACKED_PURSUIT"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 7.636742066,
+      "seconds": 0.108604907,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_ROTATION"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 7.845109794,
+      "seconds": 0.455003644,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_ROTATION",
+        "FOLLOW_WAITING_LEADER_REVERSE"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 8.418170056,
+      "seconds": 0.771228291,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_ROTATION",
+        "FOLLOW_WAITING_LEADER_REVERSE"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 9.408560983,
+      "seconds": 1.259797766,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_REVERSE",
+        "FOLLOW_WAITING_LEADER_ROTATION",
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 11.107773227,
+      "seconds": 0.8945608349999999,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_ROTATION",
+        "FOLLOW_WAITING_LEADER_REVERSE",
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 12.118188431,
+      "seconds": 1.9250167099999997,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_ROTATION",
+        "SMOOTH_GAP_HOLD",
+        "FOLLOW_WAITING_LEADER_REVERSE"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 14.268265709,
+      "seconds": 0.580092037,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_ROTATION"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 14.94720714,
+      "seconds": 0.336713158,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_ROTATION",
+        "FOLLOW_WAITING_LEADER_REVERSE"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 15.725484374,
+      "seconds": 0.343635599,
+      "reasons": [
+        "FOLLOW_WAITING_LEADER_ROTATION",
+        "FOLLOW_WAITING_LEADER_REVERSE"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 55.490258964,
+      "seconds": 0.237139032,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 147.580710754,
+      "seconds": 0.215274597,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 148.35700497,
+      "seconds": 0.355807867,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 158.611478917,
+      "seconds": 0.113496306,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 160.289512747,
+      "seconds": 1.303756283,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 161.70264071,
+      "seconds": 0.357836348,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 172.616968184,
+      "seconds": 0.233093286,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 175.522462746,
+      "seconds": 0.22837926,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 201.119275225,
+      "seconds": 0.116477654,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 202.266091448,
+      "seconds": 0.124400978,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 203.916553982,
+      "seconds": 0.368124225,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 284.989274491,
+      "seconds": 0.32348625000000003,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 293.290842594,
+      "seconds": 0.109280398,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    },
+    {
+      "zero": true,
+      "start_s": 344.352716815,
+      "seconds": 0.245626636,
+      "reasons": [
+        "SMOOTH_GAP_HOLD"
+      ]
+    }
+  ],
+  "limitations": [
+    "Control/status samples are logged near 10Hz, not a continuous command or serial capture.",
+    "Durations assume each logged command holds until the next sample; physical stopping time is not measured.",
+    "Gaps and leader speeds are localization/odometry estimates, not independent physical measurements.",
+    "Source ages here are at follower publication; actual receipt age and stop reason on the leader are not recorded.",
+    "TRIAL_TIME_LIMIT and trial_success do not certify Nav2 goal success or formal geometric evaluation."
+  ]
+}

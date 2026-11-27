@@ -1,0 +1,12 @@
+{
+  "checked_setting_count": 9,
+  "all_checked_settings_match": true,
+  "current_status_m1": 0,
+  "current_status_m2": 0,
+  "encoder_error_historical_count_previous": 1,
+  "encoder_error_historical_count_current": 2,
+  "hall_error_historical_count_current": 7,
+  "physical_root_cause": "Not established. Encoder feedback path or driver hardware/configuration outside the nine checked registers remains unverified.",
+  "motion_retest_recommended": false,
+  "pid99_6byte_layout_confirmed": false
+}

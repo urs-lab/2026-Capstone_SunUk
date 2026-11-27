@@ -1,0 +1,23 @@
+{
+  "source": "User report convoy_host_audit_1794378781556496698.json",
+  "stage": "Private follower sensors and AMCL; leader sensors only",
+  "follower_amcl": "active",
+  "leader_reliable_tf_hz": 20.028983371961804,
+  "leader_reliable_tf_max_age_s": 0.073623779,
+  "leader_reliable_tf_max_gap_s": 0.06939013400005933,
+  "leader_filtered_max_age_s": 0.271160139,
+  "leader_scan_max_age_s": 0.457609314,
+  "follower_filtered_at_leader": {
+    "hz": 19.528610711178747,
+    "p95_age_s": 0.053389554,
+    "max_age_s": 0.59325187,
+    "max_gap_s": 0.5861810589995002
+  },
+  "follower_scan_at_leader": {
+    "p95_age_s": 0.138611379,
+    "max_age_s": 0.585855359,
+    "max_gap_s": 0.5799568239999644
+  },
+  "conclusion": "No multi-second leader TF failure in this 30s window. Sporadic follower input delays remain above control deadlines. Not cleared for motion.",
+  "next_step": "Observe private TF and measurements locally on follower for 30s with timestamp trace; no additional nodes."
+}

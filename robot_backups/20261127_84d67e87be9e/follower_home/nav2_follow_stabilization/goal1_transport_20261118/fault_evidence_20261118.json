@@ -1,0 +1,15 @@
+{
+  "source": "user-pasted goal1 smooth010 driver fault",
+  "reason": "RESPONSE_TIMEOUT",
+  "armed": false,
+  "arm_ros_ns": null,
+  "accepted_commands": 0,
+  "measured_rpm": [0, 0],
+  "device_status": {"m1": 0, "m2": 0},
+  "status_publish_s": 0.7255738139997447,
+  "tick_gap_s": 0.729598530000203,
+  "response_timeout_s": 0.3,
+  "rx_available_bytes": 20,
+  "confirmed_blocking_path": "DDS status publish in the hardware tick",
+  "physical_validation_pending": true
+}

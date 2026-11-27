@@ -1,0 +1,67 @@
+{
+  "log": "/home/sunuk/nav2_follow_stabilization/evaluation3_reference_wait_stop03/candidate/follower_diagnostics/logs/local_avoidance_trial_1794896827363546723.jsonl",
+  "sha256": "12449ce0fb724ad2089eb7a4c18d33ee5d2b0a8a8a55376af29fbb7fe38c6005",
+  "body_clearance_m": 0.06822859783714987,
+  "swept_clearance_m": 0.027796300385449276,
+  "stop_threshold_m": 0.03,
+  "stage": "MOVE_OUT",
+  "filtered_wait_recovered": true,
+  "scan_windows": [
+    {
+      "time_from_stop_scan_s": -0.518542,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": -0.41464,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": -0.311051,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": -0.206975,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": -0.10358,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": 0.0,
+      "near_points": [
+        {
+          "index": 154,
+          "range_m": 0.30000001192092896,
+          "body_distance_m": 0.07888263293499492
+        },
+        {
+          "index": 155,
+          "range_m": 0.2980000078678131,
+          "body_distance_m": 0.08174251562625218
+        }
+      ]
+    },
+    {
+      "time_from_stop_scan_s": 0.103635,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": 0.207263,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": 0.310744,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": 0.414447,
+      "near_points": []
+    },
+    {
+      "time_from_stop_scan_s": 0.517989,
+      "near_points": []
+    }
+  ],
+  "object_identity": "unconfirmed; sparse transient points, not proven physical obstacle or sensor defect"
+}

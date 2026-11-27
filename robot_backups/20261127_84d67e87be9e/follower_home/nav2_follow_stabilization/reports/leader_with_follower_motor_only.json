@@ -1,0 +1,11 @@
+{
+  "source": "User report convoy_host_audit_1794377872209414087.json",
+  "stage": "Follower motor node only; motion input disabled",
+  "filtered_hz": 19.25725324883418,
+  "filtered_age_p95_s": 0.03692604,
+  "filtered_age_max_s": 0.039530335,
+  "filtered_max_receive_gap_s": 0.07130478899944137,
+  "scan_age_max_s": 0.085130709,
+  "conclusion": "Large prior degradation not reproduced with motor node alone.",
+  "next_step": "Add follower sensor/EKF stack only; keep localization, bridges and RViz stopped."
+}

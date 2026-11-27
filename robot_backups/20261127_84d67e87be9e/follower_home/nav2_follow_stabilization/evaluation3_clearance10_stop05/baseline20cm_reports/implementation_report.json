@@ -1,0 +1,52 @@
+{
+  "original_files_verified": 268,
+  "changed_candidate_files": [
+    "continuous_avoidance_candidate.py",
+    "run_local_avoidance_trial.py",
+    "test_local_avoidance_operator.py"
+  ],
+  "planning_clearance_m": 0.2,
+  "stop_clearance_m": 0.1,
+  "driver_max_rpm": 10,
+  "trial_seconds": 360,
+  "hardware_executed": false,
+  "scope": "offline optimized planner and separate evaluation3 entrypoints",
+  "full_search_results": [
+    {
+      "fixture": "local_avoidance_trial_1793859841865297024.jsonl.planning.json",
+      "full_result_identical": true,
+      "elapsed_s": {
+        "reference": 4.839194842000325,
+        "optimized": 3.484067204999519
+      },
+      "reason": "SIM_REJOIN_PLUS_1M",
+      "selected": {
+        "offset_m": 0.7180873079708431,
+        "approach_m": 0.65,
+        "rejoin_m": 1.0,
+        "minimum_m": 0.250377456025646
+      }
+    },
+    {
+      "fixture": "local_avoidance_trial_1794032200970674450.jsonl.planning.json",
+      "full_result_identical": true,
+      "elapsed_s": {
+        "reference": 4.695630526000059,
+        "optimized": 3.407988946999467
+      },
+      "reason": "SIM_REJOIN_PLUS_1M",
+      "selected": {
+        "offset_m": 0.5740501316529847,
+        "approach_m": 0.65,
+        "rejoin_m": 1.0,
+        "minimum_m": 0.25026910688305337
+      }
+    }
+  ],
+  "tests": {
+    "planner_equivalence": 5,
+    "entrypoints": 4,
+    "evaluation3_regression": 93,
+    "current_driver_continuous_contract": 4
+  }
+}

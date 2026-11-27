@@ -1,0 +1,20 @@
+{
+  "bond_timeout_s": 20.0,
+  "sensor_before_localization_delay_s": 4.0,
+  "files": {
+    "lib/libtf2.so": "64343691f6812b817a48f684a085ae9348bf3d7132bc444e2b3fbe2c8583c976",
+    "localization/follower_localization_tf02524.launch.py": "0dba1cea226f75ad934339bf429d49e9a070e3e2536c52fed4acb7cfaf7ff77e",
+    "localization/follower_success_tf_stack.launch.py": "c81719022b42b9dc0c6726a372f460fe9b9eb07bb18918288c93ddff25a08026",
+    "localization/real_follower_bridge_tf_candidate.py": "031fd970835e34ab167c6f1993a583b9ef50a208c20fb09c0781ec26b3adee27",
+    "readiness_policy.py": "344319510cd3fb423a536570a49701d54fe57d2c52f445f4416a533b0f7767c4",
+    "start_localization.bash": "41c0c4c9957ce4da7209106098d07e51f723a0d7795d108bf0349edc7ca208a6",
+    "test_localization_startup.py": "033ae116685b52029ee507d72f42e844814775e496e8dce453096370aa41bd78",
+    "verify_sources.py": "11910ed7aa7f4b6a6a90fd4b9c93c82e66ea1aaad29549f0abedb06c7b37a106",
+    "watch_localization_ready.py": "49b7049e39bde3a48092bc51ef5440f9393a81c0ca282712e4428020ebb76ca4",
+    "localization/follower_input_guard.py": "cf5676a39776504b3517b186aef2e2203b08936a19b4493c10f9a6a4105c0670",
+    "start_bridge_only.bash": "7e7db82e657bb98a4d8d64ee7c21f7589670fbdf05682990ad0ab8dd678ad2b5",
+    "convoy_udp_only.xml": "c2e33667c13ad4ef9746285c55788666d4f5ef278f0fd1b4a5335341c6bdc29d",
+    "start_localization_udp.bash": "1fd190a1b56104ca21348db617a0520ee0b1ccdd944106aab33adb3fed176293"
+  },
+  "dds_transport": "UDPv4 only; identical XML to success_tf_recovery/convoy_udp_only.xml"
+}

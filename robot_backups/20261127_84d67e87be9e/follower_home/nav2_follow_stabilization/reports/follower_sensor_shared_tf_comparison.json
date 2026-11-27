@@ -1,0 +1,12 @@
+{
+  "source": "User report convoy_host_audit_1794377971513349993.json",
+  "stage": "Follower motor+sensor/EKF only; no AMCL, bridge or RViz",
+  "leader_filtered_hz": 15.725966367048105,
+  "leader_tf_best_effort_age_max_s": 0.175896592,
+  "leader_tf_reliable_age_max_s": 6.926326481,
+  "leader_tf_reliable_receive_gap_max_s": 6.5148201479996715,
+  "follower_tf_best_effort_age_max_s": 0.250649332,
+  "follower_tf_reliable_receive_gap_max_s": 8.178727624000203,
+  "conclusion": "Reliable delivery path can deliver severely stale TF even when best-effort reception of the same edges remains relatively fresh. Exact middleware/network mechanism is not established.",
+  "pilot": "Follower internal TF topics separated using scoped launch remaps; no motor limits, frames, packet decoder, clock or watchdog changes."
+}

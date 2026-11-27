@@ -1,0 +1,46 @@
+{
+  "hardware_executed": false,
+  "scope": "fixed candidate replay only; no Raspberry Pi end-to-end claim",
+  "results": [
+    {
+      "fixture": "local_avoidance_trial_1793859841865297024.jsonl.planning.json",
+      "obstacle_points": 596,
+      "path_poses": 396,
+      "full_result_identical": true,
+      "result_reason": "SIM_REJOIN_PLUS_1M",
+      "elapsed_s": {
+        "reference": [
+          4.179054275000453,
+          4.246539892999863,
+          4.145364960999359
+        ],
+        "optimized": [
+          2.8571756369992727,
+          2.890324808000514,
+          2.851971803000197
+        ]
+      },
+      "speedup": 1.4626522153147974
+    },
+    {
+      "fixture": "local_avoidance_trial_1794032200970674450.jsonl.planning.json",
+      "obstacle_points": 597,
+      "path_poses": 399,
+      "full_result_identical": true,
+      "result_reason": "SIM_REJOIN_PLUS_1M",
+      "elapsed_s": {
+        "reference": [
+          4.026062273999742,
+          4.020156405000307,
+          4.0156808330002605
+        ],
+        "optimized": [
+          2.854787641999792,
+          2.860601647999829,
+          2.8119742450007834
+        ]
+      },
+      "speedup": 1.4082155694719798
+    }
+  ]
+}

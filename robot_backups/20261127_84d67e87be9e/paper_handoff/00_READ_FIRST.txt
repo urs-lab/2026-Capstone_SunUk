@@ -1,0 +1,11 @@
+새 GPT에서 논문 작성 시작하기
+
+1. 01_GPT_HANDOFF_KO.txt 또는 GPT_HANDOFF_KO.docx를 새 대화에 첨부하세요.
+2. 02_NEW_CHAT_PROMPT.txt 내용을 첫 메시지로 붙여 넣으세요.
+3. 05_EVIDENCE_INDEX.csv, 06_EVIDENCE_SUMMARIES.json, 04_RESULTS_TEMPLATE.csv도 함께 첨부하세요.
+4. 최종 시연 영상·실측표·학교 논문 양식이 있으면 추가하세요.
+
+이 문서는 대화 요약·실제 코드 및 로그의 인수인계입니다. 모든 과거 메시지의 전사본은 아닙니다.
+빈 결과를 0으로 채우지 마세요. 코드 설정값은 실제 달성값이 아닙니다.
+실제 코드 전체는 별도 repository/와 robot_sources_20261127.zip에 있습니다.
+GitHub 업로드 완료 여부는 PUBLISH_STATUS.json 또는 업로드 실행의 성공 출력으로 확인하세요.

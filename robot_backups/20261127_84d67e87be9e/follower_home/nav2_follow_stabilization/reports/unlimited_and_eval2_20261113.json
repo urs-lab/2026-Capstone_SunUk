@@ -1,0 +1,14 @@
+{
+  "convoy_session_limit": "removed with seconds=0 in smooth010 only",
+  "preserved": "command/feedback/response deadlines, source freshness, device faults, goal completion stop",
+  "tests": {
+    "smooth010_regression": 211,
+    "evaluation2_fake_ros": 8,
+    "evaluation2_deployment_simulation": 1
+  },
+  "hardware_executed": false,
+  "remote_deployment_executed": false,
+  "protected_original_files_verified": 818,
+  "backup_files_verified": 326,
+  "leader_eval2_directory": "~/leader_diagnostics/eval2_distance_66f3bd585847"
+}

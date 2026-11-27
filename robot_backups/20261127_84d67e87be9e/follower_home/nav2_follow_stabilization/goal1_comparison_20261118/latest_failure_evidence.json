@@ -1,0 +1,228 @@
+{
+  "log": "/home/sunuk/nav2_follow_stabilization/smooth010/candidate/follower_diagnostics/logs/local_avoidance_trial_1794989578439735516.jsonl",
+  "log_sha256": "85fdf1e408f3623d7a87bc103571d30ec8ca07e771aedd705174d3f3b9066c08",
+  "exception_ns": 1794989624636099884,
+  "last_controls": [
+    {
+      "event": "local_control",
+      "ros_ns": 1794989624286638525,
+      "motion": "STOP",
+      "reason": "SMOOTH_GAP_HOLD",
+      "source_stamp_ns": 1794989624039547204,
+      "scan_stamp_ns": 1794989624089785000,
+      "input_source_stamps": {
+        "follower_map": 1794989624079753805,
+        "scan": 1794989624089785000,
+        "leader": 1794989624039547204,
+        "path": 1794989624039547204
+      },
+      "pose_scan_delta_s": 0.010031195
+    },
+    {
+      "event": "local_control",
+      "ros_ns": 1794989624397193869,
+      "motion": "STOP",
+      "reason": "SMOOTH_GAP_HOLD",
+      "source_stamp_ns": 1794989624079753805,
+      "scan_stamp_ns": 1794989624192712000,
+      "input_source_stamps": {
+        "follower_map": 1794989624079753805,
+        "scan": 1794989624192712000,
+        "leader": 1794989624239391294,
+        "path": 1794989624239391294
+      },
+      "pose_scan_delta_s": 0.112958195
+    },
+    {
+      "event": "local_control",
+      "ros_ns": 1794989624512913510,
+      "motion": "STOP",
+      "reason": "SMOOTH_GAP_HOLD",
+      "source_stamp_ns": 1794989624079753805,
+      "scan_stamp_ns": 1794989624296378000,
+      "input_source_stamps": {
+        "follower_map": 1794989624079753805,
+        "scan": 1794989624296378000,
+        "leader": 1794989624337373331,
+        "path": 1794989624239391294
+      },
+      "pose_scan_delta_s": 0.216624195
+    },
+    {
+      "event": "local_control",
+      "ros_ns": 1794989624618579288,
+      "motion": "STOP",
+      "reason": "SMOOTH_GAP_HOLD",
+      "source_stamp_ns": 1794989624079753805,
+      "scan_stamp_ns": 1794989624399321000,
+      "input_source_stamps": {
+        "follower_map": 1794989624079753805,
+        "scan": 1794989624399321000,
+        "leader": 1794989624390001675,
+        "path": 1794989624390001675
+      },
+      "pose_scan_delta_s": 0.319567195
+    }
+  ],
+  "last_follower_map_trace": [
+    {
+      "event": "map_pose_trace",
+      "ros_ns": 1794989623898742385,
+      "robot": "follower",
+      "source_ns": 1794989623781885846,
+      "pose": [
+        -1.6127572215074724,
+        0.009941206140608764,
+        -3.1310042520887915
+      ],
+      "twist": [
+        0.02648743772455094,
+        0.00012416371866270728
+      ],
+      "trial_phase": "FOLLOW"
+    },
+    {
+      "event": "map_pose_trace",
+      "ros_ns": 1794989624182420609,
+      "robot": "follower",
+      "source_ns": 1794989624079753805,
+      "pose": [
+        -1.6202914590185493,
+        0.00986131748037784,
+        -3.1310008031424346
+      ],
+      "twist": [
+        0.028119426911414003,
+        1.6997710214838705e-05
+      ],
+      "trial_phase": "FOLLOW"
+    },
+    {
+      "event": "map_pose_trace",
+      "ros_ns": 1794989624475790726,
+      "robot": "follower",
+      "source_ns": 1794989624079753805,
+      "pose": [
+        -1.6202914590185493,
+        0.00986131748037784,
+        -3.1310008031424346
+      ],
+      "twist": [
+        0.028119426911414003,
+        1.6997710214838705e-05
+      ],
+      "trial_phase": "FOLLOW"
+    },
+    {
+      "event": "map_pose_trace",
+      "ros_ns": 1794989624878940271,
+      "robot": "follower",
+      "source_ns": 1794989624810176578,
+      "pose": [
+        -1.6330699162468956,
+        0.009727820885960008,
+        -3.130995944187177
+      ],
+      "twist": [
+        0.028586774045890054,
+        8.857477543561908e-06
+      ],
+      "trial_phase": "FOLLOW"
+    }
+  ],
+  "last_motor_states": [
+    {
+      "ros_ns": 1794989624422245470,
+      "fault": null,
+      "armed": true,
+      "telemetry_isolated": true,
+      "valid_feedback": 513
+    },
+    {
+      "ros_ns": 1794989624499069685,
+      "fault": null,
+      "armed": true,
+      "telemetry_isolated": true,
+      "valid_feedback": 514
+    },
+    {
+      "ros_ns": 1794989624639427970,
+      "fault": null,
+      "armed": true,
+      "telemetry_isolated": true,
+      "valid_feedback": 515
+    },
+    {
+      "ros_ns": 1794989624725991748,
+      "fault": null,
+      "armed": false,
+      "telemetry_isolated": true,
+      "valid_feedback": 516
+    },
+    {
+      "ros_ns": 1794989624845413212,
+      "fault": null,
+      "armed": false,
+      "telemetry_isolated": true,
+      "valid_feedback": 517
+    },
+    {
+      "ros_ns": 1794989624948194967,
+      "fault": null,
+      "armed": false,
+      "telemetry_isolated": true,
+      "valid_feedback": 518
+    }
+  ],
+  "end": {
+    "event": "end",
+    "ros_ns": 1794989624953015930,
+    "reason": "FOLLOW_POSE_SCAN_TIME_MISMATCH",
+    "leader_started": true,
+    "arm_requested": true,
+    "leader_zero_confirmed": true,
+    "follower_zero_confirmed": true,
+    "post_stop_faults": [],
+    "motion_feedback_seen": true,
+    "trial_success": false,
+    "geometric_complete_candidate": false,
+    "evaluation_pass": false,
+    "controller_kind": "TRACKED_PURSUIT_BOUNDED_CHECK_V1",
+    "trial_seconds": 0,
+    "input_source_timeout_s": 0.8,
+    "plan_only": false,
+    "plan_ready": false,
+    "near_return_hold_enabled": false,
+    "continuous_reobservation_enabled": false,
+    "pose_source": "filtered",
+    "dynamic_box": false,
+    "post_rejoin_follow_target_m": 1.0,
+    "obstacle_front_trigger_m": null,
+    "persistent_replan": false,
+    "continuous20": false,
+    "clearance_policy_m": null,
+    "stop_clearance_m": null,
+    "follow_lookahead_m": 0.8,
+    "tracked_pursuit_handoff_confirmed": false,
+    "frame_check_distance_m": null,
+    "frame_check_complete": false,
+    "follow_only": true,
+    "follower_rpm_limit": 15,
+    "extended_follow_speed": true,
+    "smooth_follow": true,
+    "session_unlimited": true,
+    "follow_gap_deadband_m": 0.05,
+    "follow_max_linear_mps": 0.1,
+    "follow_min_linear_mps": 0.0,
+    "reference_recovery_waits": 0,
+    "reference_recovery_timeout_s": 10.0,
+    "follow_check_seconds": 0,
+    "auto_start_on_plan": true,
+    "auto_start_on_goal": true,
+    "prepare_only": false,
+    "direct_unicast": true,
+    "exclude_body_internal_scan": true,
+    "clearance_stop_enabled": false,
+    "leader_control": "NAV2_THROUGH_FAIL_CLOSED_GATE"
+  }
+}

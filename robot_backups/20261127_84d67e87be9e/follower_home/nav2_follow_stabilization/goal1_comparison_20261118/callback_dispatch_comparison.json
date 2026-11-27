@@ -1,0 +1,32 @@
+{
+  "success_goal1": [
+    {
+      "line": 359,
+      "call": "rclpy.spin_once(node, timeout_sec=0.01)"
+    },
+    {
+      "line": 366,
+      "call": "rclpy.spin_once(node, timeout_sec=0.0)"
+    }
+  ],
+  "current_goal1": [
+    {
+      "line": 359,
+      "call": "rclpy.spin_once(node, timeout_sec=0.01)"
+    },
+    {
+      "line": 366,
+      "call": "rclpy.spin_once(node, timeout_sec=0.0)"
+    }
+  ],
+  "success_goal3_current": [
+    {
+      "line": 407,
+      "call": "callback_pump.spin_once()"
+    },
+    {
+      "line": 414,
+      "call": "callback_pump.spin_once()"
+    }
+  ]
+}

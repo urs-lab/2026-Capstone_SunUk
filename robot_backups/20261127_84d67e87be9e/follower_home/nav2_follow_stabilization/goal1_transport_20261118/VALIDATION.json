@@ -1,0 +1,17 @@
+{
+  "tests_passed": 25,
+  "test_log": "validation_tests.log",
+  "unchanged_original_non_entrypoint_files": 323,
+  "source_profile": "smooth010 extended follow",
+  "max_rpm": 15,
+  "session_seconds": 0,
+  "control_deadlines_s": {
+    "command": 0.3,
+    "response": 0.3,
+    "feedback": 0.3
+  },
+  "physical_test_run": false,
+  "modified_live_wrapper": "/home/sunuk/nav2_follow_stabilization/smooth010/start_follower_driver.bash",
+  "original_wrapper_backup": "/home/sunuk/nav2_follow_stabilization/goal1_transport_20261118/start_follower_driver.before.bash",
+  "goal3_frozen_verification_passed": true
+}

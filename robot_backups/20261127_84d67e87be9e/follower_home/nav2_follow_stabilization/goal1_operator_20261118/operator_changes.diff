@@ -1,0 +1,190 @@
+--- success_goal1/run_local_avoidance_trial.py
++++ goal1_20261118/run_local_avoidance_trial.py
+@@ -186,6 +186,9 @@
+     from nav2_goal_state import has_active_goal
+     rclpy.init(args=[],signal_handler_options=SignalHandlerOptions.NO)
+     node=rclpy.create_node('local_avoidance_trial_operator')
++    from callback_pump import CallbackPump
++    from follow_pose_recovery import recoverable_pose_delay,zero_support
++    callback_pump=CallbackPump(node)
+     node._use_direct_unicast=a.direct_unicast
+     core=core_type(pose_source='filtered') if a.pose_source=='filtered' else core_type()
+     if a.map_rejoin or a.follow_only:
+@@ -210,7 +213,11 @@
+     samples={};end_rows=[];worker=ThreadPoolExecutor(max_workers=1)
+     commands=None if a.plan_only else node.create_publisher(String,command_topic,QoSProfile(depth=1,reliability=ReliabilityPolicy.RELIABLE))
+     leadpub=None if (a.plan_only or a.nav2_leader) else node.create_publisher(Twist,'/cmd_vel',1)
+-    statuspub=None if a.plan_only else node.create_publisher(String,'/follower/local_avoidance/status',latest_state_qos())
++    status_owner=None
++    if a.nav2_leader and a.follow_only and not a.plan_only:
++        from operator_status_process import OperatorStatusPublisher
++        status_owner=OperatorStatusPublisher()
++    statuspub=None if a.plan_only else status_owner if status_owner is not None else node.create_publisher(String,'/follower/local_avoidance/status',latest_state_qos())
+     arm=node.create_client(Trigger,'/follower/motor_candidate/arm');disarm=node.create_client(Trigger,'/follower/motor_candidate/disarm')
+     class Abort(Exception):pass
+     def now():return node.get_clock().now().nanoseconds
+@@ -236,7 +243,9 @@
+     nav_goal_active=[False]
+     nav_goal_last_report=[None]
+     leader_path_seen=[False]
+-    reference_recovery=FollowReferenceRecovery()
++    reference_recovery=FollowReferenceRecovery(timeout_s=0. if a.seconds==0 else 10.)
++    from startup_wait import ReferenceWait
++    startup_wait=ReferenceWait()
+     last_map_pose_log={}
+     last_input_rejection_report={}
+     def odom_cb(key,m):
+@@ -356,14 +365,14 @@
+     def spin():
+         nonlocal last_leader
+         if not rclpy.ok():raise Abort('ROS_SHUTDOWN')
+-        rclpy.spin_once(node,timeout_sec=.01)
++        callback_pump.spin_once()
+         if a.pose_source=='filtered':
+             # Drain pending state callbacks before computing: one spin handles
+             # only one callback, while IMU/EKF/scan arrive independently.
+             drain_started=time.monotonic()
+             for _ in range(6):
+                 if time.monotonic()-drain_started>.003:break
+-                rclpy.spin_once(node,timeout_sec=0.)
++                callback_pump.spin_once()
+         mono=time.monotonic()
+         if leader_started and mono-last_leader>=.05:
+             leader_command(0. if stopping or (a.seconds>0 and mono-started>a.seconds+4.) else desired_leader);last_leader=mono
+@@ -447,6 +456,32 @@
+             scene['source_stamps']['path']=path_ns
+         scene['follow_source_ns']=pursuit_source
+         return scene
++    def scene_before_arm():
++        while True:
++            spin();ns=now();mono=time.monotonic()
++            if not nav_goal_active[0]:raise Abort('NAV2_GOAL_FINISHED')
++            if not graph_ok():raise Abort('GRAPH_CHANGED')
++            problem=motor_problem(motor,mono,a.seconds,True,follow_only=True,
++                disable_clearance_stop=a.disable_clearance_stop,expected_max_rpm=expected_rpm)
++            if problem and problem!='MOTOR_STATUS_MISSING_OR_STALE':raise Abort(problem)
++            scene=None
++            if problem is None:
++                try:scene=follow_scene()
++                except ValueError as exc:
++                    if not (recoverable_reference_loss(str(exc),getattr(nav,'last_input_rejection',None))
++                            or recoverable_pose_delay(str(exc),nav.inputs.get('follower'),ns,mono,
++                                getattr(nav,'last_input_rejection',None))):raise
++                    problem=str(exc)
++            if scene is not None and not startup_wait.active:return scene
++            first=startup_wait.enter(mono,invalid=scene is None)
++            if first:
++                log('startup_pose_wait_started',reason=problem)
++                print('[PREFLIGHT] WAIT: 지도·스캔 정렬 대기. 후발 비무장 유지.',flush=True)
++            if scene is None:continue
++            if not startup_wait.ready(mono,scene['source_stamps'],True):continue
++            duration=startup_wait.finish(mono)
++            log('startup_pose_wait_resumed',waited_s=duration)
++            return scene
+     origin=heading=None;planning=None;planning_started=None;box_count=0;last_box_scan=None;phase='PREFLIGHT'
+     try:
+         if nav2_goal_follow:
+@@ -577,8 +612,8 @@
+             print('현재 모드 '+phase+' / '+controller_kind+' / 자세 '+a.pose_source+'. START + Enter: 선두·후발 제한 시험 시작.',flush=True)
+             if not wait_for_start(spin):raise Abort('START_CANCELLED')
+         problem=motor_problem(motor,time.monotonic(),a.seconds,True,continuous20=a.continuous20,follow_only=a.follow_only,disable_clearance_stop=a.disable_clearance_stop,expected_max_rpm=expected_rpm)
+-        if problem or not graph_ok():raise Abort(problem or 'GRAPH_CHANGED')
+-        scene=follow_scene() if a.follow_only else core.scene(now(),time.monotonic())
++        if (problem and not (use_auto_nav2_goal and problem=='MOTOR_STATUS_MISSING_OR_STALE')) or not graph_ok():raise Abort(problem or 'GRAPH_CHANGED')
++        scene=scene_before_arm() if use_auto_nav2_goal else follow_scene() if a.follow_only else core.scene(now(),time.monotonic())
+         current=scene['pose']
+         if math.hypot(current.x-start_pose.x,current.y-start_pose.y)>.03 or abs(current.yaw-start_pose.yaw)>.05:raise Abort('POSE_CHANGED_AFTER_PLANNING')
+         from watch_temporary_detour_shadow import PreparedPathReview
+@@ -627,7 +662,9 @@
+             nonlocal last_status
+             # Stop intent relies only on fresh local pose/scan support. Do not
+             # relabel the expired remote path/leader measurements as current.
+-            local=follow_scene(require_reference=False)
++            # A fresh raw/scan pair supports zero output only. Do not project
++            # a stale map pose or loosen build_follow_scene's .4s motion gate.
++            local=zero_support(core,now(),time.monotonic(),SOURCE_TIMEOUT_S)
+             if a.smooth_follow:nav.reset_motion()
+             was_active=reference_recovery.active
+             publish_zero_hold(local['source'],local['scan_stamp'])
+@@ -644,7 +681,7 @@
+                 last_status=mono
+             reference_recovery.wait(mono)
+             if not was_active:
+-                print('[FOLLOW] STOP: 입력 갱신 대기. 새 입력 검증 후 자동 재개합니다.',flush=True)
++                print('[FOLLOW] WAIT: 양쪽 속도0 대기. 새 지도위치·스캔·참조 및 정지 확인 후 재개합니다.',flush=True)
+ 
+         while True:
+             spin();mono=time.monotonic();ns=now()
+@@ -655,8 +692,18 @@
+             if use_auto_nav2_goal and not nav_goal_active[0]:raise Abort('NAV2_GOAL_FINISHED')
+             if not graph_ok():raise Abort('GRAPH_CHANGED')
+             problem=motor_problem(motor,mono,a.seconds,continuous20=a.continuous20,follow_only=a.follow_only,disable_clearance_stop=a.disable_clearance_stop,expected_max_rpm=expected_rpm)
++            if use_auto_nav2_goal and problem=='MOTOR_STATUS_MISSING_OR_STALE':
++                hold_reference(problem,mono)
++                continue
+             if problem:raise Abort(problem)
+             state=motor[0]
++            if use_auto_nav2_goal:
++                status_ns=state.get('status_ros_ns')
++                if type(status_ns) is not int or status_ns<=0 or status_ns>ns:
++                    raise Abort('MOTOR_STATUS_TIME_INVALID')
++                if (ns-status_ns)/1e9>.3:
++                    hold_reference('MOTOR_STATUS_SOURCE_STALE',mono)
++                    continue
+             if state.get('armed') and state.get('epoch')!=epoch:raise Abort('SESSION_CHANGED')
+             if not state.get('armed') and mono-armed>.2:raise Abort('UNEXPECTED_DISARM')
+             # A disarmed status may retain the previous trial's arm timestamp.
+@@ -665,8 +712,15 @@
+                 continue
+             try:scene=follow_scene() if a.follow_only else core.scene(ns,mono)
+             except ValueError as exc:
+-                if (use_auto_nav2_goal and recoverable_reference_loss(str(exc),
+-                        getattr(nav,'last_input_rejection',None))):
++                if (use_auto_nav2_goal and (recoverable_reference_loss(str(exc),
++                        getattr(nav,'last_input_rejection',None)) or recoverable_pose_delay(
++                        str(exc),nav.inputs.get('follower'),now(),time.monotonic(),
++                        getattr(nav,'last_input_rejection',None)))):
++                    row=nav.inputs.get('follower')
++                    pose_ns=row[0].sec*10**9+row[0].nanosec if row else None
++                    log('follow_input_delay',reason=str(exc),pose_source_ns=pose_ns,
++                        scan_source_ns=core.scan[0] if core.scan else None,
++                        pose_scan_delta_s=abs(pose_ns-core.scan[0])/1e9 if row and core.scan else None)
+                     hold_reference(str(exc),mono)
+                     continue
+                 diagnostic=getattr(core,'last_alignment_failure',None)
+@@ -1026,6 +1080,12 @@
+         result['follow_min_linear_mps']=a.follow_min_linear if a.follow_only else None
+         result['reference_recovery_waits']=reference_recovery.count
+         result['reference_recovery_timeout_s']=reference_recovery.timeout_s if use_auto_nav2_goal else None
++        result['callback_dispatch']='PERSISTENT_EXECUTOR_FIXED_TIMEOUT'
++        result['operator_variant']='GOAL1_POSE_SCAN_WAIT_20261118'
++        result['pose_scan_wait_enabled']=use_auto_nav2_goal
++        result['isolated_status']=status_owner is not None
++        result['motor_status_wait_enabled']=use_auto_nav2_goal
++        result['startup_pose_wait_episodes']=startup_wait.episodes
+         result['follow_check_seconds']=a.follow_check_seconds if a.follow_only else None
+         result['auto_start_on_plan']=a.auto_start_on_plan
+         result['auto_start_on_goal']=use_auto_nav2_goal
+@@ -1036,7 +1096,9 @@
+         result['leader_control']='NAV2_THROUGH_FAIL_CLOSED_GATE' if a.nav2_leader else 'BOUNDED_TRIAL_PUBLISHER'
+         print(json.dumps(result,ensure_ascii=False,indent=2),flush=True);log('end',**result)
+         if (leader_started or arm_requested) and not (leader_zero and follower_zero):print('정지 피드백 미확인. 실물이 멈추지 않으면 전원을 차단하세요.',flush=True)
+-        worker.shutdown(wait=False,cancel_futures=True);logstream.close();node.destroy_node()
++        worker.shutdown(wait=False,cancel_futures=True)
++        if status_owner is not None:status_owner.close()
++        logstream.close();callback_pump.close();node.destroy_node()
+         if rclpy.ok():rclpy.shutdown()
+     return 0 if success or reason in ('PLAN_ONLY_READY','FOLLOW_INPUTS_READY_NO_ARM') else 1
+ 
+
+--- success_goal1/follow_reference_recovery.py
++++ goal1_20261118/follow_reference_recovery.py
+@@ -39,7 +39,7 @@
+         self.check_timeout(mono)
+ 
+     def check_timeout(self, mono):
+-        if self.active and mono-self.started >= self.timeout_s:
++        if self.active and self.timeout_s>0 and mono-self.started >= self.timeout_s:
+             raise ValueError('FOLLOW_REFERENCE_RECOVERY_TIMEOUT')
+ 
+     def recovered(self, mono, stamps, zero_feedback):

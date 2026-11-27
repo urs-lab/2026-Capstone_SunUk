@@ -1,0 +1,23 @@
+{
+  "source": "User-supplied Ubuntu audit summaries",
+  "baseline_report": "convoy_host_audit_1794376799983622492.json",
+  "isolated_report": "convoy_host_audit_1794377128062326535.json",
+  "baseline": {
+    "filtered_hz": 2.266544587099816,
+    "filtered_age_p95_s": 0.843075819,
+    "filtered_max_receive_gap_s": 2.1311144850005803,
+    "scan_received": 0
+  },
+  "isolated": {
+    "filtered_hz": 19.99621277462237,
+    "filtered_age_p95_s": 0.037729818,
+    "filtered_max_receive_gap_s": 0.3558006920002299,
+    "scan_hz": 12.930460571184303,
+    "scan_age_p95_s": 0.081396333
+  },
+  "limitations": [
+    "Domain, localhost-only, publication mode and running node set changed together. Causality is not isolated.",
+    "Isolated maximum receive gaps still exceed 0.3s. Stationary production readiness not established."
+  ],
+  "next_step": "Keep asynchronous mode and sensor-only/allow_motion=false. Change domain to 10 and localhost_only to 0; compare leader-local and follower reception with RViz off."
+}

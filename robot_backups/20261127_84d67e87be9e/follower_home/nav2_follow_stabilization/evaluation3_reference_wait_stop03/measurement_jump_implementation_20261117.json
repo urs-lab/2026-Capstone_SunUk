@@ -1,0 +1,18 @@
+{
+  "change": "Check odom jumps between consecutive accepted EKF measurements, not control snapshots across waits",
+  "position_step_limit_m": 0.1,
+  "yaw_step_limit_rad": 0.12,
+  "fault_latched": true,
+  "stop_clearance_m": 0.03,
+  "plan_clearance_m": 0.1,
+  "source": "/home/sunuk/nav2_follow_stabilization/evaluation3_reference_wait_stop03/candidate/follower_diagnostics/continuous_local_core.py",
+  "sha256": "db27806c9853d4fe0da9c46b42d3e3172efd11ea04182194e7f1b8e3a1fb42b9",
+  "known_limit": "Original log contains control endpoints only; intermediate EKF steps require the next live run to confirm. Single large steps across receive gaps still fault.",
+  "hardware_executed_by_agent": false,
+  "validation": {
+    "new_measurement_guard_tests_passed": 6,
+    "existing_wait_clearance_operator_regressions_passed": 56,
+    "total_passed": 62,
+    "physical_motion_test_completed": false
+  }
+}

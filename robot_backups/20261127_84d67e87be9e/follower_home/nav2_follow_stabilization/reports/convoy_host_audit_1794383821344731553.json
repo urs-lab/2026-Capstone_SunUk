@@ -1,0 +1,99 @@
+{
+  "host": "ubuntu",
+  "tf_topic": "/tf",
+  "stream_only": true,
+  "observer_loop_gap_max_s": 0.07148162500016042,
+  "observer_stalls": [],
+  "amcl_states": {},
+  "inputs": {
+    "/odom": {
+      "received": 541,
+      "rate_hz": 18.03266979059253,
+      "age_min_p95_max_s": [
+        0.001933969,
+        0.01632509,
+        0.128137691
+      ],
+      "repeated_stamps": 0,
+      "maximum_receive_gap_s": 0.1852048310011014
+    },
+    "/odometry/filtered": {
+      "received": 529,
+      "rate_hz": 17.630656974333963,
+      "age_min_p95_max_s": [
+        0.004013654,
+        0.04521614,
+        0.13103172
+      ],
+      "repeated_stamps": 0,
+      "maximum_receive_gap_s": 0.17985942200175487
+    },
+    "/scan": {
+      "received": 359,
+      "rate_hz": 11.964459678106707,
+      "age_min_p95_max_s": [
+        0.012857252,
+        0.631879068,
+        0.991259543
+      ],
+      "repeated_stamps": 0,
+      "maximum_receive_gap_s": 0.8410500289992342
+    },
+    "/leader/odom": {
+      "received": 602,
+      "rate_hz": 20.062547610972086,
+      "age_min_p95_max_s": [
+        0.012145437,
+        0.122486855,
+        0.31067963
+      ],
+      "repeated_stamps": 177,
+      "maximum_receive_gap_s": 0.12509914499969454
+    },
+    "tf_best_effort:odom->base_link": {
+      "received": 527,
+      "rate_hz": 17.56273359434217,
+      "age_min_p95_max_s": [
+        0.004322133,
+        0.047371875,
+        0.090231166
+      ],
+      "repeated_stamps": 0,
+      "maximum_receive_gap_s": 0.1811766959999659
+    },
+    "/follower/odometry/filtered": {
+      "received": 508,
+      "rate_hz": 16.929266700569254,
+      "age_min_p95_max_s": [
+        -0.012151561,
+        0.429807761,
+        1.040187693
+      ],
+      "repeated_stamps": 0,
+      "maximum_receive_gap_s": 0.5255209460010519
+    },
+    "/follower/odom_map": {
+      "received": 276,
+      "rate_hz": 9.197672734942417,
+      "age_min_p95_max_s": [
+        0.0164294,
+        0.488836055,
+        1.047131827
+      ],
+      "repeated_stamps": 6,
+      "maximum_receive_gap_s": 0.5679941580001469
+    },
+    "/follower/scan": {
+      "received": 262,
+      "rate_hz": 8.731056371619397,
+      "age_min_p95_max_s": [
+        0.089904544,
+        0.5136901,
+        0.755342457
+      ],
+      "repeated_stamps": 0,
+      "maximum_receive_gap_s": 0.7470769909996307
+    }
+  },
+  "publishers": {}
+}

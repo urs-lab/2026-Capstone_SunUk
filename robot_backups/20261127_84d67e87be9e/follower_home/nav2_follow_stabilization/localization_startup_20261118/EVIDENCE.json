@@ -1,0 +1,21 @@
+{
+  "manager_log": "/home/sunuk/.ros/log/lifecycle_manager_7033_1794991498876.log",
+  "amcl_log": "/home/sunuk/.ros/log/amcl_7024_1794991498854.log",
+  "map_server_log": "/home/sunuk/.ros/log/map_server_7019_1794991498796.log",
+  "confirmed_failure": "map_server bond formation failed, manager aborted bringup before amcl activation; initial pose received while inactive",
+  "amcl_activation_logged": false,
+  "initial_pose_applied_logged": false,
+  "config_tests_passed": 8,
+  "physical_restart_tested": false,
+  "previous_failure_remedied": "AMCL activation confirmed in latest manager log",
+  "bridge_exit_observed": {
+    "pid": 7477,
+    "exit_code": 1,
+    "launch_log": "/home/sunuk/.ros/log/2026-11-18-17-53-52-088042-follower-7429/launch.log"
+  },
+  "new_failure": "Missing follower_input_guard.py in the new localization directory",
+  "missing_import_reproduced_in_fresh_interpreter": true,
+  "restored_helper_byte_identical_to_success": true,
+  "config_and_import_tests_passed": 10,
+  "bridge_restart_still_required": true
+}

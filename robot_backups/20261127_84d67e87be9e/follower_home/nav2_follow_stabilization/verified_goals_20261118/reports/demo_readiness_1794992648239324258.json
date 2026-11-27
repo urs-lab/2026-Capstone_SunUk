@@ -1,0 +1,1084 @@
+{
+  "read_only": true,
+  "graph_blockers": [
+    {
+      "topic": "/follower/odom_map",
+      "endpoint": "publisher",
+      "expected_count": 1,
+      "actual_nodes": []
+    }
+  ],
+  "operator_absent_expected": [
+    {
+      "topic": "/follower/motor_candidate/local_avoidance_command",
+      "endpoint": "publisher",
+      "expected_nodes": [
+        "local_avoidance_trial_operator"
+      ],
+      "actual_nodes": []
+    }
+  ],
+  "inputs": {
+    "/follower/odom_raw": {
+      "count": 37,
+      "source_ns": 1794992648166032994,
+      "frame": "follower/odom",
+      "receive_age_s": 0.019022491999749036,
+      "source_age_s": 0.024149069
+    },
+    "/follower/motor_candidate/status": {
+      "count": 36,
+      "motor": {
+        "armed": false,
+        "fault": null,
+        "trial_max_rpm": 15,
+        "trial_max_seconds": 0,
+        "continuous20": false,
+        "feedback_fresh": true,
+        "telemetry_isolated": true
+      },
+      "source_ns": 1794992648126088138,
+      "receive_age_s": 0.05975003399998968,
+      "source_age_s": 0.064093925
+    },
+    "/leader/odom_unicast": {
+      "count": 70,
+      "source_ns": 1794992648074005944,
+      "frame": "map",
+      "receive_age_s": 0.029265072000271175,
+      "source_age_s": 0.116176119
+    },
+    "/leader/path_unicast": {
+      "count": 65,
+      "source_ns": 1794992648074005944,
+      "frame": "map",
+      "points": 1,
+      "receive_age_s": 0.025927495999894745,
+      "source_age_s": 0.116176119
+    },
+    "/leader/nav2_goal_status_unicast": {
+      "count": 63,
+      "goal_statuses": [
+        6,
+        6,
+        2
+      ],
+      "receive_age_s": 0.024801681000099052
+    },
+    "/follower/scan": {
+      "count": 34,
+      "source_ns": 1794992647987155000,
+      "frame": "follower/laser",
+      "receive_age_s": 0.09794418499950552,
+      "source_age_s": 0.203027063
+    },
+    "/follower/odometry/filtered": {
+      "count": 63,
+      "source_ns": 1794992648140814832,
+      "frame": "follower/odom",
+      "receive_age_s": 0.03586653899947123,
+      "source_age_s": 0.049367231
+    }
+  },
+  "endpoints": {
+    "/cmd_vel": {
+      "publishers": [
+        {
+          "node": "nav2_convoy_gate",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            195,
+            109,
+            57,
+            22,
+            29,
+            115,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "md200t_controller",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            195,
+            109,
+            108,
+            21,
+            7,
+            29,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/cmd_vel_smoothed": {
+      "publishers": [
+        {
+          "node": "velocity_smoother",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            195,
+            109,
+            34,
+            22,
+            59,
+            104,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            29,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "nav2_convoy_gate",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            195,
+            109,
+            57,
+            22,
+            29,
+            115,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            18,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/follower/motor_candidate/local_avoidance_command": {
+      "publishers": [],
+      "subscribers": [
+        {
+          "node": "follower_drive_candidate",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            230,
+            26,
+            55,
+            50,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/leader/odom": {
+      "publishers": [
+        {
+          "node": "real_leader_bridge",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            195,
+            109,
+            222,
+            21,
+            157,
+            128,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            20,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "nav2_convoy_gate",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            195,
+            109,
+            57,
+            22,
+            29,
+            115,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            21,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "node": "leader_unicast_relay",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            195,
+            109,
+            237,
+            21,
+            4,
+            248,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/leader/nav2_goal_status_unicast": {
+      "publishers": [
+        {
+          "node": "follower_unicast_relay",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            195,
+            27,
+            206,
+            140,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            19,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "goal_demo_readonly_audit",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            188,
+            30,
+            168,
+            35,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            24,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/follower/odom_raw": {
+      "publishers": [
+        {
+          "node": "follower_drive_telemetry_raw",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            41,
+            27,
+            128,
+            232,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "goal_demo_readonly_audit",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            188,
+            30,
+            168,
+            35,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/follower/motor_candidate/status": {
+      "publishers": [
+        {
+          "node": "follower_drive_telemetry_status",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            64,
+            27,
+            118,
+            99,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "goal_demo_readonly_audit",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            188,
+            30,
+            168,
+            35,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            23,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "node": "follower_unicast_relay",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            195,
+            27,
+            206,
+            140,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            20,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/leader/odom_unicast": {
+      "publishers": [
+        {
+          "node": "follower_unicast_relay",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            195,
+            27,
+            206,
+            140,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "goal_demo_readonly_audit",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            188,
+            30,
+            168,
+            35,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            21,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/leader/path_unicast": {
+      "publishers": [
+        {
+          "node": "follower_unicast_relay",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            195,
+            27,
+            206,
+            140,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            18,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "goal_demo_readonly_audit",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            188,
+            30,
+            168,
+            35,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            22,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/follower/scan": {
+      "publishers": [
+        {
+          "node": "follower_lidar",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            43,
+            29,
+            48,
+            65,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            18,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "amcl",
+          "namespace": "/follower",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            119,
+            29,
+            145,
+            47,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            34,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "node": "goal_demo_readonly_audit",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            188,
+            30,
+            168,
+            35,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            20,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "/follower/odometry/filtered": {
+      "publishers": [
+        {
+          "node": "follower_ekf_filter_node",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            41,
+            29,
+            70,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "goal_demo_readonly_audit",
+          "namespace": "/",
+          "gid": [
+            1,
+            15,
+            157,
+            82,
+            188,
+            30,
+            168,
+            35,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            18,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "nodes": [
+    [
+      "follower_drive_telemetry_position",
+      "/"
+    ],
+    [
+      "follower_imu_mount_tf",
+      "/"
+    ],
+    [
+      "follower_laser_mount_tf",
+      "/"
+    ],
+    [
+      "follower_imu",
+      "/"
+    ],
+    [
+      "follower_drive_telemetry_raw",
+      "/"
+    ],
+    [
+      "follower_ekf_filter_node",
+      "/"
+    ],
+    [
+      "transform_listener_impl_aaaaf8ba9de0",
+      "/"
+    ],
+    [
+      "follower_lidar",
+      "/"
+    ],
+    [
+      "follower_drive_telemetry_status",
+      "/"
+    ],
+    [
+      "follower_localization_readiness",
+      "/"
+    ],
+    [
+      "_ros2cli_daemon_10_163dd294af9d4a5fa6d12e0126bd965b",
+      "/"
+    ],
+    [
+      "map_server",
+      "/follower"
+    ],
+    [
+      "amcl",
+      "/follower"
+    ],
+    [
+      "transform_listener_impl_aaaad8943820",
+      "/follower"
+    ],
+    [
+      "localization_manager",
+      "/follower"
+    ],
+    [
+      "goal_demo_readonly_audit",
+      "/"
+    ],
+    [
+      "follower_unicast_relay",
+      "/"
+    ],
+    [
+      "follower_drive_candidate",
+      "/"
+    ],
+    [
+      "controller_server",
+      "/"
+    ],
+    [
+      "local_costmap",
+      "/local_costmap"
+    ],
+    [
+      "transform_listener_impl_aaaae8455430",
+      "/"
+    ],
+    [
+      "smoother_server",
+      "/"
+    ],
+    [
+      "transform_listener_impl_aaaaf820f3f0",
+      "/"
+    ],
+    [
+      "planner_server",
+      "/"
+    ],
+    [
+      "global_costmap",
+      "/global_costmap"
+    ],
+    [
+      "transform_listener_impl_aaaae97ddc40",
+      "/"
+    ],
+    [
+      "behavior_server",
+      "/"
+    ],
+    [
+      "transform_listener_impl_aaab017b9bd0",
+      "/"
+    ],
+    [
+      "bt_navigator",
+      "/"
+    ],
+    [
+      "bt_navigator_navigate_to_pose_rclcpp_node",
+      "/"
+    ],
+    [
+      "bt_navigator_navigate_through_poses_rclcpp_node",
+      "/"
+    ],
+    [
+      "waypoint_follower",
+      "/"
+    ],
+    [
+      "velocity_smoother",
+      "/"
+    ],
+    [
+      "lifecycle_manager_navigation",
+      "/"
+    ],
+    [
+      "nav2_convoy_gate",
+      "/"
+    ],
+    [
+      "robot_state_publisher",
+      "/"
+    ],
+    [
+      "iahrs_node",
+      "/"
+    ],
+    [
+      "sllidar_node",
+      "/"
+    ],
+    [
+      "ekf_filter_node",
+      "/"
+    ],
+    [
+      "transform_listener_impl_aaab011e4920",
+      "/"
+    ],
+    [
+      "md200t_controller",
+      "/"
+    ],
+    [
+      "map_server",
+      "/"
+    ],
+    [
+      "amcl",
+      "/"
+    ],
+    [
+      "transform_listener_impl_aaaadabddf50",
+      "/"
+    ],
+    [
+      "lifecycle_manager_localization",
+      "/"
+    ],
+    [
+      "real_leader_bridge",
+      "/"
+    ],
+    [
+      "leader_unicast_relay",
+      "/"
+    ]
+  ],
+  "load_average": [
+    3.6044921875,
+    2.9052734375,
+    3.66650390625
+  ],
+  "cpu_count": 4,
+  "top_processes": [
+    "    PID COMMAND         %CPU %MEM",
+    "   7107 python3         35.0  1.5",
+    "   7868 python3         32.8  1.5",
+    "   7463 iahrs_node      18.3  1.6",
+    "   6886 python3         15.9  1.6",
+    "   7543 amcl            10.0  1.1",
+    "   7465 ekf_node         9.7  0.8",
+    "   4094 codex            9.4  4.1",
+    "   6932 python3          7.4  1.5",
+    "   6953 python3          7.2  1.5",
+    "   6976 python3          6.5  1.5",
+    "    523 kworker/u9:1-br  5.4  0.0",
+    "    137 kworker/u9:0-br  5.3  0.0",
+    "   7545 lifecycle_manag  5.2  0.7",
+    "   7541 map_server       4.4  0.9",
+    "   7467 lidar_sdk_trace  3.8  0.7"
+  ]
+}

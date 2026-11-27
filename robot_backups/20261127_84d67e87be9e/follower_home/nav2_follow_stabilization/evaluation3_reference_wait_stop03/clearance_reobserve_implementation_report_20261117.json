@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-17",
+  "profile": "CONTINUOUS10_STOP03_REFERENCE_WAIT_V1",
+  "plan_clearance_m": 0.1,
+  "stop_clearance_m": 0.03,
+  "resume_clearance_m": 0.05,
+  "resume_comparison": ">",
+  "minimum_new_scan_samples": 3,
+  "resume_stability_s": 1.0,
+  "action": "Immediate ZERO then unbounded re-observation, never ignore or mask the near points",
+  "probe_velocities_published": false,
+  "ramp_reset_before_resume": true,
+  "same_epoch_and_stage": true,
+  "real_motor_and_sensor_fault_guards_preserved": true,
+  "driver_and_hardware_configuration_changed": false,
+  "physical_run_executed": false,
+  "tests": {
+    "clearance_reobserve_tests.log": 11,
+    "clearance_reobserve_operator_regression.log": 35,
+    "clearance_reobserve_filtered_regression.log": 17,
+    "clearance_reobserve_recorded_tests.log": 1
+  },
+  "total_new_and_regression_checks": 64,
+  "analysis": "clearance_anomaly_1794896827363546723.json",
+  "backup": "backups/before_clearance_reobserve_20261117",
+  "sources": {
+    "candidate/follower_diagnostics/run_local_avoidance_trial.py": "c2943a148c1cd92b1067c62e2f0be91ba80132d9c824790d7245f29487244ca6",
+    "candidate/follower_diagnostics/clearance_reobserve.py": "753cd06d309707b5b5d2794182773bf68ca2f9384304f80bd5dbc7e97f8ca0a0",
+    "test_clearance_reobserve.py": "3027fefb1064605a385a846e6bcef6279cbae7b790d53ab2857fa463bf8863ae",
+    "test_clearance_reobserve_recorded.py": "a4065bbdc7d7203cb0bca63176232eaea8accc1947e4633d26c235bd2b550346",
+    "test_reference_wait_operator.py": "6498506f3077df5447f4adaeda7f2c7029d4446adecdfefb74db411ec90a2589"
+  }
+}

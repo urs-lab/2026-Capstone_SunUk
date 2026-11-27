@@ -1,0 +1,541 @@
+15초 조회 전용: public TF·오뎀·AMCL·Bridge 진단. 주행·arm·설정 변경 없음.
+{
+  "reason": "PUBLIC_MAP_TO_BASE_TF_MISSING",
+  "tf_scope": "public",
+  "amcl_state": "active",
+  "inputs": {
+    "/follower/odometry/filtered": {
+      "count": 297,
+      "source_age_s": 0.039054264,
+      "receive_age_s": 0.003929542999685509,
+      "frame": "follower/odom",
+      "child_frame": "follower/base_link"
+    },
+    "/follower/odom_raw": {
+      "count": 131,
+      "source_age_s": 0.064881793,
+      "receive_age_s": 0.0577132789985626,
+      "frame": "follower/odom",
+      "child_frame": "follower/base_link"
+    },
+    "/follower/scan": {
+      "count": 113,
+      "source_age_s": 0.195337916,
+      "receive_age_s": 0.09097195100002864,
+      "frame": "follower/laser",
+      "child_frame": null
+    },
+    "/follower/odom_position_candidate": {
+      "count": 100,
+      "source_age_s": 0.064881793,
+      "receive_age_s": 0.056605967998621054,
+      "frame": "follower/odom",
+      "child_frame": "follower/base_link"
+    }
+  },
+  "publishers": {
+    "/follower/odom_raw": [
+      {
+        "node": "follower_drive_telemetry_raw",
+        "namespace": "/"
+      }
+    ],
+    "/follower/odometry/filtered": [
+      {
+        "node": "follower_ekf_filter_node",
+        "namespace": "/"
+      }
+    ],
+    "/follower/odom_position_candidate": [
+      {
+        "node": "follower_drive_telemetry_position",
+        "namespace": "/"
+      }
+    ],
+    "/follower/odom_map": [
+      {
+        "node": "real_follower_bridge",
+        "namespace": "/"
+      }
+    ],
+    "/follower/amcl_pose": [
+      {
+        "node": "amcl",
+        "namespace": "/follower"
+      }
+    ],
+    "/follower/scan": [
+      {
+        "node": "follower_lidar",
+        "namespace": "/"
+      }
+    ]
+  },
+  "tf_edges": {
+    "/tf:follower/odom -> follower/base_link": {
+      "count": 297,
+      "source_age_s": 0.039054264
+    },
+    "/tf_static:follower/base_link -> follower/laser": {
+      "count": 1,
+      "source_age_s": 834.66608029
+    },
+    "/tf_static:follower/base_link -> follower/imu_link": {
+      "count": 1,
+      "source_age_s": 835.14607472
+    }
+  },
+  "map_to_base_lookup": {
+    "available": false,
+    "error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  "tf_subscribers": {
+    "/tf": [
+      {
+        "node": "transform_listener_impl_aaab033068f0",
+        "namespace": "/",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      },
+      {
+        "node": "transform_listener_impl_aaaab71769c0",
+        "namespace": "/follower",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      },
+      {
+        "node": "follower_odom_readonly_diagnostic",
+        "namespace": "/",
+        "reliability": "ReliabilityPolicy.BEST_EFFORT"
+      },
+      {
+        "node": "real_follower_bridge",
+        "namespace": "/",
+        "reliability": "ReliabilityPolicy.BEST_EFFORT"
+      },
+      {
+        "node": "transform_listener_impl_aaaade910350",
+        "namespace": "/",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      },
+      {
+        "node": "real_leader_bridge",
+        "namespace": "/",
+        "reliability": "ReliabilityPolicy.BEST_EFFORT"
+      },
+      {
+        "node": "transform_listener_impl_aaaaf1bc0e90",
+        "namespace": "/",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      },
+      {
+        "node": "transform_listener_impl_57e1c9a5b770",
+        "namespace": "/",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      }
+    ],
+    "/follower/tf_internal": [
+      {
+        "node": "follower_odom_readonly_diagnostic",
+        "namespace": "/",
+        "reliability": "ReliabilityPolicy.BEST_EFFORT"
+      }
+    ]
+  },
+  "recent_warnings": [
+    "real_follower_bridge: Waiting for TF map->follower/base_link: Lookup would require extrapolation into the past.  Requested time 1794899726.354363 but the earliest data is at time 1794900479.088535, when looking up transform from frame [follower/base_link] to frame [map]",
+    "real_follower_bridge: Waiting for TF map->follower/base_link: Lookup would require extrapolation into the past.  Requested time 1794899726.354363 but the earliest data is at time 1794900481.046642, when looking up transform from frame [follower/base_link] to frame [map]",
+    "real_follower_bridge: Waiting for TF map->follower/base_link: Lookup would require extrapolation into the past.  Requested time 1794899726.354363 but the earliest data is at time 1794900483.065144, when looking up transform from frame [follower/base_link] to frame [map]",
+    "real_follower_bridge: Waiting for TF map->follower/base_link: Lookup would require extrapolation into the past.  Requested time 1794899726.354363 but the earliest data is at time 1794900485.186505, when looking up transform from frame [follower/base_link] to frame [map]",
+    "real_follower_bridge: Waiting for TF map->follower/base_link: Lookup would require extrapolation into the past.  Requested time 1794899726.354363 but the earliest data is at time 1794900487.288874, when looking up transform from frame [follower/base_link] to frame [map]"
+  ],
+  "endpoints": {
+    "/tf": {
+      "publishers": [
+        {
+          "node": "follower_ekf_filter_node",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "amcl",
+          "namespace": "/follower",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "amcl",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "robot_state_publisher",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "ekf_filter_node",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "transform_listener_impl_aaab033068f0",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "transform_listener_impl_aaaab71769c0",
+          "namespace": "/follower",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "follower_odom_readonly_diagnostic",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "real_follower_bridge",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "transform_listener_impl_aaaade910350",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "real_leader_bridge",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "transform_listener_impl_aaaaf1bc0e90",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "transform_listener_impl_57e1c9a5b770",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ]
+    },
+    "/tf_static": {
+      "publishers": [
+        {
+          "node": "follower_imu_mount_tf",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "follower_laser_mount_tf",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "robot_state_publisher",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "transform_listener_impl_aaab033068f0",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "transform_listener_impl_aaaab71769c0",
+          "namespace": "/follower",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "follower_odom_readonly_diagnostic",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "real_follower_bridge",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "transform_listener_impl_aaaade910350",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "real_leader_bridge",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "transform_listener_impl_aaaaf1bc0e90",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        },
+        {
+          "node": "transform_listener_impl_57e1c9a5b770",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.TRANSIENT_LOCAL"
+        }
+      ]
+    },
+    "/follower/scan": {
+      "publishers": [
+        {
+          "node": "follower_lidar",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "amcl",
+          "namespace": "/follower",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "follower_odom_readonly_diagnostic",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "rviz",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ]
+    },
+    "/follower/odom_raw": {
+      "publishers": [
+        {
+          "node": "follower_drive_telemetry_raw",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "follower_odom_readonly_diagnostic",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ]
+    },
+    "/follower/odom_position_candidate": {
+      "publishers": [
+        {
+          "node": "follower_drive_telemetry_position",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "follower_ekf_filter_node",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "follower_odom_readonly_diagnostic",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ]
+    },
+    "/follower/odometry/filtered": {
+      "publishers": [
+        {
+          "node": "follower_ekf_filter_node",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.RELIABLE",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ],
+      "subscribers": [
+        {
+          "node": "follower_odom_readonly_diagnostic",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        },
+        {
+          "node": "real_follower_bridge",
+          "namespace": "/",
+          "reliability": "ReliabilityPolicy.BEST_EFFORT",
+          "durability": "DurabilityPolicy.VOLATILE"
+        }
+      ]
+    }
+  },
+  "motor": {
+    "armed": false,
+    "fault": null,
+    "feedback_fresh": true,
+    "valid_feedback": 7520,
+    "measured_rpm": [
+      0,
+      0
+    ],
+    "status_ros_ns": 1794900498292770760,
+    "telemetry_isolated": true,
+    "telemetry_processes": {
+      "/follower/odom_position_candidate": {
+        "sequence": 7411,
+        "ready": true,
+        "stop": false,
+        "failed": false,
+        "published": 7411,
+        "publish_started_mono": 0.0,
+        "last_publish_s": 0.00040986899875861127,
+        "dropped": 105,
+        "pid": 20084,
+        "alive": true
+      },
+      "/follower/odom_raw": {
+        "sequence": 7401,
+        "ready": true,
+        "stop": false,
+        "failed": false,
+        "published": 7400,
+        "publish_started_mono": 0.0,
+        "last_publish_s": 0.00032861099862202536,
+        "dropped": 119,
+        "pid": 20098,
+        "alive": true
+      },
+      "/follower/motor_candidate/status": {
+        "sequence": 7411,
+        "ready": true,
+        "stop": false,
+        "failed": false,
+        "published": 7411,
+        "publish_started_mono": 0.0,
+        "last_publish_s": 0.00017623999883653596,
+        "dropped": 86,
+        "pid": 20118,
+        "alive": true
+      }
+    },
+    "receive_age_s": 0.07804319599927112,
+    "source_age_s": 0.084900156
+  },
+  "processes": [
+    {
+      "pid": 20053,
+      "command": "python3 -B /home/sunuk/nav2_follow_stabilization/evaluation3_reference_wait_stop03/driver/follower_drive_node.py --run-hardware --ack-hardware-zero-rpm-tx --isolated-telemetry --input-kind local_avoidance --ack-bounded-pivot-candidate --ack-continuous20-candidate --enable-motion-input --trial-max-rpm 10 --trial-seconds 0 ",
+      "environment": {
+        "ROS_DOMAIN_ID": "10",
+        "RMW_FASTRTPS_USE_QOS_FROM_XML": "0",
+        "RMW_FASTRTPS_PUBLICATION_MODE": "ASYNCHRONOUS",
+        "ROS_LOCALHOST_ONLY": "0",
+        "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+      }
+    },
+    {
+      "pid": 20084,
+      "command": "/usr/bin/python3 -B -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=20, pipe_handle=22) --multiprocessing-fork ",
+      "environment": {
+        "ROS_DOMAIN_ID": "10",
+        "RMW_FASTRTPS_USE_QOS_FROM_XML": "0",
+        "RMW_FASTRTPS_PUBLICATION_MODE": "ASYNCHRONOUS",
+        "ROS_LOCALHOST_ONLY": "0",
+        "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+      }
+    },
+    {
+      "pid": 20098,
+      "command": "/usr/bin/python3 -B -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=20, pipe_handle=31) --multiprocessing-fork ",
+      "environment": {
+        "ROS_DOMAIN_ID": "10",
+        "RMW_FASTRTPS_USE_QOS_FROM_XML": "0",
+        "RMW_FASTRTPS_PUBLICATION_MODE": "ASYNCHRONOUS",
+        "ROS_LOCALHOST_ONLY": "0",
+        "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+      }
+    },
+    {
+      "pid": 20118,
+      "command": "/usr/bin/python3 -B -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=20, pipe_handle=35) --multiprocessing-fork ",
+      "environment": {
+        "ROS_DOMAIN_ID": "10",
+        "RMW_FASTRTPS_USE_QOS_FROM_XML": "0",
+        "RMW_FASTRTPS_PUBLICATION_MODE": "ASYNCHRONOUS",
+        "ROS_LOCALHOST_ONLY": "0",
+        "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+      }
+    },
+    {
+      "pid": 20157,
+      "command": "/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=follower_ekf_filter_node --params-file /home/sunuk/follower_diagnostics/follower_ekf_position_candidate.yaml --params-file /tmp/launch_params_t2riz0pc -r odometry/filtered:=/follower/odometry/filtered -r /set_pose:=/follower/set_pose -r /enable:=/follower/enable -r /toggle:=/follower/toggle ",
+      "environment": {
+        "FASTRTPS_DEFAULT_PROFILES_FILE": "/home/sunuk/nav2_follow_stabilization/success_tf_recovery/convoy_udp_only.xml",
+        "ROS_DOMAIN_ID": "10",
+        "FASTDDS_DEFAULT_PROFILES_FILE": "/home/sunuk/nav2_follow_stabilization/success_tf_recovery/convoy_udp_only.xml",
+        "RMW_FASTRTPS_USE_QOS_FROM_XML": "0",
+        "RMW_FASTRTPS_PUBLICATION_MODE": "ASYNCHRONOUS",
+        "ROS_LOCALHOST_ONLY": "0",
+        "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+      }
+    },
+    {
+      "pid": 20173,
+      "command": "/opt/ros/humble/lib/nav2_amcl/amcl --ros-args -r __node:=amcl -r __ns:=/follower --params-file /tmp/launch_params_21vpicpm -r map:=/follower/localization_map -r initialpose:=/follower/initialpose -r amcl_pose:=/follower/amcl_pose -r particle_cloud:=/follower/particle_cloud -r tf:=/tf -r tf_static:=/tf_static ",
+      "environment": {
+        "FASTRTPS_DEFAULT_PROFILES_FILE": "/home/sunuk/nav2_follow_stabilization/success_tf_recovery/convoy_udp_only.xml",
+        "ROS_DOMAIN_ID": "10",
+        "FASTDDS_DEFAULT_PROFILES_FILE": "/home/sunuk/nav2_follow_stabilization/success_tf_recovery/convoy_udp_only.xml",
+        "RMW_FASTRTPS_USE_QOS_FROM_XML": "0",
+        "RMW_FASTRTPS_PUBLICATION_MODE": "ASYNCHRONOUS",
+        "ROS_LOCALHOST_ONLY": "0",
+        "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+      }
+    },
+    {
+      "pid": 20187,
+      "command": "/usr/bin/python3 -B /home/sunuk/nav2_follow_stabilization/success_tf_recovery/real_follower_bridge_tf_candidate.py --ros-args -r __node:=real_follower_bridge ",
+      "environment": {
+        "FASTRTPS_DEFAULT_PROFILES_FILE": "/home/sunuk/nav2_follow_stabilization/success_tf_recovery/convoy_udp_only.xml",
+        "ROS_DOMAIN_ID": "10",
+        "FASTDDS_DEFAULT_PROFILES_FILE": "/home/sunuk/nav2_follow_stabilization/success_tf_recovery/convoy_udp_only.xml",
+        "RMW_FASTRTPS_USE_QOS_FROM_XML": "0",
+        "RMW_FASTRTPS_PUBLICATION_MODE": "ASYNCHRONOUS",
+        "ROS_LOCALHOST_ONLY": "0",
+        "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+      }
+    }
+  ]
+}

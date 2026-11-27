@@ -1,0 +1,10 @@
+{
+  "max_linear": 0.05,
+  "combinations_checked": 24060,
+  "bounds_passed": true,
+  "hardware_io": false,
+  "straight_raw_rpm": [
+    -7,
+    7
+  ]
+}

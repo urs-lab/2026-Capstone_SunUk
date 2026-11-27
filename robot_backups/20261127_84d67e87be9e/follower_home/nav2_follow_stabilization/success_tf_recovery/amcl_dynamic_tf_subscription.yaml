@@ -1,0 +1,6 @@
+# AMCL uses an internal transform_listener_impl_* node. Scope to this process
+# via its command-line parameter file, not only the /follower/amcl parameter map.
+/**:
+  ros__parameters:
+    qos_overrides./tf.subscription.reliability: best_effort
+    qos_overrides./tf.subscription.depth: 10

@@ -1,0 +1,61 @@
+{
+  "snapshot_date": "2026-11-13",
+  "scope": "Robot source/configuration/maps, not a full operating-system image",
+  "leader_archive_sha256": "cca5fa5ef06bf5e94e5e06a905680cbfd745b7848c3293076207bf7feb91c750",
+  "repositories": [
+    {
+      "repo": "final_robot",
+      "parent": "d5dc27a75b9490802141e30c093874dd37729cd9",
+      "tree": "6ad3fd2af6ec9adf6df98aa9b23c629197be5ba8",
+      "next": 49,
+      "complete": true,
+      "verifiedFiles": 2007,
+      "commit": "096d575ec86092aff112caeeb200c4d1eb202b45",
+      "published": true,
+      "snapshotBranch": true,
+      "headVerified": true
+    },
+    {
+      "repo": "capstone_goal1",
+      "parent": "1992a57c6fbbb72160b17c09a74b04c67877035f",
+      "tree": "e1864296496d98ce091ac3fc37640b58c91ffb9f",
+      "next": 40,
+      "complete": true,
+      "verifiedFiles": 1347,
+      "commit": "b50321217157ebafbc302c7d028ddb7c0bb24591",
+      "published": true,
+      "snapshotBranch": true,
+      "headVerified": true
+    },
+    {
+      "repo": "capstone_goal2",
+      "parent": "06c8b7a72325c460f6a8cc42f95d3c1ededccf23",
+      "tree": "c9f8f507b124a381f42866ee3ba2298768690a81",
+      "next": 13,
+      "complete": true,
+      "verifiedFiles": 470,
+      "commit": "ee4538e73b25ed085655c47ea1780c955745893b",
+      "published": true,
+      "snapshotBranch": true,
+      "headVerified": true
+    },
+    {
+      "repo": "capstone_goal3",
+      "parent": "17643ff1fec5e73071ecbcaace347be578a3c833",
+      "tree": "c029dd9272439d7a1baa1932d5f4cb94b4674c40",
+      "next": 47,
+      "complete": true,
+      "verifiedFiles": 1618,
+      "commit": "7df1f0f69b947196e87db621a353aa3afc99cf16",
+      "published": true,
+      "snapshotBranch": true,
+      "headVerified": true
+    }
+  ],
+  "excluded": [
+    "Credentials and SSH keys",
+    "Build/install outputs and caches",
+    "Raw telemetry logs"
+  ],
+  "physical_processes_changed": false
+}

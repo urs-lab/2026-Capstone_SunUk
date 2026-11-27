@@ -1,0 +1,14 @@
+{
+  "source": "User report convoy_host_audit_1794378513311061112.json",
+  "stage": "Follower motor+private TF sensor/EKF; no AMCL, bridge, RViz or motion",
+  "leader_reliable_tf_max_age_before_s": 6.926326481,
+  "leader_reliable_tf_max_age_after_s": 0.044278658,
+  "leader_reliable_tf_max_receive_gap_after_s": 0.07087137700000312,
+  "leader_filtered_max_age_s": 0.040873398,
+  "follower_filtered_hz": 19.72905143207891,
+  "follower_filtered_max_age_s": 0.111075468,
+  "follower_scan_max_age_s": 0.163767381,
+  "observed_public_follower_tf": false,
+  "conclusion": "15s stationary evidence supports private follower TF topic isolation; sustained localization/navigation/motion behavior not yet validated.",
+  "next_step": "Add only follower AMCL using private TF wrapper and measure again."
+}

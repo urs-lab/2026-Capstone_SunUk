@@ -1,0 +1,74 @@
+{
+  "source_log": "/home/sunuk/nav2_follow_stabilization/evaluation3_reference_wait/candidate/follower_diagnostics/logs/local_avoidance_trial_1794895061004562056.jsonl",
+  "current_body_clearance_m": 0.08307543382006745,
+  "predicted_clearance_m": 0.04641841448321633,
+  "body_model_half_length_m": 0.27,
+  "body_model_half_width_m": 0.3,
+  "uncertainty_m": 0.01,
+  "adjacent_raw_scans": [
+    {
+      "seconds_from_stop_scan": -0.517823,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": -0.414033,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": -0.310774,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": -0.20699,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": -0.1038,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": 0.0,
+      "near_points": [
+        {
+          "index": 154,
+          "range_m": 0.3400000035762787,
+          "base_xy_m": [
+            0.36191085585590943,
+            -0.32436735330576283
+          ],
+          "body_distance_m": 0.09508613637798956
+        },
+        {
+          "index": 155,
+          "range_m": 0.3370000123977661,
+          "base_xy_m": [
+            0.36491893842227696,
+            -0.32025150228599547
+          ],
+          "body_distance_m": 0.09705528432832332
+        }
+      ]
+    },
+    {
+      "seconds_from_stop_scan": 0.103238,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": 0.207049,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": 0.310249,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": 0.414387,
+      "near_points": []
+    },
+    {
+      "seconds_from_stop_scan": 0.517363,
+      "near_points": []
+    }
+  ],
+  "physical_object_identity": "unconfirmed; user visually estimated box gap >=0.20m; do not classify external returns as body-internal without evidence"
+}

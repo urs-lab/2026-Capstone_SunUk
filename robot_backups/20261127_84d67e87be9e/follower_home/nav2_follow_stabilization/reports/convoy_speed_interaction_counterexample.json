@@ -1,0 +1,752 @@
+{
+  "mode": "fixed_gap_ideal_measurement_counterexample",
+  "assumptions": "gap fixed; ideal leader velocity measurement; no inertia, obstacles, transport jitter or hardware",
+  "results": [
+    {
+      "gap": 1.51,
+      "method": "recorded",
+      "steps": 20,
+      "follower_drive_stop_edges": 19,
+      "rows": [
+        {
+          "step": 0,
+          "leader_measured_v": 0.0,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 1,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 2,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 3,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 4,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 5,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 6,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 7,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 8,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 9,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 10,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 11,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 12,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 13,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 14,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 15,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 16,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 17,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 18,
+          "leader_measured_v": 0.008000000000000004,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 19,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.0050000000000000044,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            1,
+            1
+          ],
+          "leader_gate_v": 0.008000000000000004,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        }
+      ]
+    },
+    {
+      "gap": 1.7,
+      "method": "recorded",
+      "steps": 20,
+      "follower_drive_stop_edges": 1,
+      "rows": [
+        {
+          "step": 0,
+          "leader_measured_v": 0.0,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 1,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 2,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 3,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 4,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 5,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 6,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 7,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 8,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 9,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 10,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 11,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 12,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 13,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 14,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 15,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 16,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 17,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 18,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 19,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.06,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            9,
+            9
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        }
+      ]
+    },
+    {
+      "gap": 1.51,
+      "method": "floor",
+      "steps": 20,
+      "follower_drive_stop_edges": 1,
+      "rows": [
+        {
+          "step": 0,
+          "leader_measured_v": 0.0,
+          "follower_v": 0.0,
+          "follower_reason": "STOP_LEADER_STOPPED",
+          "follower_rpm": [
+            0,
+            0
+          ],
+          "leader_gate_v": 0.06,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 1,
+          "leader_measured_v": 0.06,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 2,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 3,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 4,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 5,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 6,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 7,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 8,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 9,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 10,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 11,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 12,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 13,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 14,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 15,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 16,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 17,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 18,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        },
+        {
+          "step": 19,
+          "leader_measured_v": 0.043000000000000003,
+          "follower_v": 0.04,
+          "follower_reason": "FORWARD_ALLOWED",
+          "follower_rpm": [
+            6,
+            6
+          ],
+          "leader_gate_v": 0.043000000000000003,
+          "leader_gate_reason": "NAV2_FOLLOWER_GATE_OPEN"
+        }
+      ]
+    }
+  ],
+  "runtime_controller_changed": false,
+  "encoder_alarm_cause_proven": false
+}

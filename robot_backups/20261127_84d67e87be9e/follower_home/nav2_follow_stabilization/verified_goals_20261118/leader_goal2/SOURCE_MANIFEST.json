@@ -1,0 +1,12 @@
+{
+  "forward_speed_mps": 0.1,
+  "distance_m": 3.0,
+  "distance_scale": 0.935594233291917,
+  "files": {
+    "run_leader_distance_trial.py": "a11cba3afedd13eef475ebe7af6eee018af18e8d366088344660f2d89fdd7051",
+    "leader_short_forward_trial.py": "80a71222bf8d8a3aaccaa4bbb586cbc42f24a06fcf1d611cfecabab31b7f24d6",
+    "follower_yaw_diagnostics.py": "6332b8e60067145827e67b79310c419aaf5408bc4f5401f66383a727911e18f6",
+    "forward_3m.bash": "b83547ef29bed4897d7aa14152345242059cc339924ba23b53e54cd1a16a226f",
+    "verify_sources.py": "3aae259f0c50c6b1fe9a189bc3d0475ffee9aea17cd9db8168ba700e222368ca"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "previous_114s": {
+    "logged_controls": 1041,
+    "nonzero_controls": 352,
+    "requested_nonzero_v_min_p50_max": [
+      0.0229777585443518,
+      0.04,
+      0.04
+    ],
+    "max_logged_sent_rpm": 6,
+    "logged_motor_samples_at_1_or_2rpm": 0,
+    "logged_motor_samples": 1115
+  },
+  "incident": {
+    "logged_controls": 62,
+    "nonzero_controls": 12,
+    "requested_nonzero_v_min_p50_max": [
+      0.004122414106333072,
+      0.013684626348949624,
+      0.027979928114942543
+    ],
+    "max_logged_sent_rpm": 4,
+    "logged_motor_samples_at_1_or_2rpm": 6,
+    "logged_motor_samples": 202
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "source": "/home/sunuk/nav2_follow_stabilization/candidate/follower_diagnostics/logs/lifted_diagnostic_1794468542878304639.json",
+  "physical_observation": "User reports chassis turned approximately 45 degrees and apparently only right wheel moved",
+  "motor_commands": [
+    [
+      -3,
+      3
+    ]
+  ],
+  "nonzero_tx_count": 5,
+  "first_nonzero_to_first_zero_s": 0.4693198669992853,
+  "rpm_ranges": {
+    "m1_rpm": [
+      -2,
+      0
+    ],
+    "m2_rpm": [
+      0,
+      0
+    ]
+  },
+  "raw_position_delta": {
+    "m1_position": -1,
+    "m2_position": 9
+  },
+  "odom_replayed_from_received_rpm": {
+    "x_m": 0.001773894641034455,
+    "y_m": -5.619166530204427e-06,
+    "yaw_deg": -0.3629905040356627,
+    "integration_skips": 0
+  },
+  "odom_published_by_diagnostic": false,
+  "conclusions": [
+    "Symmetric -3/+3 RPM commands do not establish symmetric physical wheel response.",
+    "RPM-based odometry does not explain the reported chassis rotation.",
+    "No IMU/EKF/RViz yaw was captured in this serial-only diagnostic.",
+    "Raw position register unit is unverified; no distance or angle conversion applied.",
+    "DONE was only completion of the pulse/zero-feedback state machine, not a mechanical pass."
+  ],
+  "further_motion_authorized": false
+}

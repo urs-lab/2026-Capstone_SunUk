@@ -1,0 +1,39 @@
+{
+  "log": "/home/sunuk/nav2_follow_stabilization/evaluation3_reference_wait_stop03/candidate/follower_diagnostics/logs/local_avoidance_trial_1794903117789737665.jsonl",
+  "last_control": {
+    "ros_ns": 1794903192504461503,
+    "pose": [
+      0.5423896625502943,
+      0.01007766152910754,
+      0.16053161450582834
+    ],
+    "input_source_stamps": {
+      "scan": 1794903192326532000,
+      "scan_pose_support": 1794903192288570266,
+      "raw": 1794903192388311307,
+      "leader": 1794903192309967765,
+      "filtered": 1794903192331390368,
+      "imu": 1794903192476453429
+    }
+  },
+  "stop_control": {
+    "pose": [
+      0.5748839522131292,
+      0.0156286564631012,
+      0.32286954363494813
+    ],
+    "input_source_stamps": {
+      "scan": 1794903196164522000,
+      "scan_pose_support": 1794903196130143750,
+      "raw": 1794903196308277620,
+      "leader": 1794903196206707194,
+      "filtered": 1794903196308277620,
+      "imu": 1794903196332292029
+    }
+  },
+  "stop_ros_ns": 1794903196364962625,
+  "control_gap_s": 3.860501122,
+  "position_delta_m": 0.032965017904582415,
+  "yaw_delta_deg": 9.301278193992431,
+  "within_wait_filtered_samples_logged": false
+}

@@ -1,0 +1,40 @@
+{
+  "source_log": "candidate/follower_diagnostics/logs/local_avoidance_trial_1794385866172303503.jsonl",
+  "before_clearance_m": -0.020841667970055103,
+  "after_clearance_m": 0.5535376206902349,
+  "excluded_base_points": [
+    [
+      -0.11481313532217569,
+      0.08349321022356841
+    ],
+    [
+      -0.1490761403175036,
+      0.08591112842225201
+    ]
+  ],
+  "replayed_command": {
+    "v": 0.06,
+    "w": 0.0,
+    "motion": "DRIVE",
+    "reason": "TRACKED_PURSUIT",
+    "source_stamp_ns": 1794385992330103741,
+    "scan_stamp_ns": 1794385992334761000,
+    "clearance_m": 0.5535376206902349,
+    "swept_clearance_m": 0.5535376206902349,
+    "pose": [
+      -0.17661275521334407,
+      -0.014812547838334196,
+      0.034350663189290934
+    ],
+    "uncertainty_m": 0.020841667970055103,
+    "input_source_stamps": {
+      "follower_map": 1794385992330103741,
+      "scan": 1794385992334761000
+    },
+    "pose_scan_delta_s": 0.004657259,
+    "geometry_complete": false,
+    "pose_source": "map",
+    "body_filter_enabled": true,
+    "excluded_body_point_count": 2
+  }
+}

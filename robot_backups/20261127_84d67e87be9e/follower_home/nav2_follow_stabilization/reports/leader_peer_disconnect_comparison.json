@@ -1,0 +1,14 @@
+{
+  "source": "User report convoy_host_audit_1794377751769361035.json",
+  "leader_configuration_unchanged": true,
+  "domain": 10,
+  "peer_follower_ros_nodes": "stopped",
+  "filtered_hz": 20.04342587074166,
+  "filtered_age_p95_s": 0.036703932,
+  "filtered_age_max_s": 0.03849421,
+  "filtered_max_receive_gap_s": 0.07063884999934089,
+  "scan_hz": 12.984529270971313,
+  "scan_age_max_s": 0.08790252,
+  "conclusion": "Strong evidence of shared-domain peer-dependent degradation; offending node/topic/transport not yet identified.",
+  "next_step": "Introduce follower motor node alone with motion input disabled, then measure unchanged leader."
+}

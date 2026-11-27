@@ -1,0 +1,34 @@
+"""Success-backup TF topology for follower sensors, AMCL and pose bridge.
+
+No motor driver, command publisher, arming or automatic initial pose is included.
+Stop the existing follower sensors/localization/bridge before starting this stack.
+"""
+from pathlib import Path
+import sys
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument,IncludeLaunchDescription,TimerAction
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+
+
+def generate_launch_description():
+    root=Path.home()/'follower_diagnostics';here=Path(__file__).resolve().parent
+    sensor=root/'follower_position_fixed_lidar.launch.py'
+    localization=here/'follower_localization_tf02524.launch.py'
+    bridge=here/'real_follower_bridge_tf_candidate.py'
+    for p in (sensor,localization,bridge):
+        if not p.is_file():raise RuntimeError('Missing verified source: '+str(p))
+    return LaunchDescription([
+        DeclareLaunchArgument('map',default_value=str(Path.home()/'robot_ws/maps/leader_mapping_20261107_143101_9R24Wc/leader_map.yaml')),
+        DeclareLaunchArgument('ekf_frequency',default_value='20.0'),
+        IncludeLaunchDescription(PythonLaunchDescriptionSource(str(sensor)),
+            launch_arguments={'enable_position_profile':'true','ekf_frequency':LaunchConfiguration('ekf_frequency')}.items()),
+        TimerAction(period=4.0,actions=[
+            IncludeLaunchDescription(PythonLaunchDescriptionSource(str(localization)),
+                launch_arguments={'enable_localization':'true','map':LaunchConfiguration('map')}.items()),
+        ]),
+        Node(executable=sys.executable,arguments=['-B',str(bridge)],name='real_follower_bridge',output='screen'),
+        Node(executable=sys.executable,arguments=['-B',str(here.parent/'watch_localization_ready.py')],
+             name='follower_localization_readiness',output='screen'),
+    ])

@@ -1,0 +1,13 @@
+﻿mode,repository_path,role,present_in_snapshot
+goal1,leader_home/leader_diagnostics/goal1_flow_20261118/start_leader_nav2.bash,선두 Nav2와gate,True
+goal1,follower_home/nav2_follow_stabilization/goal1_flow_20261118/start_driver.bash,후발15RPM 드라이버·수신중만료zero대기,True
+goal1,follower_home/nav2_follow_stabilization/goal1_flow_20261118/start_unicast.bash,상태channel5 즉시전송,True
+goal1,follower_home/nav2_follow_stabilization/goal1_flow_20261118/start_follow.bash,실측경로PurePursuit와대기재개,True
+goal2,leader_home/leader_diagnostics/eval2_distance_dbd45e9d9025/run_leader_distance_trial.py,선두3m증분오뎀거리제어,True
+goal3,follower_home/nav2_follow_stabilization/goal3_success_tf02524/start_evaluation3_ekf_wait.bash,원본평가3 운영자,True
+goal3,follower_home/nav2_follow_stabilization/goal3_success_tf02524/start_driver.bash,원본평가3 후발10RPM,True
+goal3_experiment,follower_home/nav2_follow_stabilization/goal3_leader_motion_test_20261119/start_test.bash,별도 선두속도범위guard해제,True
+common,follower_home/nav2_follow_stabilization/verified_goals_20261118/start_follower_localization.bash,UDP공통센서·AMCL·Bridge1개,True
+common,follower_home/robot_ws/src,ROS패키지소스,True
+common,leader_home/robot_ws/src,선두에서직접수집한ROS패키지소스,True
+common,follower_home/follower_diagnostics/EVALUATION_REQUIREMENTS_20261102.md,과거설계평가기준·상태기술은당시기준,True

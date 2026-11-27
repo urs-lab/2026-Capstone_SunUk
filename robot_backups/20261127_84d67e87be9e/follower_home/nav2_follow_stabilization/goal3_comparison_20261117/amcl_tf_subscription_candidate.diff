@@ -1,0 +1,21 @@
+--- github_success/follower_localization.launch.py
++++ candidate/follower_localization_tf_be.launch.py
+@@ -26,7 +26,7 @@
+     # Default retains the original success map's hash checks. New maps require
+     # an explicit path, never replacement of that original file.
+     import sys
+-    directory = str(Path(__file__).parent)
++    directory = str(Path.home() / 'follower_diagnostics')
+     if directory not in sys.path:sys.path.insert(0, directory)
+     from follower_map_selection import selected_map
+     selected, yaml_sha, image_sha = selected_map(
+@@ -43,6 +43,9 @@
+         'scan_topic': '/follower/scan',
+         'set_initial_pose': False,
+         'tf_broadcast': True,
++        # Only AMCL dynamic TF reception changes; static TF remains latched/reliable.
++        'qos_overrides./tf.subscription.reliability': 'best_effort',
++        'qos_overrides./tf.subscription.depth': 10,
+     })
+     return [
+         LogInfo(msg=f'Follower map: {selected}; YAML_SHA256={yaml_sha}; IMAGE_SHA256={image_sha}'),

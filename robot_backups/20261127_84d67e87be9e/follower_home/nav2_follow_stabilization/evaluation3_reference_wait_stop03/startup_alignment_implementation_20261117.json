@@ -1,0 +1,32 @@
+{
+  "evidence_log": "local_avoidance_trial_1794904845710531421.jsonl",
+  "failure_stage": "LEADER_START_BEFORE_FOLLOWER_ARM",
+  "observed_reason": "FILTERED_ODOM_SCAN_BRACKET_MISSING",
+  "changes": [
+    "After START and during measured leader-start wait, transient scan bracket and valid past raw/filtered delays enter an unbounded zero-speed startup hold",
+    "Follower stays disarmed; leader commanded zero during hold",
+    "Resume after 1s stable fresh scene and >=3 advancing measurements plus leader and follower zero feedback",
+    "Leader-start measurement deadline excludes verified input-wait time"
+  ],
+  "preserved": [
+    "START consent",
+    "pose-changed-after-planning guard",
+    "source times and scan interpolation requirements",
+    "genuine sensor and motor errors",
+    "3cm stop/10cm clearance",
+    "motor command/feedback/response watchdogs"
+  ],
+  "physical_test_completed": false,
+  "sources": {
+    "candidate/follower_diagnostics/run_local_avoidance_trial.py": "59d5786fcc5a96984e2875ed4fa2f0525ee86aeb09304af61bc33ed378265da0",
+    "test_reference_wait_operator.py": "608ae8f56528d753d23bcdf6976f578eff15218eb54c7e489b8e7fb45f7208e6",
+    "test_startup_alignment_wait.py": "3c02a6fc0b52953d8f0fceca503e594bedf0f560f23b6a1dbdb453d4c92c2f82"
+  },
+  "validation": {
+    "startup_scenarios_passed": 5,
+    "existing_wait_raw_operator_scenarios_passed": 11,
+    "filtered_gap_regression_passed": 1,
+    "tf_launch_scope_regressions_passed": 4,
+    "selector_note": "An invalid test method selector in the combined invocation was corrected by running the existing named filtered regression separately; no actual test case failure remained."
+  }
+}

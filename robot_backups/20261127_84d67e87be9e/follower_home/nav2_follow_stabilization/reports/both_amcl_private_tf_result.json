@@ -1,0 +1,15 @@
+{
+  "source": "User report convoy_host_audit_1794379150461964018.json",
+  "duration_s": 30,
+  "leader_amcl": "active",
+  "follower_amcl": "active",
+  "leader_reliable_tf_max_age_s": 0.045470389,
+  "leader_reliable_tf_max_gap_s": 0.07393895800123573,
+  "leader_filtered_p95_age_s": 0.037404609,
+  "leader_filtered_max_age_s": 0.041390341,
+  "leader_scan_max_age_s": 0.384492837,
+  "follower_filtered_remote_max_age_s": 0.605116556,
+  "follower_scan_remote_max_age_s": 0.772891298,
+  "conclusion": "Leader TF remains fresh with both AMCL nodes connected after follower TF isolation; cross-host tail delays persist. AMCL initial-pose particle-filter workload and motion remain unvalidated.",
+  "next_step": "Connect timestamp-preserving best-effort follower map-pose bridge on private TF, initialize actual map poses, then audit with low-load RViz."
+}

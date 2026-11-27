@@ -1,0 +1,56 @@
+{
+  "source": "nav2_follow_stabilization/reports/convoy_host_audit_1794382318000605746.jsonl",
+  "window": "5s after first received message through end",
+  "stats": {
+    "/odometry/filtered": {
+      "count": 469,
+      "age_p95_s": 0.040738314,
+      "age_max_s": 0.051379666,
+      "max_receive_gap_s": 0.11176676500144822,
+      "age_over_0_3_count": 0
+    },
+    "tf_best_effort:odom->base_link": {
+      "count": 469,
+      "age_p95_s": 0.041706168,
+      "age_max_s": 0.051916329,
+      "max_receive_gap_s": 0.11328807300014887,
+      "age_over_0_3_count": 0
+    },
+    "/leader/odom": {
+      "count": 500,
+      "age_p95_s": 0.088266982,
+      "age_max_s": 0.133542009,
+      "max_receive_gap_s": 0.07940210699962336,
+      "age_over_0_3_count": 0
+    },
+    "/odom": {
+      "count": 484,
+      "age_p95_s": 0.011787417,
+      "age_max_s": 0.02345637,
+      "max_receive_gap_s": 0.10460474299907219,
+      "age_over_0_3_count": 0
+    },
+    "/scan": {
+      "count": 325,
+      "age_p95_s": 0.087765496,
+      "age_max_s": 0.103212981,
+      "max_receive_gap_s": 0.10177679799926409,
+      "age_over_0_3_count": 0
+    },
+    "/follower/scan": {
+      "count": 235,
+      "age_p95_s": 0.16319625,
+      "age_max_s": 0.323113709,
+      "max_receive_gap_s": 0.22599085100046068,
+      "age_over_0_3_count": 1
+    },
+    "/follower/odometry/filtered": {
+      "count": 487,
+      "age_p95_s": 0.092310058,
+      "age_max_s": 0.249308669,
+      "max_receive_gap_s": 0.14448289500069222,
+      "age_over_0_3_count": 0
+    }
+  },
+  "finding": "All scan and leader odom receive gaps above 0.25 s occurred before 3.7 s after first received message. Does not prove discovery as cause."
+}

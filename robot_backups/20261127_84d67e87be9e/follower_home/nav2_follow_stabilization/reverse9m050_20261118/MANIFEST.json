@@ -1,0 +1,17 @@
+{
+  "target_distance_m": 9,
+  "max_signed_speed_mps": -0.5,
+  "physical_motion_test": false,
+  "files": {
+    "README_KO.md": "5681a3ecff76cfd64a54d625b2ea8963a11d95dc32ed67663caccb0321afe721",
+    "test_distance_runtime.py": "71efca5586b76aca211e2d2697e7745a83d20b78b8e4cea1e4dd29ba84ab72f4",
+    "leader_short_forward_trial.py": "80a71222bf8d8a3aaccaa4bbb586cbc42f24a06fcf1d611cfecabab31b7f24d6",
+    "test_reverse9m.py": "23c69308d070d76c261c45a507647dce5e021304805292b54622f00d9c336a58",
+    "follower_yaw_diagnostics.py": "6332b8e60067145827e67b79310c419aaf5408bc4f5401f66383a727911e18f6",
+    "run_leader_distance_trial.py": "e0ccaadaac6e3a91a165ba81a0547c714efcdee43403bd97e94358511eb944e5",
+    "leader_eval2_speed050.launch.py": "3a6f16d2fef4f3f4e930f148cf12b2303e094679d989677720a45cc7cbab2194",
+    "reverse_leader.bash": "cea4ca23653a1b13b2dd7b76b07c13c72b9f0c6e883977fa85ede49efb3a1bbc",
+    "validation.log": "ecd743823a6d35d2280feec3e5b47a5c37e01163ed2fee5a82fd94cd2ad0f81f",
+    "copy_leader.bash": "7b747344a7ffe44c6e34fdae781f596e6eaf2363bc218c65a2d93dbd65ff1c26"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "offline_tests_passed": 93,
+  "protected_files_verified": 818,
+  "baseline_modified": false,
+  "default_clearance_stop_enabled": true,
+  "explicit_disable_flag": "--disable-clearance-stop",
+  "runtime_started_by_agent": false,
+  "physical_collision_stopping_validation": false
+}

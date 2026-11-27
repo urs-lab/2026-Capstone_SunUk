@@ -1,0 +1,99 @@
+{
+  "sources": [
+    "/home/sunuk/nav2_follow_stabilization/reports/convoy_host_audit_1794383821344731553.jsonl",
+    "/home/sunuk/convoy_host_audit_1794383827865141954.jsonl"
+  ],
+  "note": "First receipt per source stamp; cross-host receive differences include clock offset, scheduling and DDS transport. Repeated source stamps cannot uniquely identify republications. after20 window is post-hoc, not readiness authorization.",
+  "comparison": {
+    "/odom all": {
+      "matched_unique_stamps": 215,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        0.01577548,
+        0.046227687,
+        1.401654977,
+        1.537401879
+      ]
+    },
+    "/odom follower_after20": {
+      "matched_unique_stamps": 68,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        0.01577548,
+        0.02483671,
+        0.039605043,
+        0.049685585
+      ]
+    },
+    "/odometry/filtered all": {
+      "matched_unique_stamps": 236,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        0.00259158,
+        0.180171975,
+        1.394809801,
+        1.55739922
+      ]
+    },
+    "/odometry/filtered follower_after20": {
+      "matched_unique_stamps": 67,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        0.00259158,
+        0.024894312,
+        0.039820848,
+        0.051630366
+      ]
+    },
+    "/scan all": {
+      "matched_unique_stamps": 213,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        0.007824229,
+        0.589905551,
+        1.413080398,
+        1.58136051
+      ]
+    },
+    "/scan follower_after20": {
+      "matched_unique_stamps": 44,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        0.007824229,
+        0.032728151,
+        0.050945647,
+        0.053875129
+      ]
+    },
+    "/leader/odom all": {
+      "matched_unique_stamps": 148,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        0.014806783,
+        0.150434983,
+        1.43344506,
+        1.535037471
+      ]
+    },
+    "/leader/odom follower_after20": {
+      "matched_unique_stamps": 44,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        0.014806783,
+        0.025325327,
+        0.035934588,
+        0.039901392
+      ]
+    },
+    "/follower/odom_map all": {
+      "matched_unique_stamps": 213,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        -0.53436166,
+        -0.018781159,
+        0.01547779,
+        0.019683906
+      ]
+    },
+    "/follower/odom_map follower_after20": {
+      "matched_unique_stamps": 34,
+      "follower_minus_leader_first_receipt_min_p50_p95_max_s": [
+        -0.019993359,
+        0.0119516,
+        0.017977127,
+        0.01875512
+      ]
+    }
+  }
+}

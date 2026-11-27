@@ -1,0 +1,12 @@
+{
+  "checked_pairs": 1620,
+  "hardware_io": false,
+  "pass": true,
+  "straight_010_raw_rpm": [
+    -15,
+    15
+  ],
+  "nominal_rpm_at_010": 14.691225516174955,
+  "rpm_cap": 15,
+  "note": "Integer rounding of wheel RPM remains as in the proven driver; not physical speed verification."
+}

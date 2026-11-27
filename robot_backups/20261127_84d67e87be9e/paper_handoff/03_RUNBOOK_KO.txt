@@ -1,0 +1,91 @@
+실행 경로 인수인계 — 소스 보존용, 자동 실행/자동 복원 아님
+
+현재 코드는 고정 /home/sunuk 경로·ROS2 Humble·장치명·지도에 의존한다. 새장치에는 소스빌드/권한설정 필요.
+각 명령은 별도 터미널. 동일 모터/센서/Bridge/운영자/relay를 중복 실행하지 않는다.
+
+공통 환경(선두·후발):
+source /opt/ros/humble/setup.bash
+source ~/robot_ws/install/setup.bash
+export ROS_DOMAIN_ID=10
+export ROS_LOCALHOST_ONLY=0
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+export RMW_FASTRTPS_PUBLICATION_MODE=ASYNCHRONOUS
+export RMW_FASTRTPS_USE_QOS_FROM_XML=0
+
+선두 공통1 — 모터·센서·EKF:
+ros2 launch ~/leader_diagnostics/leader_nav_yaw_calibrated.launch.py allow_motion:=true
+
+선두 공통2 — 지도·AMCL:
+ros2 launch nav2_bringup localization_launch.py \
+ map:=/home/sunuk/robot_ws/maps/leader_mapping_20261107_143101_9R24Wc/leader_map.yaml \
+ params_file:=/home/sunuk/leader_diagnostics/nav2_015_rotation_shim_check.yaml \
+ use_sim_time:=false autostart:=true
+
+선두 공통3 — Bridge:
+FASTRTPS_DEFAULT_PROFILES_FILE="$HOME/convoy_udp_only_pilot.xml" \
+python3 -B ~/leader_diagnostics/leader_bridge_latest_candidate.py \
+ --ros-args -p map_frame:=map -p base_frame:=base_link -p publish_rate:=20.0
+
+선두 공통4 — relay:
+FASTRTPS_DEFAULT_PROFILES_FILE="$HOME/convoy_udp_only_pilot.xml" \
+python3 -B ~/leader_diagnostics/convoy060_dfa647fff6de/convoy_unicast_relay.py \
+ --role leader --peer 10.253.245.192
+
+후발 목표1/3 공통 — 센서·EKF·지도·AMCL·Bridge(한개만):
+bash ~/nav2_follow_stabilization/verified_goals_20261118/start_follower_localization.bash
+LOCALIZATION_ACTIVE → RViz /follower/initialpose 지정 → FOLLOWER_MAP_ODOM_READY 확인.
+이 상태에서 단독 start_bridge_only.bash를 추가하지 않음. 중복 odom_map발행자는기동검사차단사유.
+
+노트북:
+source /opt/ros/humble/setup.bash
+export ROS_DOMAIN_ID=10 ROS_LOCALHOST_ONLY=0
+rviz2 -d ~/convoy_view.rviz
+
+정량1 — 선두5 Nav2/gate:
+bash ~/leader_diagnostics/goal1_flow_20261118/start_leader_nav2.bash
+후발1 드라이버:
+bash ~/nav2_follow_stabilization/goal1_flow_20261118/start_driver.bash
+후발3 relay:
+bash ~/nav2_follow_stabilization/goal1_flow_20261118/start_unicast.bash
+후발추종:
+bash ~/nav2_follow_stabilization/goal1_flow_20261118/start_follow.bash
+이후 RViz에서 선두2D Goal. goal1_flow는후발15RPM/0.1m/s와상태대기/재개전용본.
+
+정량3 전환:
+후발정량1추종·선두5Nav2/gate·후발정량1driver/relay 종료. 공통센서/AMCL/Bridge는유지.
+후발1:
+bash ~/nav2_follow_stabilization/goal3_success_tf02524/start_driver.bash
+후발3:
+bash ~/nav2_follow_stabilization/goal3_success_tf02524/start_unicast.bash
+양쪽초기위치/방향준비·정지·후발비무장후:
+bash ~/nav2_follow_stabilization/goal3_success_tf02524/capture_reference.bash
+평가:
+bash ~/nav2_follow_stabilization/goal3_success_tf02524/start_evaluation3_ekf_wait.bash
+
+정량3 별도 속도범위 검사해제 실험(정상평가와동시실행금지):
+기존평가3운영자종료. driver/센서/Bridge/relay 유지.
+bash ~/nav2_follow_stabilization/goal3_leader_motion_test_20261119/capture_reference.bash
+bash ~/nav2_follow_stabilization/goal3_leader_motion_test_20261119/start_test.bash
+ROS node: goal3_leader_motion_range_test. 선두속도범위guard만옵트인해제,계획10cm/정지5cm/후발속도는유지.
+원본복귀는새테스트종료후원래capture_reference와start_evaluation3_ekf_wait실행.
+
+정량2:
+Nav2/gate·추종·평가3·teleop·다른거리프로그램모두종료. 후발비무장·경로밖.
+선두기본모터/센서/EKF 유지. 고속후진용드라이버가켜져있다면기본launch로복귀하여조건고정.
+python3 -B ~/leader_diagnostics/eval2_distance_dbd45e9d9025/run_leader_distance_trial.py \
+ --run --ack-clear-path-power-cut-ready --direction forward \
+ --distance-m 3 --speed 0.1 --distance-scale 0.935594233291917 --operator-clear-path
+각각START,총3회.외부실측과전면부중앙원내판정별도기록.
+
+후진 복귀 도구(정량2 데이터와분리):
+선두5m/0.06: ~/leader_diagnostics/reverse5m006_20261118/reverse_leader.bash
+후발5m/0.06: ~/nav2_follow_stabilization/reverse5m006_20261118/start_follower_driver.bash 와 reverse_follower.bash
+선두9m/최대0.5: ~/leader_diagnostics/reverse9m050_20261118/leader_eval2_speed050.launch.py 와 reverse_leader.bash
+고속후진실측/제동거리완료를본자료로보증하지않음.
+
+상태확인:
+ros2 lifecycle get /amcl
+ros2 lifecycle get /follower/amcl
+ros2 topic info /follower/odom_map
+후발odom_map Publisher count는1이어야함.
+timeout 10 ros2 topic echo /follower/odom_map --once --qos-reliability best_effort

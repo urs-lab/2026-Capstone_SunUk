@@ -1,0 +1,53 @@
+{
+  "user_confirmed_physical_operation": true,
+  "automatic_result": {
+    "event": "end",
+    "ros_ns": 1794561805814937195,
+    "reason": "FOLLOW_REFERENCE_STALE_OR_MISSING",
+    "leader_started": true,
+    "arm_requested": true,
+    "leader_zero_confirmed": true,
+    "follower_zero_confirmed": true,
+    "post_stop_faults": [
+      "INVALID_LOCAL_AVOIDANCE_ENVELOPE"
+    ],
+    "motion_feedback_seen": true,
+    "trial_success": false,
+    "geometric_complete_candidate": false,
+    "evaluation_pass": false,
+    "controller_kind": "CONTINUOUS20_MAP_REJOIN_V1",
+    "trial_seconds": 360,
+    "input_source_timeout_s": 0.8,
+    "plan_only": false,
+    "plan_ready": false,
+    "near_return_hold_enabled": false,
+    "continuous_reobservation_enabled": true,
+    "pose_source": "filtered",
+    "dynamic_box": true,
+    "post_rejoin_follow_target_m": 2.0,
+    "obstacle_front_trigger_m": 0.7,
+    "persistent_replan": false,
+    "continuous20": true,
+    "clearance_policy_m": 0.1,
+    "stop_clearance_m": 0.05,
+    "follow_lookahead_m": 0.35,
+    "tracked_pursuit_handoff_confirmed": false,
+    "frame_check_distance_m": null,
+    "frame_check_complete": false,
+    "follow_only": false,
+    "follow_check_seconds": null
+  },
+  "handoff_event_recorded": true,
+  "maximum_logged_post_rejoin_follow_progress_m": 0.673748787222586,
+  "first_motor_fault": "INVALID_LOCAL_AVOIDANCE_ENVELOPE",
+  "last_command_rejection": {
+    "reason": "Stale/future/pre-arm source",
+    "received_ros_ns": 1794561804881830265,
+    "profile": "LOCAL_STOP_TURN_GO_V1"
+  },
+  "last_source_age_at_operator_send_s": 0.799011318,
+  "last_source_age_at_driver_rejection_s": 0.800619845,
+  "observed_planning_elapsed_s": 34.84170359,
+  "control_compute_median_s": 0.0034115359994757455,
+  "scope": "operator confirmed functional success; original automatic failure flags retained; no formal completion claim"
+}

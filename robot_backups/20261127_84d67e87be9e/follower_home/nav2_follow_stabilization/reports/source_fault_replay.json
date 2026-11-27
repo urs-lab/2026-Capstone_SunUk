@@ -1,0 +1,11 @@
+{
+  "seed": 20261111,
+  "trials": 20000,
+  "counts": {
+    "passed_valid": 8646,
+    "blocked_invalid": 11354
+  },
+  "method": "Actual gate callback bodies; fake clocks and message objects; no ROS transport",
+  "live_transport_tested": false,
+  "hardware_opened": false
+}

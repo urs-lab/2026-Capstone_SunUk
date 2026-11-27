@@ -1,0 +1,39 @@
+{
+  "evidence_log": "local_avoidance_trial_1794903697263553303.jsonl",
+  "observed_trial_reason": "RAW_STALE",
+  "post_stop_fault": "COMMAND_TIMEOUT",
+  "unattributed_log_gap_s": 1.355697041,
+  "changes": [
+    "Raw source delays now command only zero with original source timestamps and wait for fresh advancing samples plus measured zero before resuming",
+    "Display-only operator status DDS publication isolated in one child process",
+    "Timing records for command/status/leader publication, graph checks, callback drain and log flush"
+  ],
+  "unchanged": [
+    "0.3s command watchdog",
+    "0.3s feedback/response watchdogs",
+    "hardware driver source",
+    "3cm stop threshold",
+    "10cm planning clearance",
+    "measurement-level odom jump guard"
+  ],
+  "limitations": [
+    "The original 1.4s operator gap is not yet attributed to one API call",
+    "If command delivery itself still fails for more than 0.3s the motor watchdog still stops and faults; this fix does not mask that fault"
+  ],
+  "validation": {
+    "driver_regressions_passed": 23,
+    "live_motion_test_completed": false,
+    "operator_and_input_regressions_passed": 52,
+    "isolated_status_entrypoint_passed": 1,
+    "total_passed": 76
+  },
+  "sources": {
+    "candidate/follower_diagnostics/run_local_avoidance_trial.py": "d805cbc5d2eb649e3a89e7f2ef9785019d8295371195ba1d8db3e2bdd281d5ed",
+    "candidate/follower_diagnostics/operator_status_process.py": "7e0238a293d476d379a8595756a3321fbc7bdbff7fbca7ffff281cccc7583b3c",
+    "candidate/follower_diagnostics/filtered_input_wait.py": "038bfbb3280f4cac10cec451723d359133f022f0eb149f84786f1329195f38a1",
+    "start_evaluation3.bash": "0a5d96f295ade5438db588181d38f5ebc6e8e015a88a80f2e028a68b80657d14",
+    "test_reference_wait_operator.py": "8e92c41ed044f3e638233ba00bd2f193d7829f68b6afe9927e76d76f2c7fbef3",
+    "test_raw_input_wait.py": "3d53f852add8f132644a9cfb7c9430911c860c85099f2203b69a6533fd33f8b5",
+    "test_operator_status_process.py": "3d4dd590f92d474aee1c86acaaaf0a93b425fd118426638a80a0a2428c4d5540"
+  }
+}

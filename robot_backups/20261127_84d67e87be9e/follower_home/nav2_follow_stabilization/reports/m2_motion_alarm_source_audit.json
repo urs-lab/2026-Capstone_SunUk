@@ -1,0 +1,14 @@
+{
+  "follower_hardware.yaml": {
+    "same_as_original": true,
+    "candidate_sha256": "722ababf2dde06603fa07f3ebf19ac5e80092f60255e72e29bd59c644749025f"
+  },
+  "follower_motor_candidate.py": {
+    "same_as_original": true,
+    "candidate_sha256": "7540076f34b3ce3dbd3e050747705f05dea9bfee3b973dcbf05fca304e47a755"
+  },
+  "follower_odometry_calibration.json": {
+    "same_as_original": true,
+    "candidate_sha256": "bdb755deb5558b9288af8a937db4563de85e80a0c9c20c344a1eead07fc2f217"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "source": "/home/sunuk/convoy_host_audit_1794378950704674044.json",
+  "trace": "/home/sunuk/convoy_host_audit_1794378950704674044.jsonl",
+  "follower_filtered_hz": 20.029486483512716,
+  "follower_filtered_age_max_s": 0.053489371,
+  "follower_reliable_tf_age_max_s": 0.05880926,
+  "follower_reliable_tf_gap_max_s": 0.07495193199974892,
+  "follower_scan_age_max_s": 0.112155857,
+  "remote_leader_gap_s": {
+    "odom": 0.3177132619985059,
+    "filtered": 0.3327973240011488,
+    "scan": 0.37174244199923123
+  },
+  "during_remote_scan_gap": {
+    "local_filtered": 7,
+    "local_scan": 4
+  },
+  "conclusion": "Follower local pipeline continued receiving during gaps in remote leader measurements. This window supports remaining cross-host transport/delivery latency rather than a whole-follower observer stall. Different-host windows do not prove the sender remained smooth at the same instant.",
+  "next_step": "Add only leader localization; keep private follower TF and disabled motion. No new rate/timeout changes."
+}

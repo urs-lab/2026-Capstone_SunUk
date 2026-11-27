@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-17",
+  "observed_failure": {
+    "status_publish_s": 1.676965898999697,
+    "tick_gap_s": 1.6786428490004255,
+    "response_wait_s": 1.6786428490004255,
+    "rx_available_bytes": 20,
+    "armed": false,
+    "measured_rpm": [
+      0,
+      0
+    ],
+    "device_status": [
+      0,
+      0
+    ]
+  },
+  "change": "Independent spawn publication process for raw odom, position odom and motor status; no DDS publication in the motor tick",
+  "startup_flag": "--isolated-telemetry",
+  "bounded_slot_capacity_bytes": 131072,
+  "parent_lock_mode": "LOCK_NB; drops contended telemetry rather than blocking hardware",
+  "queue_policy": "latest only; original stamps retained; no stale backlog replay",
+  "parent_ports_owned_by_children": false,
+  "response_timeout_s": 0.3,
+  "command_timeout_s": 0.3,
+  "feedback_timeout_s": 0.3,
+  "stop_clearance_m": 0.03,
+  "residual_OS_scheduler_stalls_still_fault": true,
+  "tests": {
+    "telemetry_isolation_tests.log": 5,
+    "telemetry_guard_tests.log": 2,
+    "telemetry_driver_regression.log": 123,
+    "telemetry_packaging_tests.log": 12
+  },
+  "total_checks": 142,
+  "physical_run_executed": false,
+  "limitations": "Actual DDS/network timing and host scheduling require physical observation; process isolation is not a hard real-time guarantee. A real parent scheduling pause and serial loss still latch faults.",
+  "primary_reference": "https://raw.githubusercontent.com/ros2/rclpy/humble/rclpy/src/rclpy/publisher.cpp",
+  "backup": "backups/before_telemetry_isolation_20261117",
+  "sources": {
+    "driver/follower_drive_node.py": "5ae1d7f115c9cc375bc25d7d0d6e851bcab5a35ad2ec92749117bb6a4172df81",
+    "driver/isolated_telemetry.py": "aa0e1b3156b1d913df64de5ace4cb2c1336909c93095e93731cdc50e07f70090",
+    "driver/test_isolated_telemetry.py": "cc069ffc4e236f79eacdeaba60b8a5d2dc082a3575d3a88e8d22603e668f7e3a",
+    "start_follower_driver.bash": "359d36fdf91ff827027ac4a3177f1c59669b3f51a8944ed5cfec4cae28577a0d"
+  }
+}

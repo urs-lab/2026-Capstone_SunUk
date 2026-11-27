@@ -1,0 +1,300 @@
+--- github_success/candidate/follower_diagnostics/run_local_avoidance_trial.py
++++ current_stop03/candidate/follower_diagnostics/run_local_avoidance_trial.py
+@@ -21,7 +21,7 @@
+     if sample is None or not 0<=mono-sample[1]<=.3:return 'MOTOR_STATUS_MISSING_OR_STALE'
+     s=sample[0]
+     if bool(s.get('continuous20',False))!=continuous20:return 'REQUIRE_MATCHING_CONTINUOUS20_DRIVER'
+-    if continuous20 and (s.get('continuous_stop_clearance_m')!=STOP_CLEARANCE_M or s.get('continuous_clearance_profile')!=CLEARANCE_PROFILE):return 'REQUIRE_CONTINUOUS10_STOP05_DRIVER_RESTART'
++    if continuous20 and (s.get('continuous_stop_clearance_m')!=STOP_CLEARANCE_M or s.get('continuous_clearance_profile')!=CLEARANCE_PROFILE):return 'REQUIRE_CONTINUOUS10_STOP03_DRIVER_RESTART'
+     if s.get('distance_test_only'):return 'DISTANCE_TEST_DRIVER_NOT_FOR_AVOIDANCE'
+     if (s.get('mode')!='HARDWARE_CANDIDATE' or s.get('input_kind')!='local_avoidance'
+             or s.get('motion_profile')!=PROFILE or s.get('input_source_timeout_s')!=SOURCE_TIMEOUT_S or s.get('trial_max_rpm')!=10
+@@ -99,7 +99,7 @@
+         from continuous_local_core import ContinuousCore,build_plan
+         core_type=ContinuousCore;planner=build_plan;controller_kind='CONTINUOUS20_MAP_REJOIN_V1'
+     else:core_type=LocalCore
+-    if a.reference_wait:controller_kind='CONTINUOUS10_STOP05_REFERENCE_WAIT_V1'
++    if a.reference_wait:controller_kind='CONTINUOUS10_STOP03_REFERENCE_WAIT_V1'
+     command_topic='/follower/motor_candidate/continuous20_command' if a.continuous20 else COMMAND_TOPIC
+     reference=json.loads(a.reference_plan.read_text())
+     import rclpy
+@@ -125,6 +125,12 @@
+     nav.timeout=SOURCE_TIMEOUT_S
+     from reference_wait import ReferenceWait,ReferenceUnavailable,reference_stamps,MAX_MOTION_SOURCE_AGE_S
+     reference_wait=ReferenceWait() if a.reference_wait else None
++    from motor_status_wait import MotorStatusWait
++    motor_status_wait=MotorStatusWait() if a.reference_wait else None
++    from filtered_input_wait import FilteredUnavailable,filtered_stamp,fresh_zero_sources
++    filtered_input_wait=ReferenceWait() if a.reference_wait else None
++    from clearance_reobserve import ClearanceWait
++    clearance_wait=ClearanceWait() if a.reference_wait else None
+     motor=None;mount=None;leader_started=False;arm_requested=False;stopping=False;epoch=None
+     started=None;armed=None;last_leader=0.;last_status=0.;desired_leader=.04
+     leader_zero=follower_zero=False;faults=set();reason='NOT_STARTED';motion_seen=False;last_report_key=None
+@@ -153,27 +159,34 @@
+         commands.publish(String(data=json.dumps(dict(version=3,controller=PROFILE,epoch=epoch,
+             frame='follower/base_link',stamp_ns=sent,source_stamp_ns=source,
+             scan_stamp_ns=scan_stamp,motion='STOP',v=0.,w=0.,clearance_m=0.,swept_clearance_m=0.))))
++    def local_zero_hold(ns,mono):
++        # Only validated sensor sources support zero; this never creates a motion scene.
++        # Interpolation is not needed for STOP; never use this fallback to move.
++        try:local=core.scene(ns,mono,require_leader=False)
++        except ValueError as exc:
++            diagnostic=getattr(core,'last_alignment_failure',None)
++            if str(exc)=='FILTERED_STALE' and filtered_input_wait is not None:
++                try:filtered_stamp(core,ns,mono)
++                except FilteredUnavailable:pass
++                local=fresh_zero_sources(core,ns,mono)
++            else:
++                if (str(exc)!='FILTERED_ODOM_SCAN_BRACKET_MISSING' or not diagnostic
++                        or diagnostic.get('kind') not in {'WAITING_FOR_NEWER_POSE','POSE_HISTORY_GAP'}):raise
++                local=dict(source=min([core.inputs[k][0] for k in ('raw','filtered','imu')]+[core.scan[0]]),
++                           scan_stamp=core.scan[0])
++        publish_zero_hold(local['source'],local['scan_stamp'])
++        return local
+     def pause_reference(detail,*,invalid=True):
+         nonlocal desired_leader,last_status,stable_since,stable_count,stable_stamp
+         mono=time.monotonic();ns=now()
+         first=reference_wait.enter(mono,invalid=invalid)
+         desired_leader=0.;leader_command(0.)
+-        # This path deliberately excludes only the remote reference from the
+-        # scene. Local odom, IMU, scan, heading and time checks still run.
+-        try:local=core.scene(ns,mono,require_leader=False)
+-        except ValueError as exc:
+-            diagnostic=getattr(core,'last_alignment_failure',None)
+-            if (str(exc)!='FILTERED_ODOM_SCAN_BRACKET_MISSING' or not diagnostic
+-                    or diagnostic.get('kind') not in {'WAITING_FOR_NEWER_POSE','POSE_HISTORY_GAP'}):raise
+-            # scene has already validated local sensor freshness and heading.
+-            # Missing interpolation supports STOP only, never a motion scene.
+-            local=dict(source=min([core.inputs[k][0] for k in ('raw','filtered','imu')]+[core.scan[0]]),
+-                       scan_stamp=core.scan[0])
+-        publish_zero_hold(local['source'],local['scan_stamp'])
++        local=local_zero_hold(ns,mono)
+         core.last_curve=(mono,0.,0.)
+         if first:
+             stable_since=None;stable_count=0;stable_stamp=None
+             rejoin_verifier.previous=None;post_follow_verifier.previous=None
++            if clearance_wait.active:clearance_wait.enter(mono,invalid=True)
+             log('reference_wait_started',detail=detail,phase=phase)
+             print('[WAIT] 입력 지연: 양쪽 속도0 대기. 새 입력이 안정되면 자동 재개합니다.',flush=True)
+         if mono-last_status>=.1:
+@@ -200,8 +213,131 @@
+             elif label=='handoff' and handoff_started is not None:handoff_started+=duration
+         if near_pause is not None and near_pause.active:near_pause.started+=duration
+         core.last_curve=(mono,0.,0.)
++        if clearance_wait.active:clearance_wait.started+=duration
+         log('reference_wait_resumed',waited_s=duration,phase=phase)
+         print('[RESUME] 새 입력·양쪽 정지 확인. 같은 세션에서 저속부터 재개합니다.',flush=True)
++        return True
++    def pause_motor_status(ns,mono,*,invalid):
++        nonlocal desired_leader,last_status,stable_since,stable_count,stable_stamp
++        first=motor_status_wait.enter(mono,invalid=invalid)
++        desired_leader=0.;leader_command(0.)
++        local=local_zero_hold(ns,mono)
++        core.last_curve=(mono,0.,0.)
++        if first:
++            stable_since=None;stable_count=0;stable_stamp=None
++            rejoin_verifier.previous=None;post_follow_verifier.previous=None
++            if reference_wait.active:reference_wait.enter(mono,invalid=True)
++            if alignment_recovery.active:alignment_recovery.enter(mono,invalid=True)
++            if filtered_input_wait.active:filtered_input_wait.enter(mono,invalid=True)
++            if clearance_wait.active:clearance_wait.enter(mono,invalid=True)
++            log('motor_status_wait_started',phase=phase)
++            print('[WAIT] 모터 상태 수신 지연: 양쪽 속도0 대기. 상태 복구 후 같은 단계에서 재개합니다.',flush=True)
++        if mono-last_status>=.1:
++            row=dict(v=0.,w=0.,motion='STOP',reason='WAITING_MOTOR_STATUS',trial_phase=phase,
++                     motor_status_wait_s=mono-motor_status_wait.started,
++                     source_stamp_ns=local['source'],scan_stamp_ns=local['scan_stamp'])
++            statuspub.publish(String(data=json.dumps(row)));log('motor_status_wait',**row);last_status=mono
++    def finish_motor_status_wait(mono):
++        nonlocal follow_started,planning_started,handoff_started,alignment_wait_started,map_alignment_wait_started
++        duration=motor_status_wait.finish(mono)
++        if follow_started is not None:follow_started+=duration
++        if planning_started is not None:planning_started+=duration
++        if handoff_started is not None:handoff_started+=duration
++        if near_pause is not None and near_pause.active:near_pause.started+=duration
++        # Exclude this interval from other nested waits to avoid double counting.
++        if reference_wait.active:reference_wait.started+=duration
++        if alignment_wait_started is not None:alignment_wait_started+=duration
++        if alignment_recovery.active:alignment_recovery.started+=duration
++        if map_alignment_wait_started is not None:map_alignment_wait_started+=duration
++        if filtered_input_wait.active:filtered_input_wait.started+=duration
++        core.last_curve=(mono,0.,0.)
++        if clearance_wait.active:clearance_wait.started+=duration
++        log('motor_status_wait_resumed',waited_s=duration,phase=phase)
++        print('[RESUME] 모터 상태·정지·동일 세션 확인. 중단했던 단계에서 재개합니다.',flush=True)
++    def pause_filtered(ns,mono,*,invalid):
++        nonlocal desired_leader,last_status,stable_since,stable_count,stable_stamp
++        first=filtered_input_wait.enter(mono,invalid=invalid)
++        desired_leader=0.;leader_command(0.)
++        local=fresh_zero_sources(core,ns,mono)
++        publish_zero_hold(local['source'],local['scan_stamp'])
++        core.last_curve=(mono,0.,0.)
++        if first:
++            stable_since=None;stable_count=0;stable_stamp=None
++            rejoin_verifier.previous=None;post_follow_verifier.previous=None
++            if reference_wait.active:reference_wait.enter(mono,invalid=True)
++            if alignment_recovery.active:alignment_recovery.enter(mono,invalid=True)
++            if clearance_wait.active:clearance_wait.enter(mono,invalid=True)
++            log('filtered_input_wait_started',phase=phase)
++            print('[WAIT] EKF 오뎀 갱신 지연: 양쪽 속도0 대기. 새 EKF·스캔 정렬 확인 후 재개합니다.',flush=True)
++        if mono-last_status>=.1:
++            row=core.inputs.get('filtered')
++            info=dict(v=0.,w=0.,motion='STOP',reason='WAITING_FILTERED_INPUT',trial_phase=phase,
++                      filtered_wait_s=mono-filtered_input_wait.started,
++                      filtered_source_stamp_ns=row[0] if row else None,
++                      filtered_source_age_s=(ns-row[0])/1e9 if row else None,
++                      filtered_receive_age_s=mono-row[1] if row else None,
++                      stop_source_stamps=local['source_stamps'],source_stamp_ns=local['source'],scan_stamp_ns=local['scan_stamp'])
++            statuspub.publish(String(data=json.dumps(info)));log('filtered_input_wait',**info);last_status=mono
++    def filtered_ready(ns,mono,state):
++        nonlocal follow_started,planning_started,handoff_started,alignment_wait_started,map_alignment_wait_started
++        try:stamp=filtered_stamp(core,ns,mono)
++        except FilteredUnavailable:pause_filtered(ns,mono,invalid=True);return False
++        if not filtered_input_wait.active:return True
++        pause_filtered(ns,mono,invalid=False)
++        try:scene=core.scene(ns,mono,require_leader=False)
++        except ValueError as exc:
++            diagnostic=getattr(core,'last_alignment_failure',None)
++            if str(exc)=='FILTERED_ODOM_SCAN_BRACKET_MISSING' and diagnostic and diagnostic.get('kind') in {'WAITING_FOR_NEWER_POSE','POSE_HISTORY_GAP'}:
++                filtered_input_wait.enter(mono,invalid=True);return False
++            raise
++        zero=state.get('measured_rpm')==[0,0] and state.get('zero_feedback_samples',0)>=3
++        if not filtered_input_wait.ready(mono,{'filtered':stamp,'scan':scene['scan_stamp']},zero):return False
++        duration=filtered_input_wait.finish(mono)
++        if follow_started is not None:follow_started+=duration
++        if planning_started is not None:planning_started+=duration
++        if handoff_started is not None:handoff_started+=duration
++        if near_pause is not None and near_pause.active:near_pause.started+=duration
++        if reference_wait.active:reference_wait.started+=duration
++        if alignment_wait_started is not None:alignment_wait_started+=duration
++        if alignment_recovery.active:alignment_recovery.started+=duration
++        if map_alignment_wait_started is not None:map_alignment_wait_started+=duration
++        core.last_curve=(mono,0.,0.)
++        if clearance_wait.active:clearance_wait.started+=duration
++        log('filtered_input_wait_resumed',waited_s=duration,phase=phase)
++        print('[RESUME] 새 EKF·스캔 정렬·정지 확인. 중단했던 단계에서 재개합니다.',flush=True)
++        return True
++    def reobserve_clearance(ns,mono,state,row,scene):
++        nonlocal desired_leader,last_status,scan_failure_frames,stable_since,stable_count,stable_stamp
++        nonlocal follow_started,planning_started,handoff_started
++        if not clearance_wait.active and row['reason'] not in clearance_wait.triggers:return False
++        if not clearance_wait.accepts(row):return False
++        first=clearance_wait.enter(mono)
++        desired_leader=0.;leader_command(0.)
++        local=local_zero_hold(now(),time.monotonic())
++        if first:
++            stable_since=None;stable_count=0;stable_stamp=None
++            rejoin_verifier.previous=None;post_follow_verifier.previous=None
++            scan_failure_frames=list(raw_scan_ring)
++            log('clearance_wait_started',phase=phase,control=row,points=scene['points'].tolist())
++            print('[WAIT] 예상 이동 여유 부족: 양쪽 속도0 대기. 새 스캔으로 계속 재검사합니다.',flush=True)
++        # core.command remains a shadow probe while held. No probe velocity is
++        # published, and the ramp is reset before actual movement resumes.
++        if clearance_wait.observe(row,mono,state):
++            duration=clearance_wait.finish(mono)
++            if follow_started is not None:follow_started+=duration
++            if planning_started is not None:planning_started+=duration
++            if handoff_started is not None:handoff_started+=duration
++            if near_pause is not None and near_pause.active:near_pause.started+=duration
++            core.last_curve=(mono,0.,0.)
++            log('clearance_wait_resumed',phase=phase,waited_s=duration,clearance_m=row['clearance_m'],swept_clearance_m=row['swept_clearance_m'])
++            print('[RESUME] 새 스캔 여유·정지 확인. 다음 제어 주기부터 저속 재개합니다.',flush=True)
++            return True
++        if mono-last_status>=.1:
++            info=dict(v=0.,w=0.,motion='STOP',reason='WAITING_CLEARANCE_REOBSERVATION',trial_phase=phase,
++                      original_reason=row['reason'],clearance_m=row['clearance_m'],swept_clearance_m=row['swept_clearance_m'],
++                      clearance_wait_s=mono-clearance_wait.started,resume_clearance_m=clearance_wait.resume_clearance_m,
++                      source_stamp_ns=local['source'],scan_stamp_ns=local['scan_stamp'])
++            statuspub.publish(String(data=json.dumps(info)));log('clearance_wait',**info);last_status=mono
+         return True
+     def wait_for_post_arm_sources(source,scan_stamp,arm_ns,mono,sources):
+         log('post_arm_wait',arm_ros_ns=arm_ns,source_stamp_ns=source,
+@@ -299,7 +435,7 @@
+                 rclpy.spin_once(node,timeout_sec=0.)
+         mono=time.monotonic()
+         if leader_started and mono-last_leader>=.05:
+-            leader_command(0. if stopping or (a.seconds>0 and mono-started>a.seconds+4.) else desired_leader);last_leader=mono
++            leader_command(0. if stopping or (clearance_wait is not None and clearance_wait.active) or (filtered_input_wait is not None and filtered_input_wait.active) or (motor_status_wait is not None and (motor_status_wait.active or motor is None or not 0<=mono-motor[1]<=.3)) or (a.seconds>0 and mono-started>a.seconds+4.) else desired_leader);last_leader=mono
+     def call(client):
+         if not client.service_is_ready():raise Abort('SERVICE_UNAVAILABLE')
+         f=client.call_async(Trigger.Request());end=time.monotonic()+1.
+@@ -447,6 +583,8 @@
+             if a.seconds>0 and mono-armed>=a.seconds-.5:raise Abort('TRIAL_TIME_LIMIT')
+             if not graph_ok():raise Abort('GRAPH_CHANGED')
+             problem=motor_problem(motor,mono,a.seconds,continuous20=a.continuous20)
++            if problem=='MOTOR_STATUS_MISSING_OR_STALE' and motor_status_wait is not None:
++                pause_motor_status(ns,mono,invalid=True);continue
+             if problem:raise Abort(problem)
+             state=motor[0]
+             if state.get('armed') and state.get('epoch')!=epoch:raise Abort('SESSION_CHANGED')
+@@ -455,6 +593,11 @@
+             # Never validate new commands against that cached session.
+             if state.get('armed') is not True or state.get('epoch')!=epoch:
+                 continue
++            if motor_status_wait is not None and motor_status_wait.active:
++                pause_motor_status(ns,mono,invalid=False)
++                if not motor_status_wait.ready_status(ns,mono,state):continue
++                finish_motor_status_wait(mono)
++            if filtered_input_wait is not None and not filtered_ready(ns,mono,state):continue
+             if reference_wait is not None and not reference_ready(ns,mono,state):continue
+             try:scene=core.scene(ns,mono)
+             except ValueError as exc:
+@@ -467,6 +610,7 @@
+                 if alignment_wait_started is None:
+                     alignment_wait_started=mono;scan_failure_frames=list(raw_scan_ring);last_report_key=None
+                     desired_leader=0.;leader_command(0.)
++                    if clearance_wait is not None and clearance_wait.active:clearance_wait.enter(mono,invalid=True)
+                     print('['+phase+'] STOP: WAIT_FILTERED_SCAN_ALIGNMENT',flush=True)
+                 log('scan_alignment_wait',diagnostic=diagnostic,elapsed_s=mono-alignment_wait_started)
+                 if a.reference_wait:
+@@ -497,6 +641,7 @@
+                     if handoff_started is not None:handoff_started+=waited
+                     if near_pause is not None and near_pause.active:near_pause.started+=waited
+                     print('[RESUME] 새 스캔·오뎀 정렬 및 정지 확인. 같은 세션에서 재개합니다.',flush=True)
++                if clearance_wait is not None and clearance_wait.active:clearance_wait.started+=waited
+                 log('scan_alignment_recovered',waited_s=waited)
+                 alignment_wait_started=None
+             if phase=='REJOIN_BRAKE':
+@@ -582,6 +727,7 @@
+                     scan_failure_frames=list(raw_scan_ring)
+                     log('stopped_control',control=result,points=scene['points'].tolist())
+                     raise Abort('FRAME_CHECK_COMPLETE')
++            if clearance_wait is not None and reobserve_clearance(ns,mono,state,result,scene):continue
+             if near_pause is not None:
+                 result=near_pause.apply(result,mono,state)
+                 pause=result.get('near_return_pause',{})
+@@ -662,6 +808,17 @@
+             if not 0<=(sent-source)/1e9<=SOURCE_TIMEOUT_S:
+                 log('input_expired',control=result)
+                 raise Abort('INPUT_AGED_DURING_COMPUTE')
++            if motor_status_wait is not None:
++                latest_problem=motor_problem(motor,time.monotonic(),a.seconds,continuous20=a.continuous20)
++                if latest_problem=='MOTOR_STATUS_MISSING_OR_STALE':
++                    pause_motor_status(now(),time.monotonic(),invalid=True);continue
++                if latest_problem:raise Abort(latest_problem)
++                if motor[0].get('epoch')!=epoch:raise Abort('SESSION_CHANGED')
++                if motor[0].get('armed') is not True:raise Abort('UNEXPECTED_DISARM')
++            if filtered_input_wait is not None:
++                try:filtered_stamp(core,now(),time.monotonic())
++                except FilteredUnavailable:
++                    pause_filtered(now(),time.monotonic(),invalid=True);continue
+             obj=dict(version=3,controller=PROFILE,epoch=epoch,frame='follower/base_link',stamp_ns=sent,
+                      source_stamp_ns=source,scan_stamp_ns=scan_stamp,motion=result['motion'],v=result['v'],w=result['w'],
+                      clearance_m=result['clearance_m'],swept_clearance_m=result['swept_clearance_m'])
+@@ -746,6 +903,15 @@
+         result['reference_wait_enabled']=a.reference_wait
+         result['reference_wait_episodes']=reference_wait.episodes if reference_wait else 0
+         result['reference_wait_total_s']=reference_wait.total_wait_s+(time.monotonic()-reference_wait.started if reference_wait.active else 0.) if reference_wait else 0.
++        result['motor_status_wait_enabled']=motor_status_wait is not None
++        result['motor_status_wait_episodes']=motor_status_wait.episodes if motor_status_wait else 0
++        result['motor_status_wait_total_s']=(motor_status_wait.total_wait_s+(time.monotonic()-motor_status_wait.started if motor_status_wait.active else 0.)) if motor_status_wait else 0.
++        result['filtered_input_wait_enabled']=filtered_input_wait is not None
++        result['filtered_input_wait_episodes']=filtered_input_wait.episodes if filtered_input_wait else 0
++        result['filtered_input_wait_total_s']=(filtered_input_wait.total_wait_s+(time.monotonic()-filtered_input_wait.started if filtered_input_wait.active else 0.)) if filtered_input_wait else 0.
++        result['clearance_reobservation_wait_enabled']=clearance_wait is not None
++        result['clearance_reobservation_wait_episodes']=clearance_wait.episodes if clearance_wait else 0
++        result['clearance_reobservation_wait_total_s']=(clearance_wait.total_wait_s+(time.monotonic()-clearance_wait.started if clearance_wait.active else 0.)) if clearance_wait else 0.
+         result['session_unlimited']=a.seconds==0
+         result['clearance_policy_m']=PLAN_CLEARANCE_M if a.continuous20 else .3
+         result['stop_clearance_m']=STOP_CLEARANCE_M if a.continuous20 else .3

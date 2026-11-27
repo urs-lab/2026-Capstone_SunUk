@@ -1,0 +1,15 @@
+{
+  "profile": "CONTINUOUS10_STOP05_V1",
+  "planning_clearance_m": 0.1,
+  "stop_clearance_m": 0.05,
+  "hardware_executed": false,
+  "preserved_previous_profile": "/home/sunuk/nav2_follow_stabilization/evaluation3_optimization",
+  "driver_rpm_limit": 10,
+  "trial_seconds": 360,
+  "uncertainty_margins_preserved": true,
+  "tests": {
+    "policy_and_entrypoints": 9,
+    "controller_regression": 37,
+    "driver_faults_and_policy": 86
+  }
+}

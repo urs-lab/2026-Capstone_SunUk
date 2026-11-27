@@ -1,0 +1,31 @@
+{
+  "profile": "GOAL1_POSE_SCAN_WAIT_20261118",
+  "goal1_operator_tests_passed": 71,
+  "goal1_driver_previous_tests_passed": 25,
+  "goal2_tests_passed": 6,
+  "goal2_three_runs_independent_origin": true,
+  "goal3_callback_tests_passed": 3,
+  "goal3_success_sources_unchanged": true,
+  "physical_tests_run": false,
+  "leader_current_files_verified": false,
+  "leader_verification_blocker": "SSH socket: Operation not permitted in tool environment",
+  "goal1_max_linear_mps": 0.1,
+  "goal1_max_rpm": 15,
+  "goal2_forward_speed_mps": 0.1,
+  "goal2_distance_scale": 0.935594233291917,
+  "goal3_clearance_m": 0.1,
+  "goal3_stop_m": 0.05,
+  "driver_timeouts_s": 0.3,
+  "pose_scan_motion_time_limit_s": 0.4,
+  "pose_age_limit_s": 0.8,
+  "changed_behavior": "Map/scan and motor-status delays hold zero and resume after stable fresh input; no automatic rearm/fault clear",
+  "preserved_math_and_config": [
+    "nav2_follow_safety.py",
+    "smooth_tracked_pursuit.py",
+    "tracked_pursuit_candidate.py",
+    "follower_motor_candidate.py",
+    "local_avoidance_drive.py",
+    "follower_hardware.yaml",
+    "follower_odometry_calibration.json"
+  ]
+}

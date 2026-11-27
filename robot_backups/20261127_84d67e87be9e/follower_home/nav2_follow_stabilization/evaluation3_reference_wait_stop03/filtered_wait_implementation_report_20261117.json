@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-17",
+  "original_failure_analysis": "filtered_stale_recorded_analysis_20261117.json",
+  "fixed_failure_path": "reference/motor zero hold no longer requires a fresh filtered pose; only fresh raw/IMU/scan stamps support STOP",
+  "motion_rule": "filtered source and receipt <=0.6s, valid aligned scan history, >=3 progressing filtered/scan stamps, >=1s recovery stability and fresh zero motor feedback before same-stage resume",
+  "expiry_during_wait": false,
+  "original_measurement_stamps_preserved": true,
+  "plan_clearance_m": 0.1,
+  "stop_clearance_m": 0.03,
+  "unchanged_runtime_files": [
+    "driver/follower_drive_node.py",
+    "driver/local_avoidance_drive.py",
+    "driver/evaluation3_clearance_policy.py",
+    "candidate/follower_diagnostics/evaluation3_clearance_policy.py"
+  ],
+  "physical_test_executed": false,
+  "unknown": "Underlying EKF/DDS publication or delivery stall cause is not proven",
+  "tests": {
+    "filtered_input_wait_tests.log": 16,
+    "filtered_wait_operator_regression.log": 35,
+    "filtered_wait_driver_regression.log": 75,
+    "filtered_zero_contract_tests.log": 1,
+    "filtered_wait_legacy_regression.log": 17,
+    "filtered_wait_planning_phase_test.log": 1
+  },
+  "total_checks": 145,
+  "backup": "backups/before_filtered_wait_20261117",
+  "sources": {
+    "candidate/follower_diagnostics/run_local_avoidance_trial.py": "09f8b68f6b89947248c23c38f4345ba85938e6aa638809f2ce5e8204fb4f6bcb",
+    "candidate/follower_diagnostics/filtered_input_wait.py": "e2bf8134a1457d60fa736698a97f46511ab018c75729441d9a4ad9a7d00fb02b",
+    "test_filtered_input_wait.py": "070fc66f58b6f297825d357a99f08e9dbdfaf749c899283af9250e1b2a95162f",
+    "test_reference_wait_operator.py": "352284681db75bd932c4496ff20c52b875c830f9a7a5131277c0781af1090a3b",
+    "driver/test_filtered_zero_contract.py": "2484e7ebc372f9f247ac2cb5af3bd8b8b1568dc49354c4f7ba0290b98de06858"
+  }
+}

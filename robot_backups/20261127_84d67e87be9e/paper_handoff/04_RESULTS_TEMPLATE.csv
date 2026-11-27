@@ -1,0 +1,10 @@
+﻿goal,trial_id,code_variant,video_file,actual_distance_m,front_center_error_x_m,front_center_error_y_m,inside_200mm_circle,mean_cross_track_error_m,max_cross_track_error_m,min_body_gap_m,min_obstacle_clearance_m,contacts,planning_time_s,input_wait_time_s,motion_time_s,post_rejoin_distance_m,physical_pass,notes
+goal1,1,,,,,,,,,,,,,,,,,
+goal1,2,,,,,,,,,,,,,,,,,
+goal1,3,,,,,,,,,,,,,,,,,
+goal2,1,,,,,,,,,,,,,,,,,
+goal2,2,,,,,,,,,,,,,,,,,
+goal2,3,,,,,,,,,,,,,,,,,
+goal3,1,,,,,,,,,,,,,,,,,
+goal3,2,,,,,,,,,,,,,,,,,
+goal3,3,,,,,,,,,,,,,,,,,

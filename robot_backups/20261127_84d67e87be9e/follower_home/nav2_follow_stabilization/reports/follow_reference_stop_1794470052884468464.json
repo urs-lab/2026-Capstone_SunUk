@@ -1,0 +1,23 @@
+{
+  "log": "/home/sunuk/nav2_follow_stabilization/candidate/follower_diagnostics/logs/local_avoidance_trial_1794470052884468464.jsonl",
+  "reason": "FOLLOW_REFERENCE_STALE_OR_MISSING",
+  "armed_duration_s": 178.221421317,
+  "distinct_path_source_stamps": 1487,
+  "last_control": {
+    "ros_ns": 1794470243538242071,
+    "v": 0.04,
+    "w": -0.006122227005944995,
+    "source_stamps": {
+      "follower_map": 1794470243452100458,
+      "scan": 1794470243330694000,
+      "leader": 1794470242837234510,
+      "path": 1794470242837234510
+    }
+  },
+  "path_age_used_at_exception_s": 0.808227629,
+  "source_timeout_s": 0.8,
+  "last_leader_pose_receive_ns": 1794470243628454235,
+  "last_leader_pose_age_at_receive_s": 0.385159269,
+  "conclusion": "Paths updated continuously; the last recorded path reference crossed the freshness bound. Goal boundaries are not recorded here.",
+  "runtime_changed": false
+}

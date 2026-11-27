@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-17",
+  "change": "operator motor-status reception loss becomes unbounded zero-speed wait in reference-wait mode",
+  "driver_changed": false,
+  "auto_rearm": false,
+  "hardware_watchdogs_preserved": true,
+  "requires_original_status_stamp_and_progressing_feedback": true,
+  "resume_stability_s": 1.0,
+  "physical_test_executed": false,
+  "backup": "backups/before_motor_status_wait_20261117",
+  "tests": {
+    "operator_wait_and_existing_reference_alignment": 15,
+    "status_freshness_feedback_zero_units": 3,
+    "legacy_operator_and_local_scan_regression": 17
+  },
+  "sources": {
+    "candidate/follower_diagnostics/run_local_avoidance_trial.py": "21917a4925ed5f0d99bb996c87f8a8aa75810429446a52c27a1edb8593d11c09",
+    "candidate/follower_diagnostics/motor_status_wait.py": "0dc90cae0e5a3bd0b5ffba76ed40ffa549f81776ddfaf440ec2605719e75d9fb",
+    "test_motor_status_wait.py": "bf8f88be3acd1dd28de5ebbaa348eabaf67bc8dced629ba2670c6e48a2412a89",
+    "test_reference_wait_operator.py": "b80d8f85ec514ae89352b7664a4c9322c490beebb251e6ec189d46a69082e00c"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "requested_archive_date": "2026-11-27",
+  "prepared_host_wall_time": "2026-11-27T13:04:00.916124+09:00",
+  "leader_archive_sha256": "cb42234a1191b336a12c81cd39a4b25dd3a7403b5008252e37dc885de2bf1136",
+  "leader_collection_metadata": {
+    "collected_at": "2026-11-19T14:22:14.445566+09:00",
+    "hostname": "ubuntu",
+    "machine": "aarch64",
+    "missing_roots": [
+      "convoy_view.rviz"
+    ],
+    "read_only": true
+  },
+  "follower_source_origin": "Current shared follower workspace /home/sunuk; source snapshot, no ROS/process mutation",
+  "intended_repository": "https://github.com/urs-lab/2026-Capstone_SunUk",
+  "timestamp_caution": "User-request date and collection host clock may differ; preserve recorded timestamps, do not silently relabel historical logs.",
+  "excluded_file_types": [
+    "ROS build/install",
+    "git internals",
+    "private keys/tokens/env files",
+    "raw logs and bags from source tree",
+    "large generated scene files"
+  ],
+  "raw_logs_archive": "raw_trial_logs_local_20261127.tar.gz (local only; contains original logs for indexed trials)",
+  "active_runtime_unchanged": true,
+  "formal_demo_results_provided": false,
+  "excluded_items": [
+    {
+      "path": "convoy_udp_only_pilot.xml",
+      "reason": "missing"
+    }
+  ]
+}

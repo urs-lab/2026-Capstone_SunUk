@@ -1,0 +1,15 @@
+{
+  "latest_trial": "local_avoidance_trial_1794992152601245435.jsonl",
+  "confirmed_preflight_reason": "ROS_GRAPH_NOT_READY",
+  "arm_requested": false,
+  "amcl_latest_managed_nodes_active_ns": 1794992053536634918,
+  "amcl_initial_pose_applied_ns": 1794992138914945029,
+  "observation": "Latest startup succeeded; current preflight is blocked by endpoint/name/count checks. Exact graph item was not logged by previous operator version.",
+  "diagnostic_change": "preflight_graph event and GRAPH_DIAGNOSTIC output only; no new motion conditions or limits",
+  "required_live_audit": "check_demo_ready.py",
+  "repository_heads": {
+    "goal1": "b50321217157ebafbc302c7d028ddb7c0bb24591",
+    "goal2": "ee4538e73b25ed085655c47ea1780c955745893b",
+    "goal3": "c73ac149cd30e003530ff3834de93a8c19d2873e"
+  }
+}

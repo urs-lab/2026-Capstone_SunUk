@@ -1,0 +1,1307 @@
+{
+  "files": 324,
+  "different": [
+    {
+      "file": "follower_drive_node.py",
+      "identical": false
+    }
+  ],
+  "rows": [
+    {
+      "file": "adjust_initial_pose.py",
+      "identical": true
+    },
+    {
+      "file": "analyze_frame_round_trip.py",
+      "identical": true
+    },
+    {
+      "file": "analyze_leader_turn_bag.py",
+      "identical": true
+    },
+    {
+      "file": "analyze_lidar_packets.py",
+      "identical": true
+    },
+    {
+      "file": "analyze_local_scan_alignment.py",
+      "identical": true
+    },
+    {
+      "file": "analyze_position_trace.py",
+      "identical": true
+    },
+    {
+      "file": "analyze_post_rejoin_tracking.py",
+      "identical": true
+    },
+    {
+      "file": "analyze_scan_anomalies.py",
+      "identical": true
+    },
+    {
+      "file": "analyze_yaw_scan_pair.py",
+      "identical": true
+    },
+    {
+      "file": "apf_case3_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "apf_guard_connection.py",
+      "identical": true
+    },
+    {
+      "file": "apf_pivot_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "apf_pivot_stage_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "apf_rejoin_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "audit_md200t_settings.py",
+      "identical": true
+    },
+    {
+      "file": "baseline_manifest_20261102.json",
+      "identical": true
+    },
+    {
+      "file": "build_avoidance_comparison_report.py",
+      "identical": true
+    },
+    {
+      "file": "build_left_simulation_report.py",
+      "identical": true
+    },
+    {
+      "file": "capture_scan_anomalies.py",
+      "identical": true
+    },
+    {
+      "file": "capture_shared_map_reference.py",
+      "identical": true
+    },
+    {
+      "file": "check_apf_pivot_memory.py",
+      "identical": true
+    },
+    {
+      "file": "check_clock_offset.py",
+      "identical": true
+    },
+    {
+      "file": "check_convoy_chain_ros.py",
+      "identical": true
+    },
+    {
+      "file": "check_convoy_rx.py",
+      "identical": true
+    },
+    {
+      "file": "check_drive_node_ros.py",
+      "identical": true
+    },
+    {
+      "file": "check_follow_start.py",
+      "identical": true
+    },
+    {
+      "file": "check_gateway_startup.py",
+      "identical": true
+    },
+    {
+      "file": "check_guard_gateway_ros.py",
+      "identical": true
+    },
+    {
+      "file": "check_leader_bridge_latest_ros.py",
+      "identical": true
+    },
+    {
+      "file": "check_local_avoidance_memory.py",
+      "identical": true
+    },
+    {
+      "file": "check_motor_mock_ros.py",
+      "identical": true
+    },
+    {
+      "file": "check_obstacle_preview_ros.py",
+      "identical": true
+    },
+    {
+      "file": "check_position_ekf_live.py",
+      "identical": true
+    },
+    {
+      "file": "check_pursuit_preview_ros.py",
+      "identical": true
+    },
+    {
+      "file": "check_scan_turn_offline.py",
+      "identical": true
+    },
+    {
+      "file": "check_scan_turn_point_plane_offline.py",
+      "identical": true
+    },
+    {
+      "file": "check_source_budget.py",
+      "identical": true
+    },
+    {
+      "file": "check_stamped_guard_ros.py",
+      "identical": true
+    },
+    {
+      "file": "check_temporary_detour.py",
+      "identical": true
+    },
+    {
+      "file": "check_timing_pipeline.py",
+      "identical": true
+    },
+    {
+      "file": "check_udp_ros_delivery.py",
+      "identical": true
+    },
+    {
+      "file": "compare_avoidance_strategies.py",
+      "identical": true
+    },
+    {
+      "file": "compare_fresh_ekf.py",
+      "identical": true
+    },
+    {
+      "file": "compare_input_delivery.py",
+      "identical": true
+    },
+    {
+      "file": "compare_leader_turn_ekf.py",
+      "identical": true
+    },
+    {
+      "file": "continuous_avoidance_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "continuous_local_core.py",
+      "identical": true
+    },
+    {
+      "file": "continuous_near_return_pause.py",
+      "identical": true
+    },
+    {
+      "file": "convoy_preview_preflight.py",
+      "identical": true
+    },
+    {
+      "file": "convoy_source_time.py",
+      "identical": true
+    },
+    {
+      "file": "convoy_tmux.py",
+      "identical": true
+    },
+    {
+      "file": "directed_path_tracker.py",
+      "identical": true
+    },
+    {
+      "file": "download_mdrobot_reference.py",
+      "identical": true
+    },
+    {
+      "file": "dynamic_box_detection.py",
+      "identical": true
+    },
+    {
+      "file": "fault_snapshot.py",
+      "identical": true
+    },
+    {
+      "file": "follow_input_diagnostics.py",
+      "identical": true
+    },
+    {
+      "file": "follow_input_readiness.py",
+      "identical": true
+    },
+    {
+      "file": "follow_reference_recovery.py",
+      "identical": true
+    },
+    {
+      "file": "follower_comparison_observer.py",
+      "identical": true
+    },
+    {
+      "file": "follower_convoy_apf_candidate.launch.py",
+      "identical": true
+    },
+    {
+      "file": "follower_convoy_preview.launch.py",
+      "identical": true
+    },
+    {
+      "file": "follower_drive_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "follower_drive_node.py",
+      "identical": false
+    },
+    {
+      "file": "follower_ekf_comparison_observer.py",
+      "identical": true
+    },
+    {
+      "file": "follower_ekf_position_candidate.yaml",
+      "identical": true
+    },
+    {
+      "file": "follower_feedback_trace.py",
+      "identical": true
+    },
+    {
+      "file": "follower_ground_pulse.py",
+      "identical": true
+    },
+    {
+      "file": "follower_guard_gateway.py",
+      "identical": true
+    },
+    {
+      "file": "follower_hardware.yaml",
+      "identical": true
+    },
+    {
+      "file": "follower_keyboard_return.py",
+      "identical": true
+    },
+    {
+      "file": "follower_lifted_diagnostic.py",
+      "identical": true
+    },
+    {
+      "file": "follower_lifted_pulse.py",
+      "identical": true
+    },
+    {
+      "file": "follower_lifted_turn.py",
+      "identical": true
+    },
+    {
+      "file": "follower_localization.launch.py",
+      "identical": true
+    },
+    {
+      "file": "follower_map_selection.py",
+      "identical": true
+    },
+    {
+      "file": "follower_measurement_session.py",
+      "identical": true
+    },
+    {
+      "file": "follower_motor_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "follower_motor_locked.py",
+      "identical": true
+    },
+    {
+      "file": "follower_motor_mock.py",
+      "identical": true
+    },
+    {
+      "file": "follower_motor_port.py",
+      "identical": true
+    },
+    {
+      "file": "follower_motor_session.py",
+      "identical": true
+    },
+    {
+      "file": "follower_observation.launch.py",
+      "identical": true
+    },
+    {
+      "file": "follower_obstacle_preview.py",
+      "identical": true
+    },
+    {
+      "file": "follower_odometry_calibration.json",
+      "identical": true
+    },
+    {
+      "file": "follower_position_ekf_test.yaml",
+      "identical": true
+    },
+    {
+      "file": "follower_position_fixed_lidar.launch.py",
+      "identical": true
+    },
+    {
+      "file": "follower_position_observation.launch.py",
+      "identical": true
+    },
+    {
+      "file": "follower_position_preview.py",
+      "identical": true
+    },
+    {
+      "file": "follower_pulse_odom.py",
+      "identical": true
+    },
+    {
+      "file": "follower_pursuit_preview.py",
+      "identical": true
+    },
+    {
+      "file": "follower_remote_qos.py",
+      "identical": true
+    },
+    {
+      "file": "follower_single_wheel_diagnostic.py",
+      "identical": true
+    },
+    {
+      "file": "follower_stamped_preview.py",
+      "identical": true
+    },
+    {
+      "file": "follower_temporary_detour_preview.py",
+      "identical": true
+    },
+    {
+      "file": "follower_turn_measurement_session.py",
+      "identical": true
+    },
+    {
+      "file": "follower_yaw_diagnostics.py",
+      "identical": true
+    },
+    {
+      "file": "forward_obstacle_trigger.py",
+      "identical": true
+    },
+    {
+      "file": "gentle_pivot_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "inspect_last_rejoin.py",
+      "identical": true
+    },
+    {
+      "file": "inspect_near_scan.py",
+      "identical": true
+    },
+    {
+      "file": "inspect_wheel_position.py",
+      "identical": true
+    },
+    {
+      "file": "integration_async_env.bash",
+      "identical": true
+    },
+    {
+      "file": "leader_amcl_current.yaml",
+      "identical": true
+    },
+    {
+      "file": "leader_bag_best_effort.yaml",
+      "identical": true
+    },
+    {
+      "file": "leader_bridge_current.py",
+      "identical": true
+    },
+    {
+      "file": "leader_bridge_latest_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "leader_controller_current.yaml",
+      "identical": true
+    },
+    {
+      "file": "leader_controller_geometry_candidate.yaml",
+      "identical": true
+    },
+    {
+      "file": "leader_ekf_current.yaml",
+      "identical": true
+    },
+    {
+      "file": "leader_ekf_wheel_yaw_candidate.yaml",
+      "identical": true
+    },
+    {
+      "file": "leader_imu_current.py",
+      "identical": true
+    },
+    {
+      "file": "leader_imu_no_deadband_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "leader_md200t_base_current.py",
+      "identical": true
+    },
+    {
+      "file": "leader_md200t_polling_covariance_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "leader_md200t_polling_current.py",
+      "identical": true
+    },
+    {
+      "file": "leader_md200t_polling_split_scale_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "leader_nav2_convoy.launch.py",
+      "identical": true
+    },
+    {
+      "file": "leader_nav2_current.yaml",
+      "identical": true
+    },
+    {
+      "file": "leader_nav_015_base_current.launch.py",
+      "identical": true
+    },
+    {
+      "file": "leader_nav_geometry_candidate.launch.py",
+      "identical": true
+    },
+    {
+      "file": "leader_nav_yaw_calibrated.launch.py",
+      "identical": true
+    },
+    {
+      "file": "leader_short_forward_trial.py",
+      "identical": true
+    },
+    {
+      "file": "live_follow_reference.py",
+      "identical": true
+    },
+    {
+      "file": "live_rejoin_verification.py",
+      "identical": true
+    },
+    {
+      "file": "local_avoidance_drive.py",
+      "identical": true
+    },
+    {
+      "file": "local_avoidance_limits.py",
+      "identical": true
+    },
+    {
+      "file": "local_near_return_pause.py",
+      "identical": true
+    },
+    {
+      "file": "local_reference_diagnostics.py",
+      "identical": true
+    },
+    {
+      "file": "local_scan_evidence.py",
+      "identical": true
+    },
+    {
+      "file": "local_stop_turn_go.py",
+      "identical": true
+    },
+    {
+      "file": "local_trial_preflight.py",
+      "identical": true
+    },
+    {
+      "file": "map_rejoin_guidance.py",
+      "identical": true
+    },
+    {
+      "file": "motor_status_receiver.py",
+      "identical": true
+    },
+    {
+      "file": "nav2_convoy_gate.py",
+      "identical": true
+    },
+    {
+      "file": "nav2_convoy_gate_core.py",
+      "identical": true
+    },
+    {
+      "file": "nav2_convoy_launch_core.py",
+      "identical": true
+    },
+    {
+      "file": "nav2_follow_mode.py",
+      "identical": true
+    },
+    {
+      "file": "nav2_follow_safety.py",
+      "identical": true
+    },
+    {
+      "file": "nav2_goal_state.py",
+      "identical": true
+    },
+    {
+      "file": "optimize_recorded_left_detour.py",
+      "identical": true
+    },
+    {
+      "file": "position_profile_contract.py",
+      "identical": true
+    },
+    {
+      "file": "read_md200t_faults.py",
+      "identical": true
+    },
+    {
+      "file": "read_md200t_settings.py",
+      "identical": true
+    },
+    {
+      "file": "real_follower_bridge_tf_candidate.before_latest_input_20261031.py",
+      "identical": true
+    },
+    {
+      "file": "record_bridge_delivery.py",
+      "identical": true
+    },
+    {
+      "file": "record_odom_diagnostic.py",
+      "identical": true
+    },
+    {
+      "file": "replay_apf_pivot.py",
+      "identical": true
+    },
+    {
+      "file": "replay_ekf_diagnostic.py",
+      "identical": true
+    },
+    {
+      "file": "replay_local_avoidance_timing.py",
+      "identical": true
+    },
+    {
+      "file": "replay_recorded_detour.py",
+      "identical": true
+    },
+    {
+      "file": "run_follower_distance_trial.py",
+      "identical": true
+    },
+    {
+      "file": "run_follower_yaw_trial.py",
+      "identical": true
+    },
+    {
+      "file": "run_guarded_follow_trial.py",
+      "identical": true
+    },
+    {
+      "file": "run_joint_follow_trial.py",
+      "identical": true
+    },
+    {
+      "file": "run_leader_distance_trial.py",
+      "identical": true
+    },
+    {
+      "file": "run_leader_yaw_trial.py",
+      "identical": true
+    },
+    {
+      "file": "run_lidar_sdk_trace.py",
+      "identical": true
+    },
+    {
+      "file": "run_local_avoidance_trial.py",
+      "identical": true
+    },
+    {
+      "file": "scan_alignment_recovery.py",
+      "identical": true
+    },
+    {
+      "file": "search_recorded_detour.py",
+      "identical": true
+    },
+    {
+      "file": "sensor_executor.py",
+      "identical": true
+    },
+    {
+      "file": "simulate_apf_rejoin_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "simulate_motor_publish_stalls.py",
+      "identical": true
+    },
+    {
+      "file": "simulate_nav2_follow_integration.py",
+      "identical": true
+    },
+    {
+      "file": "simulate_temporary_detour.py",
+      "identical": true
+    },
+    {
+      "file": "smooth_tracked_pursuit.py",
+      "identical": true
+    },
+    {
+      "file": "start_leader_nav2.bash",
+      "identical": true
+    },
+    {
+      "file": "start_lidar_fixed_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "stationary_planning_retry.py",
+      "identical": true
+    },
+    {
+      "file": "stress_stop_turn_go.py",
+      "identical": true
+    },
+    {
+      "file": "temporary_detour_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_actual_left_detour.py",
+      "identical": true
+    },
+    {
+      "file": "test_adjust_initial_pose.py",
+      "identical": true
+    },
+    {
+      "file": "test_apf_case3_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_apf_guard_connection.py",
+      "identical": true
+    },
+    {
+      "file": "test_apf_initial_space.py",
+      "identical": true
+    },
+    {
+      "file": "test_apf_near_pause_memory.py",
+      "identical": true
+    },
+    {
+      "file": "test_apf_pivot_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_apf_rejoin_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_apf_stage_transition.py",
+      "identical": true
+    },
+    {
+      "file": "test_apf_stopped_scene_memory.py",
+      "identical": true
+    },
+    {
+      "file": "test_audit_md200t_settings.py",
+      "identical": true
+    },
+    {
+      "file": "test_avoidance_strategy_comparison.py",
+      "identical": true
+    },
+    {
+      "file": "test_comparison_observer.py",
+      "identical": true
+    },
+    {
+      "file": "test_continuous20.py",
+      "identical": true
+    },
+    {
+      "file": "test_continuous20_memory.py",
+      "identical": true
+    },
+    {
+      "file": "test_continuous_follow_tracking.py",
+      "identical": true
+    },
+    {
+      "file": "test_continuous_near_return_pause.py",
+      "identical": true
+    },
+    {
+      "file": "test_continuous_scan_recovery.py",
+      "identical": true
+    },
+    {
+      "file": "test_continuous_wheel_ramp.py",
+      "identical": true
+    },
+    {
+      "file": "test_convoy_preview_launch.py",
+      "identical": true
+    },
+    {
+      "file": "test_convoy_preview_preflight.py",
+      "identical": true
+    },
+    {
+      "file": "test_convoy_tmux.py",
+      "identical": true
+    },
+    {
+      "file": "test_coordinated_simulation.py",
+      "identical": true
+    },
+    {
+      "file": "test_curve_alignment_phases.py",
+      "identical": true
+    },
+    {
+      "file": "test_detour_path_observation.py",
+      "identical": true
+    },
+    {
+      "file": "test_detour_plan_refresh.py",
+      "identical": true
+    },
+    {
+      "file": "test_detour_shadow.py",
+      "identical": true
+    },
+    {
+      "file": "test_directed_path_tracker.py",
+      "identical": true
+    },
+    {
+      "file": "test_distance_only_contract.py",
+      "identical": true
+    },
+    {
+      "file": "test_drive_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_drive_node_cli.py",
+      "identical": true
+    },
+    {
+      "file": "test_dynamic_box.py",
+      "identical": true
+    },
+    {
+      "file": "test_ekf_comparison_observer.py",
+      "identical": true
+    },
+    {
+      "file": "test_ekf_replay.py",
+      "identical": true
+    },
+    {
+      "file": "test_extended_follow_speed.py",
+      "identical": true
+    },
+    {
+      "file": "test_fault_snapshot.py",
+      "identical": true
+    },
+    {
+      "file": "test_feedback_trace.py",
+      "identical": true
+    },
+    {
+      "file": "test_filtered_local_pose.py",
+      "identical": true
+    },
+    {
+      "file": "test_fixed_lidar_launch.py",
+      "identical": true
+    },
+    {
+      "file": "test_follow_alignment_audit.py",
+      "identical": true
+    },
+    {
+      "file": "test_follow_driver_profile.py",
+      "identical": true
+    },
+    {
+      "file": "test_follow_input_readiness.py",
+      "identical": true
+    },
+    {
+      "file": "test_follow_only_operator.py",
+      "identical": true
+    },
+    {
+      "file": "test_follow_reference_recovery.py",
+      "identical": true
+    },
+    {
+      "file": "test_follow_start_report.py",
+      "identical": true
+    },
+    {
+      "file": "test_follow_trial_policy.py",
+      "identical": true
+    },
+    {
+      "file": "test_follower_distance_trial.py",
+      "identical": true
+    },
+    {
+      "file": "test_follower_keyboard_return.py",
+      "identical": true
+    },
+    {
+      "file": "test_follower_linear_calibration.py",
+      "identical": true
+    },
+    {
+      "file": "test_follower_yaw_diagnostics.py",
+      "identical": true
+    },
+    {
+      "file": "test_follower_yaw_trial.py",
+      "identical": true
+    },
+    {
+      "file": "test_forward_obstacle_trigger.py",
+      "identical": true
+    },
+    {
+      "file": "test_forward_side_repair.py",
+      "identical": true
+    },
+    {
+      "file": "test_frame_check_operator.py",
+      "identical": true
+    },
+    {
+      "file": "test_fresh_comparison.py",
+      "identical": true
+    },
+    {
+      "file": "test_gap_recovery_model.py",
+      "identical": true
+    },
+    {
+      "file": "test_gateway_discovery.py",
+      "identical": true
+    },
+    {
+      "file": "test_gentle_pivot.py",
+      "identical": true
+    },
+    {
+      "file": "test_gentle_side_adjustment.py",
+      "identical": true
+    },
+    {
+      "file": "test_guard_gateway.py",
+      "identical": true
+    },
+    {
+      "file": "test_guard_status.py",
+      "identical": true
+    },
+    {
+      "file": "test_joint_follow_trial.py",
+      "identical": true
+    },
+    {
+      "file": "test_joint_operator_flow.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_bridge_latest.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_distance_trial.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_ekf_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_geometry_launch.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_imu_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_short_trial.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_split_scale.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_yaw_covariance.py",
+      "identical": true
+    },
+    {
+      "file": "test_leader_yaw_trial.py",
+      "identical": true
+    },
+    {
+      "file": "test_lidar_packets.py",
+      "identical": true
+    },
+    {
+      "file": "test_lifted_diagnostic.py",
+      "identical": true
+    },
+    {
+      "file": "test_lifted_pulse.py",
+      "identical": true
+    },
+    {
+      "file": "test_lifted_turn.py",
+      "identical": true
+    },
+    {
+      "file": "test_live_follow_reference.py",
+      "identical": true
+    },
+    {
+      "file": "test_live_rejoin_verification.py",
+      "identical": true
+    },
+    {
+      "file": "test_local_avoidance_drive.py",
+      "identical": true
+    },
+    {
+      "file": "test_local_avoidance_operator.py",
+      "identical": true
+    },
+    {
+      "file": "test_local_near_return_pause.py",
+      "identical": true
+    },
+    {
+      "file": "test_local_reference_diagnostics.py",
+      "identical": true
+    },
+    {
+      "file": "test_local_scan_evidence.py",
+      "identical": true
+    },
+    {
+      "file": "test_local_stop_turn_go.py",
+      "identical": true
+    },
+    {
+      "file": "test_local_trial_preflight.py",
+      "identical": true
+    },
+    {
+      "file": "test_map_rejoin_guidance.py",
+      "identical": true
+    },
+    {
+      "file": "test_md200t_faults.py",
+      "identical": true
+    },
+    {
+      "file": "test_md200t_settings.py",
+      "identical": true
+    },
+    {
+      "file": "test_motor_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_motor_io_diagnostics.py",
+      "identical": true
+    },
+    {
+      "file": "test_motor_locked.py",
+      "identical": true
+    },
+    {
+      "file": "test_motor_mock.py",
+      "identical": true
+    },
+    {
+      "file": "test_motor_port.py",
+      "identical": true
+    },
+    {
+      "file": "test_motor_session.py",
+      "identical": true
+    },
+    {
+      "file": "test_motor_status_receiver.py",
+      "identical": true
+    },
+    {
+      "file": "test_nav2_cli_contract.py",
+      "identical": true
+    },
+    {
+      "file": "test_nav2_convoy_gate_core.py",
+      "identical": true
+    },
+    {
+      "file": "test_nav2_convoy_launch.py",
+      "identical": true
+    },
+    {
+      "file": "test_nav2_convoy_launch_core.py",
+      "identical": true
+    },
+    {
+      "file": "test_nav2_follow_mode.py",
+      "identical": true
+    },
+    {
+      "file": "test_nav2_follow_safety.py",
+      "identical": true
+    },
+    {
+      "file": "test_nav2_goal_path.py",
+      "identical": true
+    },
+    {
+      "file": "test_nav2_goal_state.py",
+      "identical": true
+    },
+    {
+      "file": "test_obstacle_preview.py",
+      "identical": true
+    },
+    {
+      "file": "test_obstacle_trial_contract.py",
+      "identical": true
+    },
+    {
+      "file": "test_odom_diagnostic.py",
+      "identical": true
+    },
+    {
+      "file": "test_outward_heading_hold.py",
+      "identical": true
+    },
+    {
+      "file": "test_pass_height_hold.py",
+      "identical": true
+    },
+    {
+      "file": "test_position_analysis.py",
+      "identical": true
+    },
+    {
+      "file": "test_position_ekf_test.py",
+      "identical": true
+    },
+    {
+      "file": "test_position_exception_guard.py",
+      "identical": true
+    },
+    {
+      "file": "test_position_preview.py",
+      "identical": true
+    },
+    {
+      "file": "test_position_profile.py",
+      "identical": true
+    },
+    {
+      "file": "test_pulse_odom.py",
+      "identical": true
+    },
+    {
+      "file": "test_pursuit_geometry.py",
+      "identical": true
+    },
+    {
+      "file": "test_pursuit_preview.py",
+      "identical": true
+    },
+    {
+      "file": "test_rejoin_to_pursuit_memory.py",
+      "identical": true
+    },
+    {
+      "file": "test_return_frame_yaw.py",
+      "identical": true
+    },
+    {
+      "file": "test_ros_sensor_executor.py",
+      "identical": true
+    },
+    {
+      "file": "test_scan_alignment_recovery.py",
+      "identical": true
+    },
+    {
+      "file": "test_scan_anomaly_analysis.py",
+      "identical": true
+    },
+    {
+      "file": "test_scan_anomaly_shadow.py",
+      "identical": true
+    },
+    {
+      "file": "test_scan_turn_offline.py",
+      "identical": true
+    },
+    {
+      "file": "test_scan_turn_point_plane.py",
+      "identical": true
+    },
+    {
+      "file": "test_single_wheel_diagnostic.py",
+      "identical": true
+    },
+    {
+      "file": "test_single_write_serial.py",
+      "identical": true
+    },
+    {
+      "file": "test_smooth_tracked_pursuit.py",
+      "identical": true
+    },
+    {
+      "file": "test_source_budget.py",
+      "identical": true
+    },
+    {
+      "file": "test_stamped_preview.py",
+      "identical": true
+    },
+    {
+      "file": "test_stationary_planning_retry.py",
+      "identical": true
+    },
+    {
+      "file": "test_temporary_detour_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_temporary_detour_control.py",
+      "identical": true
+    },
+    {
+      "file": "test_timing_pipeline.py",
+      "identical": true
+    },
+    {
+      "file": "test_tracked_pursuit_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "test_turn_measurement.py",
+      "identical": true
+    },
+    {
+      "file": "test_udp_ros_delivery.py",
+      "identical": true
+    },
+    {
+      "file": "test_unlimited_follow_session.py",
+      "identical": true
+    },
+    {
+      "file": "test_wheel_position.py",
+      "identical": true
+    },
+    {
+      "file": "test_wireless_power_profile.py",
+      "identical": true
+    },
+    {
+      "file": "test_zero_reply_hold.py",
+      "identical": true
+    },
+    {
+      "file": "test_zero_stop_reply_retry.py",
+      "identical": true
+    },
+    {
+      "file": "tracked_pursuit_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "verify_avoidance_candidate.py",
+      "identical": true
+    },
+    {
+      "file": "verify_gentle_pivot.py",
+      "identical": true
+    },
+    {
+      "file": "watch_apf_case3.py",
+      "identical": true
+    },
+    {
+      "file": "watch_apf_pivot_shadow.py",
+      "identical": true
+    },
+    {
+      "file": "watch_directed_follow_shadow.py",
+      "identical": true
+    },
+    {
+      "file": "watch_follow_alignment.py",
+      "identical": true
+    },
+    {
+      "file": "watch_follower_yaw.py",
+      "identical": true
+    },
+    {
+      "file": "watch_obstacle_events.py",
+      "identical": true
+    },
+    {
+      "file": "watch_scan_anomaly_shadow.py",
+      "identical": true
+    },
+    {
+      "file": "watch_temporary_detour_shadow.py",
+      "identical": true
+    },
+    {
+      "file": "wireless_power_profile.py",
+      "identical": true
+    }
+  ]
+}

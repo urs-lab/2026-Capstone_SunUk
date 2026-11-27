@@ -1,0 +1,18 @@
+{
+  "checks": [
+    {
+      "backup_file": "leader_nav_yaw_calibrated.launch.py",
+      "reported_remote_sha256": "e7ac7e7a3f71371e187c878c831df12d2a2e1a6fb28a88e75591af9075f9b1f8",
+      "matches_preserved_target1_backup": true
+    },
+    {
+      "backup_file": "leader_nav2_current.yaml",
+      "reported_remote_sha256": "316fa27a8cf6afe3668f7057c5f8b9a5580e7360723c8831348095406346654c",
+      "matches_preserved_target1_backup": true
+    }
+  ],
+  "remote_yaml_path": "/home/sunuk/leader_diagnostics/nav2_015_rotation_shim_check.yaml",
+  "file_restore_required_for_these_two_files": false,
+  "scope": "only these two files verified; remote dependency files and active node states not verified",
+  "remote_modification_performed": false
+}

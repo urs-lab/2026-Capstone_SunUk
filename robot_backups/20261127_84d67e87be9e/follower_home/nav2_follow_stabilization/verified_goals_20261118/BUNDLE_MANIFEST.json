@@ -1,0 +1,28 @@
+{
+  "created": "2026-11-18",
+  "physical_motion_started": false,
+  "files": {
+    "start_goal1_driver.bash": "bdcaefbd35da57935310f74583320f621d90cbd8e0a6e000c189783340a2490d",
+    "start_follower_unicast.bash": "34cdbf5dad35b62afb1495999d17e434f8a99ce2ca624bdfcc4786b4a36cc8e6",
+    "capture_goal3_reference.bash": "748787f21d75b2c2fd712e153c330aa6f1081b54e0a36ce924c50fef9eed0ed8",
+    "start_goal1_follow.bash": "930d581345d9e18f6685ce75b4379b4e39dcf68a4d7a27757c1d5cc144e6b585",
+    "start_follower_localization.bash": "25479e5fb97ff8114a3fb0a374491af0c34d4a8a82eda09f5787f2be753e1010",
+    "goal3_callback_tests.log": "df929de0ac24d3b8626fd6a878b5b3dff0d915ef854dcd1e63b86c6b22b8b502",
+    "RUNBOOK_KO.md": "e4a8c6c1d7db4db7720c96230922275d9ff43f1b216dd6e09708a54ca6a71ad6",
+    "start_goal3_driver.bash": "543d1253c8e3758a85573b6a07b290208c0d877a7c7d120a4f96af4c5ba61e9d",
+    "start_goal3.bash": "2131d242f402c0c28dccad308396b2ef262d2aed3c3c3dea4d54900bf9053f90",
+    "goal2_validation_tests.log": "66b8099cff741885a58ebf44555ade0a261e743df2744c15ef235a1ffd9d4cf4",
+    "VALIDATION.json": "70c548a10bb90877ad0e82626f14d7758ab900bba3da1aa9675cea5b1219ca70",
+    "leader_goal2/test_distance_runtime.py": "71efca5586b76aca211e2d2697e7745a83d20b78b8e4cea1e4dd29ba84ab72f4",
+    "leader_goal2/verify_sources.py": "3aae259f0c50c6b1fe9a189bc3d0475ffee9aea17cd9db8168ba700e222368ca",
+    "leader_goal2/leader_short_forward_trial.py": "80a71222bf8d8a3aaccaa4bbb586cbc42f24a06fcf1d611cfecabab31b7f24d6",
+    "leader_goal2/follower_yaw_diagnostics.py": "6332b8e60067145827e67b79310c419aaf5408bc4f5401f66383a727911e18f6",
+    "leader_goal2/run_leader_distance_trial.py": "a11cba3afedd13eef475ebe7af6eee018af18e8d366088344660f2d89fdd7051",
+    "leader_goal2/test_goal2_confirmed_profile.py": "d99b19648424b8d8ce5652a9f059460152fe9c6a8dea51337ec955eedd2c90ef",
+    "leader_goal2/forward_3m.bash": "b83547ef29bed4897d7aa14152345242059cc339924ba23b53e54cd1a16a226f",
+    "leader_goal2/SOURCE_MANIFEST.json": "1d79524be0a5f206dbeb3cf7789dba2bdb09eea365c17162e49dcb23d984b4a3",
+    "check_demo_ready.py": "977e975193ebe2f1183eae611fb1101e4bf0279b49516242ea6def3660c392c4",
+    "test_goal3_graph_audit.py": "6b3d3ca4d8679484ea40fbff59d1c2498dca5c45d11ffaaccdb14fe9f8f168c3",
+    "goal3_graph_audit_tests.log": "921b60a7fd52e978fbb551cacd29df2d6708879400278e1fcc70fceeb0c6f8e0"
+  }
+}

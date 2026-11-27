@@ -1,0 +1,25 @@
+{
+  "log": "/home/sunuk/nav2_follow_stabilization/speed010/candidate/follower_diagnostics/logs/local_avoidance_trial_1794473279407088944.jsonl",
+  "control_samples": 1487,
+  "drive_stop_edges": 174,
+  "control_reasons": {
+    "FOLLOW_WAITING_LEADER": 721,
+    "TRACKED_PURSUIT": 689,
+    "FOLLOW_WAITING_LEADER_ROTATION": 61,
+    "FOLLOW_WAITING_LEADER_REVERSE": 16
+  },
+  "motor_hold_samples": 10,
+  "drive_v_min_median_max": [
+    0.010260240248948005,
+    0.037733726263033174,
+    0.07571482560995924
+  ],
+  "gap_min_median_max": [
+    1.461818979836531,
+    1.571502453102768,
+    1.6574097066364402
+  ],
+  "leader_pose_samples": 738,
+  "leader_samples_v_le_001": 237,
+  "interpretation": "Dominant controller stop is leader-stop classification, not reference loss or motor phase-zero waiting. A physical cause of low measured leader speed is not established."
+}

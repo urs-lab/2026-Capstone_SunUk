@@ -1,0 +1,16 @@
+{
+  "source": "User-supplied Ubuntu report convoy_host_audit_1794377261461455510.json",
+  "domain": 10,
+  "localhost_only": false,
+  "reported_filtered_hz": 4.7991478095645865,
+  "filtered_age_p95_s": 0.68172642,
+  "filtered_age_max_s": 1.560651163,
+  "filtered_max_receive_gap_s": 1.5889909159996023,
+  "scan_publishers": [],
+  "conclusion": "Degradation returns with shared-domain configuration. Cause not established because LiDAR publisher disappeared.",
+  "next_checks": [
+    "Check duplicate/leftover sensor processes across domains.",
+    "Inspect leader launch output for LiDAR exit/open-port errors.",
+    "Confirm each running sensor process environment and serial owner before further network experiments."
+  ]
+}

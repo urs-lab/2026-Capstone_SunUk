@@ -1,0 +1,838 @@
+{
+  "mode": "offline_command_chain_audit",
+  "incident": {
+    "log": "/home/sunuk/nav2_follow_stabilization/candidate/follower_diagnostics/logs/local_avoidance_trial_1794465862905625282.jsonl",
+    "samples": 62,
+    "max_logged_hold_s": 0.777254981,
+    "requested_yaw_integral_deg": -0.03644303540354286,
+    "rounded_command_equivalent_yaw_integral_deg": 0.0,
+    "map_estimate_yaw_change_through_log_end_deg": 57.260565893011425,
+    "map_estimate_yaw_change_before_first_fault_observation_deg": 38.215774333940864,
+    "map_pose_first_receive_ns": 1794465864618353884,
+    "map_pose_last_receive_ns": 1794465886205960660,
+    "first_fault_receive_ns": 1794465885689912648,
+    "max_rounded_command_abs_rpm": 4,
+    "max_logged_sent_abs_rpm": 4,
+    "asymmetric_rounded_commands": 0,
+    "converted_commands": [
+      {
+        "ros_ns": 1794465878950924994,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879080634542,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879180589244,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879283709733,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879383037033,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879488091391,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879595532853,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879710780008,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879823799951,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465879937542269,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880038763290,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880143103416,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880249454094,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880359029894,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880466779551,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880568310887,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880681513233,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880786558590,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880891408853,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465880993888841,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881100732918,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881207663547,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881312354364,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881415612109,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881518383973,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881633799855,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881742557926,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881856240727,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465881970630204,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465882080404931,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465882187128885,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465882303266172,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465882412066050,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465882528425354,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465882634832763,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465882741294352,
+        "v": 0.004122414106333072,
+        "w": 3.4354828441618574e-06,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -1,
+          1
+        ],
+        "equivalent_v": 0.006806784082777886,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 ff ff 01 01 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465882852969192,
+        "v": 0.0072450337746295945,
+        "w": 6.0377702472625355e-06,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -1,
+          1
+        ],
+        "equivalent_v": 0.006806784082777886,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 ff ff 01 01 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465882964865289,
+        "v": 0.010026632522391332,
+        "w": 8.355862154282965e-06,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -1,
+          1
+        ],
+        "equivalent_v": 0.006806784082777886,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 ff ff 01 01 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465883082604010,
+        "v": 0.012310162762436572,
+        "w": 1.0258880327966264e-05,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -2,
+          2
+        ],
+        "equivalent_v": 0.013613568165555772,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 fe ff 01 02 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465883192098364,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465883299363713,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465883405658981,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465883513755775,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465883617342580,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465883725252112,
+        "v": 0.013684626348949624,
+        "w": 1.1404312579456108e-05,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -2,
+          2
+        ],
+        "equivalent_v": 0.013613568165555772,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 fe ff 01 02 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465883844439754,
+        "v": 0.017303295405186048,
+        "w": 1.4419991048608703e-05,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -3,
+          3
+        ],
+        "equivalent_v": 0.02042035224833366,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 fd ff 01 03 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465883945759760,
+        "v": 0.0209988664576668,
+        "w": 1.7499757084406668e-05,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -3,
+          3
+        ],
+        "equivalent_v": 0.02042035224833366,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 fd ff 01 03 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465884063756436,
+        "v": 0.02406054071187813,
+        "w": 2.5009610156435645e-05,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -4,
+          4
+        ],
+        "equivalent_v": 0.027227136331111543,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 fc ff 01 04 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465884177865102,
+        "v": 0.026464858529713142,
+        "w": -5.811700913428617e-05,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -4,
+          4
+        ],
+        "equivalent_v": 0.027227136331111543,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 fc ff 01 04 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465884293525873,
+        "v": 0.027979928114942543,
+        "w": -0.00023248072410397074,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -4,
+          4
+        ],
+        "equivalent_v": 0.027227136331111543,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 fc ff 01 04 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465884400461923,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465884521676174,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465884630237453,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465884732036988,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465884844683059,
+        "v": 0.011998720493998638,
+        "w": -0.003200235318010074,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -2,
+          2
+        ],
+        "equivalent_v": 0.013613568165555772,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 fe ff 01 02 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465884957891803,
+        "v": 0.0069799270639485655,
+        "w": -0.0023875016271210064,
+        "reason": "TRACKED_PURSUIT",
+        "raw_rpm": [
+          -1,
+          1
+        ],
+        "equivalent_v": 0.006806784082777886,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 ff ff 01 01 00 01 b8"
+      },
+      {
+        "ros_ns": 1794465885063893523,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465885185335085,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465885305612673,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465885427194112,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465885526151025,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      },
+      {
+        "ros_ns": 1794465885642508189,
+        "v": 0.0,
+        "w": 0.0,
+        "reason": "FOLLOW_WAITING_LEADER",
+        "raw_rpm": [
+          0,
+          0
+        ],
+        "equivalent_v": 0.0,
+        "equivalent_w": 0.0,
+        "packet_hex": "b7 b8 01 cf 07 01 00 00 01 00 00 01 b7"
+      }
+    ]
+  },
+  "sweep": {
+    "command_pairs_checked": 128281,
+    "sign_limit_packet_failures": 0
+  },
+  "limitations": [
+    "Saved samples are not a continuous serial-wire capture.",
+    "Equivalent yaw assumes ideal wheel tracking and logged command hold.",
+    "Map yaw is a localization estimate, not independent physical measurement.",
+    "No motor dynamics, encoder failure or physical stopping is simulated."
+  ],
+  "hardware_io_performed": false,
+  "motion_authorized": false
+}

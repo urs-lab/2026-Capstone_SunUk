@@ -1,0 +1,19 @@
+{
+  "log": "nav2_follow_stabilization/candidate/follower_diagnostics/logs/local_avoidance_trial_1794465862905625282.jsonl",
+  "seconds_to_fault": 6.939325886,
+  "max_requested_v": 0.027979928114942543,
+  "w_min": -0.003200235318010074,
+  "w_max": 2.5009610156435645e-05,
+  "max_logged_sent_rpm": 4,
+  "follower_yaw_start_end_deg": [
+    0.7399267272180359,
+    38.955701061158905
+  ],
+  "first_device_fault": {
+    "mono": 2214.78868631,
+    "m1_status": 0,
+    "m2_status": 1,
+    "m1_rpm": 0,
+    "m2_rpm": 0
+  }
+}

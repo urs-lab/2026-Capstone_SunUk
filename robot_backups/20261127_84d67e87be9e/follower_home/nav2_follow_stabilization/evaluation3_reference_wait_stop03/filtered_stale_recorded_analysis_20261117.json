@@ -1,0 +1,13 @@
+{
+  "source_log": "/home/sunuk/nav2_follow_stabilization/evaluation3_reference_wait_stop03/candidate/follower_diagnostics/logs/local_avoidance_trial_1794895842099606375.jsonl",
+  "original_reason": "FILTERED_STALE",
+  "last_filtered_stamp_before_gap_ns": 1794895872349917525,
+  "filtered_age_at_exception_s": 0.807770967,
+  "source_stamp_gap_s": 0.864101451,
+  "observed_receive_gap_s": 0.845713177000107,
+  "next_filtered_stamp_ns": 1794895873214018976,
+  "recovered_after_abort": true,
+  "source_of_failure": "local_zero_hold called core.scene during reference wait; stale filtered odom raised before STOP publish",
+  "dds_or_ekf_internal_root_cause": "unconfirmed",
+  "original_motor_faults": []
+}

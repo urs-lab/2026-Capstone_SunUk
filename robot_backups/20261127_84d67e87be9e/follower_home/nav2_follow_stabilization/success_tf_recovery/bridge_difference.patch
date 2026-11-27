@@ -1,0 +1,22 @@
+--- github-success-bridge
++++ current-private-bridge
+@@ -42,7 +42,7 @@
+         self.tf_buffer = Buffer()
+         # 동적 TF는 최신 상태를 우선한다. static_qos는 지정하지 않아 기존
+         # Reliable/Transient Local 장착 TF 수신 동작을 유지한다.
+-        dynamic_qos=QoSProfile(depth=100,reliability=ReliabilityPolicy.BEST_EFFORT,
++        dynamic_qos=QoSProfile(depth=10,reliability=ReliabilityPolicy.BEST_EFFORT,
+                                durability=DurabilityPolicy.VOLATILE,history=HistoryPolicy.KEEP_LAST)
+         self.tf_listener = TransformListener(self.tf_buffer, self, qos=dynamic_qos)
+         self.latest_filtered_odom = None
+@@ -56,7 +56,9 @@
+             QoSProfile(depth=1,reliability=ReliabilityPolicy.BEST_EFFORT,
+                        durability=DurabilityPolicy.VOLATILE,history=HistoryPolicy.KEEP_LAST),
+         )
+-        self.pub = self.create_publisher(Odometry, self.output_topic, 20)
++        self.pub = self.create_publisher(Odometry, self.output_topic,
++            QoSProfile(depth=1,reliability=ReliabilityPolicy.BEST_EFFORT,
++                       durability=DurabilityPolicy.VOLATILE,history=HistoryPolicy.KEEP_LAST))
+         self.create_timer(
+             1.0 / max(publish_rate, 1.0),
+             self.publish_state,

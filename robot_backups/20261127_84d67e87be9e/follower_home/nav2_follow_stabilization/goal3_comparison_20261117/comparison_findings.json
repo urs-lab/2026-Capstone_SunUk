@@ -1,0 +1,120 @@
+{
+  "repo": "wpdhks1029/capstone_goal3",
+  "baseline_commit": "7df1f0f69b947196e87db621a353aa3afc99cf16",
+  "common_runtime_files": {
+    "follower_diagnostics/follower_localization.launch.py": {
+      "matches_success_backup": true,
+      "current_sha256": "10e2ce7a23135e1fcc3c3c6a3f4e33cfbb4418807e28aeff6467aa56e2233729"
+    },
+    "follower_diagnostics/follower_position_fixed_lidar.launch.py": {
+      "matches_success_backup": true,
+      "current_sha256": "4d463737cded4730ecb70434f7d95071df04e7b95546fe1e68ff0c2963c7bf79"
+    },
+    "follower_diagnostics/follower_observation.launch.py": {
+      "matches_success_backup": true,
+      "current_sha256": "4b50f1454c6ccc1c5f759e2d1bfc36f2d16bd43e5128de496754b473c3ba0398"
+    },
+    "robot_ws/src/cnu_capstone_2026/config/follower_amcl_candidate.yaml": {
+      "matches_success_backup": true,
+      "current_sha256": "3ff23d9ef2e045ba3f659d3b168f060a8603a8c4aa90402da0f81c47aafad384"
+    },
+    "nav2_follow_stabilization/success_tf_recovery/follower_success_tf_stack.launch.py": {
+      "matches_success_backup": true,
+      "current_sha256": "2ef7eea23d616a533cf504d591250bba355f5b3fc2d63225d6dcf9a08778e65e"
+    },
+    "nav2_follow_stabilization/success_tf_recovery/real_follower_bridge_tf_candidate.py": {
+      "matches_success_backup": true,
+      "current_sha256": "031fd970835e34ab167c6f1993a583b9ef50a208c20fb09c0781ec26b3adee27"
+    },
+    "nav2_follow_stabilization/convoy_unicast_relay.py": {
+      "matches_success_backup": true,
+      "current_sha256": "5577e817d5510e42cfa648204b8805f717e18847689912d00f871f067f7dbab7"
+    }
+  },
+  "profile_runtime_changes": [
+    {
+      "path": "candidate/follower_diagnostics/clearance_reobserve.py",
+      "kind": "added"
+    },
+    {
+      "path": "candidate/follower_diagnostics/evaluation3_clearance_policy.py",
+      "kind": "modified"
+    },
+    {
+      "path": "candidate/follower_diagnostics/filtered_input_wait.py",
+      "kind": "added"
+    },
+    {
+      "path": "candidate/follower_diagnostics/motor_status_wait.py",
+      "kind": "added"
+    },
+    {
+      "path": "candidate/follower_diagnostics/run_local_avoidance_trial.py",
+      "kind": "modified"
+    },
+    {
+      "path": "driver/evaluation3_clearance_policy.py",
+      "kind": "modified"
+    },
+    {
+      "path": "driver/follower_drive_node.py",
+      "kind": "modified"
+    },
+    {
+      "path": "driver/isolated_telemetry.py",
+      "kind": "added"
+    },
+    {
+      "path": "start_follower_driver.bash",
+      "kind": "modified"
+    }
+  ],
+  "maintain": {
+    "stop_clearance_m": 0.03,
+    "wait_until_fresh_input_then_resume": true,
+    "do_not_relabel_stale_map_tf_as_fresh": true
+  },
+  "confirmed_failure_layer": "AMCL map->follower/odom transform not received during 15s observation, while EKF odom TF is fresh; map odometry stops as a result",
+  "suspected_regression_to_test": "driver raw/position/status now use 3 publisher child processes; participants/ownership/CPU/network graph differs from success",
+  "not_proven": "whether added publisher processes caused AMCL/TF input or output to stall; current process environment and endpoint observations needed",
+  "read_only_check": "audit_live.bash",
+  "github_manifest_verified": true,
+  "baseline_manifest_files": 1617,
+  "cached_backup_hash_mismatches": [],
+  "live_observation": {
+    "report": "/home/sunuk/nav2_follow_stabilization/goal3_comparison_20261117/live_20261117_162801.txt",
+    "amcl_state": "active",
+    "raw": {
+      "count": 131,
+      "source_age_s": 0.064881793,
+      "receive_age_s": 0.0577132789985626,
+      "frame": "follower/odom",
+      "child_frame": "follower/base_link"
+    },
+    "position": {
+      "count": 100,
+      "source_age_s": 0.064881793,
+      "receive_age_s": 0.056605967998621054,
+      "frame": "follower/odom",
+      "child_frame": "follower/base_link"
+    },
+    "filtered": {
+      "count": 297,
+      "source_age_s": 0.039054264,
+      "receive_age_s": 0.003929542999685509,
+      "frame": "follower/odom",
+      "child_frame": "follower/base_link"
+    },
+    "odom_tf": {
+      "count": 297,
+      "source_age_s": 0.039054264
+    },
+    "amcl_map_odom_tf_seen": false,
+    "motor_fault": null,
+    "motor_feedback_fresh": true
+  },
+  "observed_environment_change": "EKF/AMCL/Bridge use added UDP-only XML, while motor telemetry uses default transport. GitHub-success start_localization.bash does not set that override.",
+  "candidate_recovery": "Restart only follower localization/sensors/Bridge through start_localization_success_env.bash: same GitHub-success sources, both later XML override vars removed; preserve current stop03 driver and input/reobservation waits.",
+  "transport_override_causality": "not proven: requires before/after live observation; no unconditional root-cause or recovery claim",
+  "new_environment_wrapper_test": "3 tests passed; no hardware opened or ROS nodes started by the test"
+}

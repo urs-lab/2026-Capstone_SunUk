@@ -1,0 +1,94 @@
+{
+  "no_ros_or_hardware": true,
+  "cases": [
+    {
+      "pose_scan_delta_ns": 216624195,
+      "pose_age_s": 0.556346079,
+      "scan_age_s": 0.339721884,
+      "success_backup": {
+        "reason": "SCENE_READY",
+        "delta_s": 0.216624195
+      },
+      "current": {
+        "reason": "SCENE_READY",
+        "delta_s": 0.216624195
+      }
+    },
+    {
+      "pose_scan_delta_ns": 319567195,
+      "pose_age_s": 0.556346079,
+      "scan_age_s": 0.236778884,
+      "success_backup": {
+        "reason": "SCENE_READY",
+        "delta_s": 0.319567195
+      },
+      "current": {
+        "reason": "SCENE_READY",
+        "delta_s": 0.319567195
+      }
+    },
+    {
+      "pose_scan_delta_ns": 390000000,
+      "pose_age_s": 0.556346079,
+      "scan_age_s": 0.166346079,
+      "success_backup": {
+        "reason": "SCENE_READY",
+        "delta_s": 0.39
+      },
+      "current": {
+        "reason": "SCENE_READY",
+        "delta_s": 0.39
+      }
+    },
+    {
+      "pose_scan_delta_ns": 400000000,
+      "pose_age_s": 0.556346079,
+      "scan_age_s": 0.156346079,
+      "success_backup": {
+        "reason": "SCENE_READY",
+        "delta_s": 0.4
+      },
+      "current": {
+        "reason": "SCENE_READY",
+        "delta_s": 0.4
+      }
+    },
+    {
+      "pose_scan_delta_ns": 400000001,
+      "pose_age_s": 0.556346079,
+      "scan_age_s": 0.156346078,
+      "success_backup": {
+        "reason": "FOLLOW_POSE_SCAN_TIME_MISMATCH"
+      },
+      "current": {
+        "reason": "FOLLOW_POSE_SCAN_TIME_MISMATCH"
+      }
+    },
+    {
+      "pose_scan_delta_ns": 410000000,
+      "pose_age_s": 0.556346079,
+      "scan_age_s": 0.146346079,
+      "success_backup": {
+        "reason": "FOLLOW_POSE_SCAN_TIME_MISMATCH"
+      },
+      "current": {
+        "reason": "FOLLOW_POSE_SCAN_TIME_MISMATCH"
+      }
+    },
+    {
+      "pose_scan_delta_ns": 500000000,
+      "pose_age_s": 0.556346079,
+      "scan_age_s": 0.056346079,
+      "success_backup": {
+        "reason": "FOLLOW_POSE_SCAN_TIME_MISMATCH"
+      },
+      "current": {
+        "reason": "FOLLOW_POSE_SCAN_TIME_MISMATCH"
+      }
+    }
+  ],
+  "mismatch_is_recoverable_reference_loss": [
+    false,
+    false
+  ]
+}
